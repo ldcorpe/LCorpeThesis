@@ -1,0 +1,123 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}%
+\makeatletter
+\providecommand{\hrefCMSnoop }[0]{\@secondoftwo}%
+\makeatother
+\providecommand{\doi}{\texttt{doi:}\begingroup \urlstyle{tt}\Url}
+
+\bibitem{LHC_machine}
+\hrefCMSnoop {} {L.~Evans and P.~Bryant, ``LHC Machine'',} \textit{ JINST}
+  \textbf{ 3} (2008), no.~08, S08001,
+  \href{http://dx.doi.org/10.1088/1748-0221/3/08/S08001}{\doi{10.1088/1748-0221/3/08/S08001}}.
+
+\bibitem{lepdesign}
+{{LEP Injector Study Group}}, ``{LEP design report, volume I: The LEP injector
+  chain; LEP design report, volume II: The LEP Main Ring}''.
+\newblock CERN, Geneva, 1983.
+
+\bibitem{Benedikt:823808}
+\hrefCMSnoop {} {M.~Benedikt, P.~Collier, V.~Mertens{ et~al.}, ``{LHC Design
+  Report}''.} \url{https://cds.cern.ch/record/823808}, 2004.
+
+\bibitem{AtlasatLHC}
+\hrefCMSnoop {} {{ATLAS Collaboration}, ``{The ATLAS Experiment at the CERN
+  Large Hadron Collider}'',} \textit{ JINST} \textbf{ 3} (2008) S08003,
+  \href{http://dx.doi.org/10.1088/1748-0221/3/08/S08003}{\doi{10.1088/1748-0221/3/08/S08003}}.
+
+\bibitem{CMSatLHC}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{The CMS experiment at the CERN
+  LHC}'',} \textit{ JINST} \textbf{ 3} (2008) S08004,
+\href{http://dx.doi.org/10.1088/1748-0221/3/08/S08004}{\doi{10.1088/1748-0221/3/08/S08004}}.
+%%CITATION = JINST,3,S08004;%%.
+
+\bibitem{AliceatLHC}
+\hrefCMSnoop {} {{ALICE Collaboration}, ``{The ALICE experiment at the CERN
+  LHC}'',} \textit{ JINST} \textbf{ 3} (2008) S08002,
+  \href{http://dx.doi.org/10.1088/1748-0221/3/08/S08002}{\doi{10.1088/1748-0221/3/08/S08002}}.
+
+\bibitem{LHCbatLHC}
+\hrefCMSnoop {} {{ LHCb} Collaboration, ``{The LHCb Detector at the LHC}'',}
+  \textit{ JINST} \textbf{ 3} (2008) S08005,
+\href{http://dx.doi.org/10.1088/1748-0221/3/08/S08005}{\doi{10.1088/1748-0221/3/08/S08005}}.
+%%CITATION = JINST,3,S08005;%%.
+
+\bibitem{Christiane:1260465}
+\href {https://cds.cern.ch/record/1260465} {C.~Lef\`evre, ``{The CERN
+  accelerator complex. Complexe des acc\'el\'erateurs du CERN.}'',} Dec, 2008.
+
+\bibitem{CMSLumiPublic}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``CMS Luminosity - Public Results''.}
+  \url{http://twiki.cern.ch/twiki/bin/view/CMSPublic/LumiPublicResults}.
+
+\bibitem{CMSTDR}
+{ CMS} Collaboration, ``{CMS Physics: Technical Design Report Volume 1:
+  Detector Performance and Software}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 2006.
+
+\bibitem{CMSTrackerTDR}
+{ CMS} Collaboration, ``{The CMS tracker system project: Technical Design
+  Report}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
+
+\bibitem{trackerperformance2014}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{Description and performance of track
+  and primary-vertex reconstruction with the CMS tracker}'',} \textit{ JINST}
+  \textbf{ 9} (2014), no.~10, P10009,
+  \href{http://dx.doi.org/10.1088/1748-0221/9/10/P10009}{\doi{10.1088/1748-0221/9/10/P10009}},
+\href{http://www.arXiv.org/abs/1405.6569}{\texttt{ arXiv:1405.6569}}.
+%%CITATION = ARXIV:1405.6569;%%.
+
+\bibitem{CMSEcalTDR}
+{ CMS} Collaboration, ``{The CMS electromagnetic calorimeter project: Technical
+  Design Report}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
+
+\bibitem{ECAL2012}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{Performance of the CMS
+  electromagnetic calorimeter and its role in the hunt for the Higgs boson in
+  the two-photon channel}'',} \textit{ J.Phys.Conf.Ser.} \textbf{ 455} (2013)
+  012028,
+\href{http://dx.doi.org/10.1088/1742-6596/455/1/012028}{\doi{10.1088/1742-6596/455/1/012028}}.
+%%CITATION = 00462,455,012028;%%.
+
+\bibitem{cmsEcalCalibration}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{Energy Calibration and Resolution of
+  the CMS Electromagnetic Calorimeter in $pp$ Collisions at $\sqrt{s} = 7$
+  TeV}'',} \textit{ JINST} \textbf{ 8} (2013) P09009,
+  \href{http://dx.doi.org/10.1088/1748-0221/8/09/P09009}{\doi{10.1088/1748-0221/8/09/P09009}},
+  \href{http://www.arXiv.org/abs/1306.2016}{\texttt{ arXiv:1306.2016}}.
+[JINST8,9009(2013)].
+%%CITATION = ARXIV:1306.2016;%%.
+
+\bibitem{CMSECALPublic}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``CMS ECAL first results with 2016
+  data''.}
+  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/EcalDPGResultsCMSDPS2016031}.
+
+\bibitem{cmsHcal}
+{CMS Collaboration}, ``{The CMS hadron calorimeter project: Technical Design
+  Report}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
+
+\bibitem{Abdullin:2009zz}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{The CMS barrel calorimeter response
+  to particle beams from 2-GeV/c to 350-GeV/c}'',} \textit{ Eur. Phys. J.}
+  \textbf{ C60} (2009) 359--373,
+  \href{http://dx.doi.org/10.1140/epjc/s10052-009-0959-5,
+  10.1140/epjc/s10052-009-1024-0}{\doi{10.1140/epjc/s10052-009-0959-5,
+  10.1140/epjc/s10052-009-1024-0}}.
+[Erratum: Eur. Phys. J. C61, (2009) 353].
+%%CITATION = EPHJA,C60,359;%%.
+
+\bibitem{MuonReco}
+\hrefCMSnoop {} {{ CMS} Collaboration, ``{Performance of CMS muon
+  reconstruction in $pp$ collision events at $\sqrt{s}=7$ TeV}'',} \textit{
+  JINST} \textbf{ 7} (2012) P10002,
+  \href{http://dx.doi.org/10.1088/1748-0221/7/10/P10002}{\doi{10.1088/1748-0221/7/10/P10002}},
+\href{http://www.arXiv.org/abs/1206.4071}{\texttt{ arXiv:1206.4071}}.
+%%CITATION = ARXIV:1206.4071;%%.
+
+\bibitem{cmsMuon}
+{ CMS} Collaboration, ``{The CMS muon project: Technical Design Report}''.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
+
+\end{thebibliography}\endgroup

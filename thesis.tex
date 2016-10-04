@@ -1,0 +1,115 @@
+\documentclass[]{thesis}
+\usepackage{thesis}
+\usepackage{parskip}
+\usepackage{hepnames}
+\usepackage[printonlyused]{acronym}
+\usepackage{ptdr-definitions}
+\usepackage{LC-shortcuts}
+\usepackage{slashed}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{import}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{feynmp}
+
+%% You can set the line spacing this way
+%\setallspacing{double}
+%% or a section at a time like this
+%\setfrontmatterspacing{double}
+
+
+%% Define a few useful shorthands
+\newcommand{\emu}{\Pe\Pgm}
+\newcommand{\ee}{\Pe\Pe}
+\newcommand{\mumu}{\Pgm\Pgm}
+\newcommand{\mutau}{\Pgm\Pgth}
+\newcommand{\etau}{\Pe\Pgth}
+\newcommand{\tautau}{\Pgth\Pgth}
+
+\newcommand{\WJets}{\ensuremath{\PW}{+}\text{jets}\xspace}
+\newcommand{\mhmax}{\ensuremath{m_{\Ph}^{\text{max}}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\Pqt\Paqt}\xspace}
+\newcommand{\ZToTauTau}{\ensuremath{\PZ\to\Pgt\Pgt}\xspace}
+\newcommand{\HToTauTau}{\ensuremath{\PH\to\Pgt\Pgt}\xspace}
+
+\renewcommand{\listfigurename}{List of figures}
+\renewcommand{\listtablename}{List of tables}
+
+
+\DeclareGraphicsRule{.1}{mps}{*}{}
+\DeclareGraphicsRule{.2}{mps}{*}{}
+\DeclareGraphicsRule{.3}{mps}{*}{}
+\DeclareGraphicsRule{.4}{mps}{*}{}
+\DeclareGraphicsRule{.5}{mps}{*}{}
+\DeclareGraphicsRule{.6}{mps}{*}{}
+\DeclareGraphicsRule{.7}{mps}{*}{}
+\DeclareGraphicsRule{.8}{mps}{*}{}
+\DeclareGraphicsRule{.9}{mps}{*}{}
+\DeclareGraphicsRule{.10}{mps}{*}{}
+\DeclareGraphicsRule{.11}{mps}{*}{}
+\DeclareGraphicsRule{.12}{mps}{*}{}
+\DeclareGraphicsRule{.13}{mps}{*}{}
+\DeclareGraphicsRule{.14}{mps}{*}{}
+
+
+%% PDF metadata
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+hidelinks=true,
+pdftitle = {Observation of the Higgs boson decaying to photons with the CMS detector},
+pdfsubject = {Louie Dartmoor Corpe's PhD thesis},
+pdfkeywords = {CMS, H, physics, LHC, Higgs},
+pdfauthor = {\textcopyright\ Louie Dartmoor Corpe},
+linkcolor=black,
+colorlinks=false
+}
+}{}
+\makeatother
+
+%% Define the thesis title and author
+\title{Observation of the Higgs boson decaying to photons with the CMS detector using p-p collisions at 13 TeV}
+\author{Louie Dartmoor Corpe}
+
+%% Start the document
+\begin{document}
+
+\begin{fmffile}{thesisfeynmandiags}
+%% Define the un-numbered front matter (cover pages, rubrik and table of contents)
+\begin{frontmatter}
+  \input{frontmatter}
+\end{frontmatter}
+
+%% Start the content body of the thesis
+\begin{mainmatter}
+  %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
+  \cleardoublepage
+  \pagenumbering{arabic}
+  \input{theory}
+  \input{detector}
+  \input{obj}
+  \input{categorisation}
+  \input{statandresults}
+  \input{conclusions}
+  %\import{}{run2} %relegated to declaration
+
+  %% To ignore a specific chapter while working on another,
+  %% making the build faster, comment it out like this:
+\end{mainmatter}
+
+%% Produce the appendices
+\begin{appendices}
+  %\input{appparkedtrigeff}
+\end{appendices}
+
+
+%% Produce the un-numbered back matter (e.g. colophon,
+%% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+ \input{backmatter}
+\end{backmatter}
+
+%% Close
+\end{fmffile}
+\end{document}
