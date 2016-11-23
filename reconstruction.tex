@@ -1,0 +1,84 @@
+\chapter{Object Reconstruction}
+\label{chap:reconstruction}
+
+\section{Introduction}
+
+This chapter deals with the way in which the simulation and the data collected at the \CMS experiment are reconstructed and interpreted as particles for use in the \Hgg analysis. The reconstruction is done using custom software: elements of the reconstruction which are common to most analyses are performed using the \CMSSW package; further reconstruction elements which are specific to \Hgg are obtained using the \FLASHgg software. The \CMSSW software uses the \PF algorithm, in which energy deposits from the calorimeters and tracks from the tracker and muon system are combined to reconstruct inidividual particles which are likely to have passed through the detetctor. This algorithm is described in \Sec~\ref{reco:sec:pf}. The reconstruction and identification of particles often uses \MVA techniques, known as \BDT\s, which are described in \Sec~\ref{reco:sec:bdt}. 
+
+The same reconstruction algorithms are applied both to actual data collected at the \CMS experiment, and to simulated samples where the interaction of generated particls with the \CMS sub-detectors is simulated. The way in which both data and simulation are obtained are descibred in \Sec~\ref{th:sec:samples}.
+
+The work presented in this thesis involves the study of the Higgs boson decaying to photons, \Hgg. It has already been noted in \Sec~\ref{th:sec:higgs_decays} that \Hgg is one of the most sensitive ways in which the Higgs boson can be observed and its properties measured in the \LHC environment, and at \CMS in particular, despite having a small branching fraction ($\sim 0.2\% $) and an irreducible \SM background of \QCD processes which have two photons in the final state. The channel has the benefit of having a fully reconstructible final state and a clean signature. The experimental method to study the Higgs boson is therefore to look for a resonant Higgs boson peak on top of a continuous diphoton invariant mass spectrum.
+
+
+The decay of the Higgs boson to photons, via a virtual loop of particles, can be treated as a two-body decay. It is easy to show that the invariant mass of the diphoton system (\mgg), i.e. the invariant mass of the Higgs boson, is given by:
+\begin{equation}
+ \mgg = \sqrt{2 E_{\gamma}^1 E_{\gamma}^2 (1-\cos\alpha)}, 
+\end{equation}
+
+where $E_{\gamma}^{1,2}$ represent the energies of the two photons and $\alpha$ represents the opening angle between them. The opening angle relies on identifying the spatial location of the Higgs boson decay. The method by which this is done is described in \Sec~\ref{th:sec:vertex}. Photons are reconstructed from deposits in the \CMS \ECAL. The methods with  which they are obtained and their energies are determined are descibed in \Sec~\ref{th:sec:photons}.
+
+Higgs bosons are produced at the \LHC chiefly by the mechanisms described in \Sec~\ref{sec:th:higgs_production_modes}. In the dominant production mode, \ggH, at leading order the final state of interest consists only of the two decay photons. However, for other production modes, the Higgs boson can be produced ina ssociation with other particles. These additional objects in the detector can be reconstructed and provide information on the mode in whichthe Higgs boson was likely to have ben produced. The methods used to reconstruct such additional objects are descibed in \Sec~\ref{reco:sec:other}.
+
+\section{Reconstruction Tools}
+
+\subsection{Particle-flow}
+\label{reco:sec:pf}
+
+The \PF event reconstruction algorithm (~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}) combines information from various \CMS \subdetector\s to reconstruct and identify individual particles. The inputs to this algorithm are the tracks reconstructed in the tracker and muon system, and the clusters of energy deposits in the \ECAL and \HCAL. The outputs of the algorithm are objects corresponding to stable particles (photons, electrons, muons, charged hadrons or neutral hadrons). In this scheme, \ECAL \SC\s which are not on the extrapolated trajectory of tracks from either the muon system or the tracker are identified as photons. Conversely, if a charged particle track in the tracker is associated to one or more \ECAL \SC (corresponding to the main electron and photons radiated by bremmstrahlung), then it can be identified as an electron. If a track in the tracker consistent with a track or multiple hits in the muon system, then it is idenitified as a muon. Tracks in the tracker which are not associated with any track in the muon system or any deposit in the \ECAL are interpreted as charged hadrons. Finally, desposits in the \HCAL which are not associated with any tracks, or which are in excess of the expected \HCAL energy from another \PF particle, are identified as neutral hadrons.
+
+\subsection{Boosted Decision Trees}
+\label{reco:sec:bdt}
+
+Analyses in \HEP often use \MVA techniques to improve their overall sensitivity. An example of an \MVA technique which is used repeatedly in this thesis is the \DT method, where a technique known as \emph{boosting} is applied to produce a \BDT. Problems where a \BDT is of use always involve a list of items with $N_{\textrm{inputs}}$ \emph{features} or \emph{input variables}, labelled here $\vec{x} =(x_0, ... ,x_{N_{\textrm{inputs}}})$, and a property $y$, the \emph{target variable} which is to be determined. The objective of a \BDT is to produce a function $F(\vec{x})$ which is an estimate of the true value of $y$ for a given set of input variable values~\cite{friedman2001}. There are two common uses for \BDT\s: \emph{classification} and \emph{regression}. For example, in many classification \BDT\s used in this thesis, the items are events, and $y$ decribes whether an an event contained a Higgs boson decay (signal-like) or not (background-like), based on a set of input variables $\vec{x}$ derived from properties of the \PF objects in the event. In this example, as with all classification \BDT\s, the target variable takes discrete values (background-like or signal-like). In the case of regression \BDT\s, the target variable is  continuous rather than discrete. For example, the energy correction ($y$ is $F_{\text{SC}}$ in \Eq~\ref{eq:cms:ecal:energy}) for \SC\s in the \ECAL is obtained using a regression \BDT, as is described in \Sec~\ref{recp:sec:photon_energy_correction_bdt}. The \BDT\s used in this thesis were trained using the \TMVA framework~\cite{TMVA} as part of the \ROOT software package. 
+
+In general, a \BDT is a linear combination of \DT\s. A \DT is obtained using a \emph{training dataset} consisting of a list of $N_{\textrm{items}}$ items $(\vec{x}_{m},y_{m},w_{m})$ for $m=0,...,N_{\textrm{items}}$, where for each item, $\vec{x}_{m}$ is a set of input variables values and $y_{m}$ is the true value of the target variable. The items can be weighted with weight $w_{m}$. In the simplest case, the value of $y_{m}$ is binary for any given $m$: signal or background. A numerical value, $1$ and $-1$ say, can be assigned to these two options respectively. The following description uses this binary output example, but can be generalised for $y_{m}$ to be able to be assigned any number of discrete values for classification \DT\s, or continuous values in the case of regression \DT\s.
+In order to construct a \DT, the training dataset is first split into two sub-samples by applying a selection on one or more of the input variables, which will be referred to as a \emph{cut}. The \emph{purity} $p^{\textrm{subsample}}$, which is simply the proportion of signal-like items in a sub-sample, is given by:
+
+\begin{equation}
+ p^{\textrm{subsample}} = \frac{\sum_{m=0}^{N_{\textrm{items}}^{\textrm{subsample}}} w_{m} \textrm{Bool}(y_m=1)}{\sum_{m=0}^{N_{\textrm{items}}^{\textrm{subsample}}} w_{m}}, 
+\end{equation}
+
+where $\textrm{Bool}(X)$ is equal to $1$ $(0)$ if $X$ it true (false). 
+The cuts on the input variables are chosen in order to maximise the separation of signal and background in the resulting sub-samples. This is achieved by minimizing a separation criterion. 
+A common separation criterion is the \emph{Gini index} $2p^{\textrm{subsample}}(1-p^{\textrm{subsample}})$, which has a maximum at $0.5$ for sub-samples with an equal amount of signal and background items and gives $0$ in cases where all items are of the same type (signal or background). Many other separation criteria exist, for instance \emph{cross-entropy, misclassification error, statistical significance} and \emph{average squared error}.  
+Each sub-sample can then be further split by a new set of cuts on the target variables. This procedure is repeated iteratively for each sub-sample until either the number of iterations reaches some predefined threshold known as the \emph{tree depth}, or if the sub-sample satisfies some predetermined requirement on the value of the separation criterion. Each sub-sample obtained after the final set of cuts has been applied is known as a \emph{leaf}. The output score of the items in a given leaf is then $1 (-1)$ if $p^{\textrm{subsample}}>0.5$ $(p^{\textrm{subsample}}\leq0.5)$.
+
+The procedure known as boosting helps to improve the performance of a \DT, for example by reducing the impact of statistical fluctuations in the training sample. Many boosting algorithms exist, but in all cases several individual \DT\s are produced, each trained on subsets or modified versions of the training dataset. The final \BDT is a weighted linear combination of the individual \DT\s. Supposing that there are $N_{\textrm{DT}}$ individual \DT\s, labelled as $f_{l}(\vec{x},\vec{\alpha}_{l})$ where $l=0,..,N_{\textrm{DT}}$ and $\vec{\alpha}_{l}$ is the set of cuts in the corresponding \DT, the the full \BDT, $F$, is written as:
+
+\begin{equation}
+\label{reco:eq:bdt}
+F(\vec{x},\vec{\beta},\vec{\alpha}) = \sum_{l=0}^{N_{\textrm{DT}}} \beta_{l} f_{l}(\vec{x},\vec{\alpha_{l}}), 
+\end{equation}
+
+where $\vec{\beta}=(\beta_{0},...,\beta_{N_{\textrm{DT}}})$ is the set of coefficients applied to each \DT in the \BDT. The values of of $\vec{\beta}$ are determined by the boosting algorithm used~\cite{friedman2009,TMVA}. A consequence of \Eq~\ref{reco:eq:bdt} is that the output of the \BDT is no longer a discrete value of $\pm1$, but instead a semi-continuous variable between -1 and 1. 
+
+Some of the most common boosting algorithms are \emph{adaptive boosting} and \emph{gradient boosting}. In adaptive boosting, the the first \DT is trained on the full training dataset as usual. The training dataset is then reweighted so that items which were assigned an incorrect output score by the previous \DT are given a larger weight and the items which were correctly classified are given a smaller weight. The next \DT is then trained on the modified dataset, and the whole procedure is repeated over a large number of iterations. The final $\vec{\beta}$ for adaptive boosting algorithms is given by the logarithm of the weights applied to the dataset at each step. In gradient boosting, for the $N_{\textrm{DT}}$ \DT\s in \Eq~\ref{reco:eq:bdt}, the values of the inidividual components of $\vec{\alpha}$ and $\vec{\beta}$ are varied in such a way as to minimise the \emph{loss function} $L(F,y)$, which is a measure of the deviation of the \BDT output $y = F(\vec{x},\vec{\beta},\vec{\alpha})$ from the true value $y^T$ across all items in the training dataset. Popular choices for the loss function include $L(F,y) = ( y - F(\vec{x},\vec{\beta},\vec{\alpha}))^2$ and  $L = \ln (1 + e^{-2F(\vec{x},\vec{\beta},\vec{\alpha})y})$~\cite{friedman2009,TMVA}.
+
+
+
+\section{Samples}
+\label{reco:sec:samples}
+\subsection{Simulation Samples}
+\subsection{Data Samples} % including triggers
+
+\section{Vertex Reconstruction}
+\label{reco:sec:vertex}
+\subsection{Vertex Identification}
+\subsection{Vertex Probability}
+
+\section{Photon Reconstruction} 
+\label{reco:sec:photons}
+\subsection{Photon Reconstruction}
+\subsection{Photon Energy Reconstruction}
+\subsection{Photon Identification}
+\subsection{Photon Preselection}
+
+\section{Other objects} 
+\label{reco:sec:other}
+\subsection{Jets}
+\subsection{Electrons}
+\subsection{Muons}
+\subsection{Missing energy}
+\subsection{Top quarks}
+
+Lorem Ipsum \cite{PDGBooklet}.

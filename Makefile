@@ -1,8 +1,8 @@
 .PHONY: clean
 
-EXTRASTYS = abhepexpt.sty abhep.sty  abmath.sty lineno.sty SIunits.sty varwidth.sty
+EXTRASTYS = abhepexpt.sty abhep.sty abmath.sty lineno.sty SIunits.sty varwidth.sty
 
-thesis.pdf: thesis.tex thesis.cls theory.tex detector.tex obj.tex categorisation.tex statandresults.tex conclusions.tex frontmatter.tex backmatter.tex
+thesis.pdf: thesis.tex thesis.cls theory.tex detector.tex reconstruction.tex categorisation.tex statandresults.tex conclusions.tex frontmatter.tex backmatter.tex
 	@rm -f $(EXTRASTYS)
 	unzip extrastyles.zip
 	@rm -f thesis.{aux,toc,lof,lot}
