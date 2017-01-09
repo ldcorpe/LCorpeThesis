@@ -313,7 +313,7 @@ The efficiency of the \VtxIdBdt to select the right vertex within 1\cm of the tr
 \end{figure}
 
 \subsection{Correct vertex probability BDT}
-
+\label{reco:sec:vtx_prob}
 %If the chosen vertex is over 1\cm away from the true one, the invariant mass resolution is dominated by the uncertainty on the vertex position. It is therefore desirable to have a per-event estimate of how likely it is that the vertex is chosen within 1\cm of the true one. This is referred to as the \emph{correct vertex probability}. This information is used to categorise events by sensitivity, as described in \Sec~\ref{cat:sec:dipho_bdt}.
 
 An additional \BDT, labelled \VtxProbBdt, is used to estimate of the per-event probability that the correct vertex was chosen by the \VtxProbBdt. The \VtxProbBdt is trained on simulated \Hgg events and uses the following input variables: 
@@ -343,6 +343,7 @@ The ECAL-seeded electrons are obtained via a procedure analogous to that describ
 Muons are used for the selection of Higgs bosons which are produced by the \ZH or \WH mechanism. Muons are constructed by geometrically matching tracks reconstructed independently in the tracking system and in the muon chambers. Muon candidates must have some hits in both subdetectors to qualify as \PF muons: this helps to avoids cases where cosmic rays or muons produced in jets are misreconstructed as muons from the hard scattering interaction~\cite{MuonReco}.  
 
 \subsection{Jets}
+\label{reco:sec:jets}
 
 Gluons or quarks exiting the \pp interaction hadronize, forming collimated \emph{jets} of charged and neutral hadrons.
 In the \Hgg analysis, jets are used to identify events where the Higgs boson is produced by the \VBF process. 
