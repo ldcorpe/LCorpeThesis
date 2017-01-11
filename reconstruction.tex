@@ -306,8 +306,8 @@ The efficiency of the \VtxIdBdt to select the right vertex within 1\cm of the tr
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{recoFigures/Pt2016PU125BSReweighted12.pdf}
-\includegraphics[width=0.7\textwidth]{recoFigures/Nvtx2016PU125BSReweighted12.pdf}
+\includegraphics[width=0.6\textwidth]{recoFigures/Pt2016PU125BSReweighted12.pdf}
+\includegraphics[width=0.6\textwidth]{recoFigures/Nvtx2016PU125BSReweighted12.pdf}
 \caption{The efficiency to select a vertex within 1\cm of the true vertex in simulated \Hgg events as a function \pT and the number of vertices in the event. The estimated probability that the vertex is chosen within 1\cm is superimposed. The uncertainty on the vertex-finding probability is determined using \Zmumu events. The simulation is reweighted such that the distribution of the number of vertices and the width of the interaction region matched in data and simulation. }
 \label{fig:reco:vtxidbdt_eff}
 \end{figure}
@@ -350,13 +350,7 @@ In the \Hgg analysis, jets are used to identify events where the Higgs boson is 
 Jets are reconstructed using the \antiKt algorithm~\cite{antiKt} from \PF candidates, using a cone of radius $R=0.4$. Jets originating from \PU can sometimes overlap with jets which originate from particles produced in the hard scattering interaction. To mitigate this effect, \PFCHS is used. In this scheme, the \PF charged hadron candidates associated to a vertex other than the vertex selected by the procedure described in \Sec~\ref{reco:sec:vertex} are ignored during the jet reconstruction. %Events can have multiple possible photon pairs ans since each photon pair is associated with a vertex, the event can have potentially multiple possible selected vertices. The collection of jets is therefore reclustered using the \PFCHS under all possible selected vertex scenarios. 
 Since the tracker acceptance is $|\eta|<2.5$, no \PF charged hadron candidates are available outside this range, so \PFCHS has no effect. For the jets reconstructed outside this region, but still in acceptance, a different \PU mitigation technique is used using a selection on the width of the jet. The width of the jet is described by the variable $\RMS= \sum_{\text{PF candidates}}\pT^2 \Delta R^2/ \sum_{\text{PF candidates}}\pT^2  $, where $\Delta R$ is the distance between the \PF candidate and the jet axis from the cone. Jets must have $\RMS<0.03$ to pass the \PU mitigation requirement. Finally, all jets are required to be within  $|\eta|<4.7$.
 
-Parametric corrections to the energy of the jets are made to account for the following effects:
-\begin{itemize}
-\item the additional energy of \PF neutral hadrons from \PU which are included in jets; 
-\item the nonuniformity of the detector response.
-%\item the difference between data and simulation in \gammaJet and $\PZ+\text{jet}$ events.
-\end{itemize}
-
+Parametric corrections to the energy of the jets are made to account for the additional energy of \PF neutral hadrons from \PU which are included in jets and the nonuniformity of the detector response.
 
 \subsection{Missing energy}
 
