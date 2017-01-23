@@ -1,0 +1,136 @@
+\chapter{Signal and background modelling}
+\label{chap:model}
+
+The statistical interpretation of the data relies on accurate modelling the shape and normalisation of the \mgg distribution for the signal and background processes in each category. %The signal here refers to the diphoton events produced by one of the main Higgs production processes \ggH, \VBF, \ttH, and \VH, where the latter can be further split into \WH and \ZH. 
+For the signal processes, this distribution takes the form of a resonant peak around \mH, the width of which is entirely dominated by detector resolution. The construction of the signal model is described in \Sec~\ref{model:sec:signal_model}. By contrast, the invariant mass distribution of background events is a continuously falling non-resonant continuum. The data-driven method by which the background model is produced is described in \Sec~\ref{model:sec:background_model}. Finally, the handling of the systematic uncertainties is described in \Sec~\ref{model:sec:systematics}. 
+
+\section{Signal modelling}
+\label{model:sec:signal_model}
+
+\subsection{Parametrisation of the signal \mgg distributions}
+
+The signal model is constructed from samples of simulated \Hgg events from each production mode. The events from the \VH mode are further split into \WH and \ZH samples. % are reconstructed, selected and categorised as described in Chapters~\ref{} and ~\ref{}. 
+The shape of the \mgg distribution is parametrised separately for each process in each event category. Since the vertex choice affects the shape of the \mgg  of the distribution, as was mentioned in \Sec~\ref{}, the modelling is done separately for cases where the \RV or \WV  was selected. 
+
+The signal \mgg distributions are all parametrised using a \DCB~\ref{} function with an additional Gaussian function sharing the same mean. This is in contrast with the functional form used in~\cite{HIG-16-020}, which was a sum of up to five Gaussian functions, where the number of functions in th sum was tuned for each \mgg distribution. %The \CB functional form is used in \HEP to model processes which involve losses, for example in the semiparmetric regression described in Sec~\ref{}, where it is used to model the energy of individual photons. 
+The \DCB shape consists of a Gaussian function core and two tails which are described by power laws. The Gaussian core represents the intrinsic width of the distribution being modelled, while the tails model the under- or over-estimation of the value of the parameter of interest. %For example, the \DCB shape is used iin the semiparmetric regression described in \Sec~\ref{} to model photon energy distribution. The lower tail captures the fact that a certain amount of energy of the photon can be lost in the reconstruction process, this leading to a long non-Gaussian tail of events. Ont he other side, the upper tailis motivated theenergy of the photon shower can be over-estimated, for example because of the inclsuio of showers due to \PU.  
+The \DCB shape has five parameters: the width and mean of the Gaussian core, the cross-over points to the power laws on each side, and the order of the two power laws. The functional \DCBpG form also incorporates an additional Gaussian function, which shares the same mean as the \DCB, leading to a total of seven parameters once the extra Gaussian width and mixing fraction are accounted for. 
+
+The choice of the \DCBpG functional form to parametrise the signal distributions was motivated by the fact that the resulting parametrisation of the signal shape gave closer agreement to the simulated distributions than the simple sum of Gaussian function, but with substantially fewer degrees of freedom. The \DCB shape is also better motivated physically than an arbitrary sum of Gaussian functions. 
+
+The values of the parameters of the functioanl form are determined perfoming a \NLL fit of functional for to the simulated \mgg distrubutions. The resulting parametrisations of the \mgg distributions for the \ggH process (with $\mH=125\GeV$) in the inclusive categories are shown in \Fig~\ref{fig:model:functionalform} for both the \DCBpG and sum of Gaussians functional forms. The improvement in the agreement between the distribution and the parametrisation can be seen by comparing the $\chi^2$ value and the number of degrees of freedom. The \DCBpG always gives a better agreement with a smaller numer of degrees of freedom, and this is also true for the other processes and categories.
+
+\begin{figure}[ht!]
+\centering
+  \subfloat[Functional form: DCB$+1$G]{\shortstack{
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_0.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_1.pdf} \\
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_2.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_3.pdf} 
+}}\\
+  \subfloat[Functional form: Sum of Gaussians]{\shortstack{
+\includegraphics[width=0.3\textwidth]{modellingFigures/nGaus/ggh_UntaggedTag_0.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/nGaus/ggh_UntaggedTag_1.pdf}\\  
+\includegraphics[width=0.3\textwidth]{modellingFigures/nGaus/ggh_UntaggedTag_2.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/nGaus/ggh_UntaggedTag_3.pdf} 
+}}
+\caption{The shape of the simulated \mgg distribution (\mH=125\GeV) for the \ggH process for the inclusive categories when parametrised with (a) \DCBpG and (b) a sum of Gaussian functions, where the RV and WV contributions have been summed according to their relatove fraction. The plots show the agreement between the simulation and the parametrisation expressed as the $\chi^2$, alongside the total number of degrees of freedom in the parametrisation.}
+
+\label{fig:model:functionalform}
+\end{figure}
+
+%A number of checks were performed to validate the use of the \DCBpG shape
+%insert tests of different functional forms / appendix ?
+%tests on DCB response to signal systematics / appendix ?
+%bias studies involving DCB shape / appendix ?
+%If the number of events in the sample after splitting into provess, category adn \RV/WV case is too low, it can be extremnely difficult to meaningully fit the \DCB1G shape. In this case, a replacement shape from a related high-statistics category is used to model this tag/process.
+
+\subsection{Dependence of model on \mH}
+
+Since the mass of the Higgs boson is a parameter of interest, the parametrisations from simulated signal samples under different assumptions of the Higgs boson mass are combined to form a single continuous model.  
+One option is to perform the fitting procedure described above for each different set of \mH scenarios. The individual parameters of the functional form can then be linearly interpolated from one \mH scenario to the next. This is the approach taken in~\cite{}.
+
+Another option, which is used in this analysis, instead performs a simultaneous fit of all the different \mH samples, where the individual parameters of the functional form are themselves polynomials \mH. The fitting procedure can then occur for all mass scenarios at once, where the floating parameters of the fit are the coefficients of polynomial form of each parameter of the functional form. The advantage of this method, which is called \SSF, is a reduction in the total number of parameters used to determine the full model. Indeed, in the linear interpolation method, the total number of floating parameters is increased for sample with a new \mH, since it is parameterised separately from the others. In the \SSF method the additional degrees of freedom come only from the chosen order of the polynomial describing the parameters in the main functional form). Furthermore, the \SSF method guarantees a sensible continuous model, where the linear interpolation method can lead to discontinuous or unphysical models. 
+
+The \SSF method in this analysis used the \DCBpG functional form and was applied separately for each process, category and \RV/\WV case, using the \mgg distributions from under seven different \mH scenarios: 120, 123, 124,125, 126, 127 and 130\GeV. The \mgg distributions were first normalised to the same event yield. The \SSF method  was tested with the parameters of the functional form cast as polynomials of order 0, 1 and 2. It was found that there was no substantial improvement in the agreement between the model and the \mgg distributions when using polynomials of order greater than 0. This was determined to be because the floating parameters were not sufficiently constrained by the \mgg distributions to bring any meaningful improvement.
+
+The signal models for the \RV and \WV contributions are combined according to their relative fraction. The fraction of events where the selected vertex was within $1\cm$ in the $z$-direction from the true vertex is evaluated for each \mH sample, and then parametrised as a first order polynomial to get a smoth dependence on \mH. 
+
+As an example, the depence on \mH of the signal model for the \ggH process in each of the analysis categories is shown in \Fig~\ref{}. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_0_fmc_interp.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_1_fmc_interp.pdf} \\ 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_2_fmc_interp.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_UntaggedTag_3_fmc_interp.pdf} \\
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_VBFTag_0_fmc_interp.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_VBFTag_1_fmc_interp.pdf} \\
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_TTHLeptonicTag_fmc_interp.pdf} 
+\includegraphics[width=0.3\textwidth]{modellingFigures/DCBpG/ggh_TTHHadronicTag_fmc_interp.pdf} 
+\caption{The \mH-dependence of the signal models for the ggH process for each of the analysis categories is shown. Each curve shows the signal model for a given value of \mH. The contributions from the RV and WV components of each model were summed together according to their relative size, linearly interpolated between the samples for different \mH.}
+
+\label{fig:model:sig_interpolation}
+\end{figure}
+
+\subsection{Normalisation of signal models}
+
+The signal models for each process and category must be normalised to match the event yield expected for the \SM after detector acceptance ($A$) and selection efficiency ($\epsilon$) are taken into account. The total number of events from a given process is determined by multiplying the process \crosssection by the \Hgg \BR and the integrated luminosity of the data sample to be analysed.The values for the Higgs production modes and the \Hgg \BR, as well as their dependence on \mH, are taken from \LHCHXSWG. The simulated signal samples are then normalised such that number of events in the sample at generator level matches the number of events predicted by the \SM. After the simulated samples have been reconstructed and the events selected and categorised, the total number of events remaining is related to the expected number by the \effxacc. The \effxacc is evaluated separately for each process and category, and is parametrised in \mH using a polynomial fit to give a continuous model. The final normalisation is given by the \effxacc multiplied by the total number of expected events for the integrated luminosity of the data sample as a function of \mH.
+
+The signal models for different processes can hen be summed together as required to obtain the expected \mgg distribution of signal events for a given analysis category or for all categories combined. \Fig~\ref{} shows the overall \effxacc for all categories combined as a function of \mH.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{modellingFigures/effAcc_vs_mass.pdf} 
+\caption{The \effxacc of all categories combined shown as a function of \mH. The ornage band shows the effect of the systematic uncertainties associated with trigger efficiency, photon identification and selection, photon energy scale and resolution and vertex identification.}
+
+\label{fig:model:sig_effxacc}
+\end{figure}
+
+The signal models for each category evaluated at $\mH=125\GeV$, obtained by summing the normalisaed contributions from each process, are shown in \Fig~\ref{fig:model:sig_model_all}, and for all analysis categories combined in \Fig~\ref{fig:model:sig_model_per_category}. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_0.pdf} 
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_1.pdf} \\
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_2.pdf} 
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_3.pdf} \\ 
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/VBFTag_0.pdf} 
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/VBFTag_1.pdf} \\
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/TTHLeptonicTag.pdf} 
+\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/TTHHadronicTag.pdf} 
+
+\caption{The signal models for individual analysis categories for $\mH=125\GeV$, obtained by summing the contributions from each production process according to the \effxacc. The \effSigma value (half the width of the narrowest interval containing 68.3\% of the invariant mass distribution) and the FWHM (the width of the distribution at half of the maximum value) are also shown.}
+
+\label{fig:model:sig_model_per_category}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{modellingFigures/DCBpG/all.pdf} 
+
+\caption{The signal model for all analysis categories combined for $\mH=125\GeV$, obtained by summing the contributions from each production process according to the \effxacc. The \effSigma value (half the width of the narrowest interval containing 68.3\% of the invariant mass distribution) and the FWHM (the width of the distribution at half of the maximum value) are also shown. }
+
+\label{fig:model:sig_model_all}
+\end{figure}
+
+
+%\subsection{Handling of photon energy systematics}
+
+%The systematics associa
+
+\section{Background modelling}
+\label{model:sec:background_model}
+\subsection{The discrete profiling method}
+
+In this analysis, the background is modelled from data using the discrete profiling method~\cite{DiscreteProfiling}. The method treates the choice of parametrisation of the background as a discrete nuisance parameter in the final minimisation when extracting results. 
+
+The discrete profiling method has the advantage of providing a natural handling of the uncertainty associated with choice of background function. The methdo relies on the fact that 
+
+\subsection{Bias studies?}
+
+\section{Sumamry of systematic uncertainties and their handling}
+
+\subsection{theory uncertainties}
+\subsection{experimental uncertainties}
+
