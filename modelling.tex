@@ -87,24 +87,7 @@ The signal models for different processes can hen be summed together as required
 \label{fig:model:sig_effxacc}
 \end{figure}
 
-The signal models for each category evaluated at $\mH=125\GeV$, obtained by summing the normalisaed contributions from each process, are shown in \Fig~\ref{fig:model:sig_model_all}, and for all analysis categories combined in \Fig~\ref{fig:model:sig_model_per_category}. 
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_0.pdf} 
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_1.pdf} \\
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_2.pdf} 
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/UntaggedTag_3.pdf} \\ 
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/VBFTag_0.pdf} 
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/VBFTag_1.pdf} \\
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/TTHLeptonicTag.pdf} 
-\includegraphics[width=0.35\textwidth]{modellingFigures/DCBpG/TTHHadronicTag.pdf} 
-
-\caption{The signal models for individual analysis categories for $\mH=125\GeV$, obtained by summing the contributions from each production process according to the \effxacc. The \effSigma value (half the width of the narrowest interval containing 68.3\% of the invariant mass distribution) and the FWHM (the width of the distribution at half of the maximum value) are also shown.}
-
-\label{fig:model:sig_model_per_category}
-\end{figure}
-
+The signal model evaluated at $\mH=125\GeV$ for all categories combined, obtained by summing the normalisaed contributions from each process, are shown in \Fig~\ref{fig:model:sig_model_all}, and for each analysis category in \Fig\s~\ref{fig:model:sig_model_per_category_inc} and~\ref{fig:model:sig_model_per_category_exc}.. 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.6\textwidth]{modellingFigures/DCBpG/all.pdf} 
@@ -113,6 +96,30 @@ The signal models for each category evaluated at $\mH=125\GeV$, obtained by summ
 
 \label{fig:model:sig_model_all}
 \end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/UntaggedTag_0.pdf} 
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/UntaggedTag_1.pdf} \\
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/UntaggedTag_2.pdf} 
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/UntaggedTag_3.pdf}  
+
+\caption{The signal models for the inclusive analysis categories for $\mH=125\GeV$, obtained by summing the contributions from each production process according to the \effxacc. The \effSigma value (half the width of the narrowest interval containing 68.3\% of the invariant mass distribution) and the FWHM (the width of the distribution at half of the maximum value) are also shown.}
+
+\label{fig:model:sig_model_per_category_inc}
+\end{figure}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/VBFTag_0.pdf} 
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/VBFTag_1.pdf} \\
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/TTHLeptonicTag.pdf} 
+\includegraphics[width=0.45\textwidth]{modellingFigures/DCBpG/TTHHadronicTag.pdf} 
+
+\caption{The signal models for the \VBFTag and \TTHTag analysis categories for $\mH=125\GeV$, obtained by summing the contributions from each production process according to the \effxacc. The \effSigma value (half the width of the narrowest interval containing 68.3\% of the invariant mass distribution) and the FWHM (the width of the distribution at half of the maximum value) are also shown.}
+
+\label{fig:model:sig_model_per_category_exc}
+\end{figure}
+
 
 
 %\subsection{Handling of photon energy systematics}
@@ -123,11 +130,74 @@ The signal models for each category evaluated at $\mH=125\GeV$, obtained by summ
 \label{model:sec:background_model}
 \subsection{The discrete profiling method}
 
-In this analysis, the background is modelled from data using the discrete profiling method~\cite{DiscreteProfiling}. The method treates the choice of parametrisation of the background as a discrete nuisance parameter in the final minimisation when extracting results. 
+In this analysis, the background model is produced from data using the discrete profiling method~\cite{DiscreteProfiling}, which treats the choice of functional form to describe the background as a discrete nuisance parameter in the likelihood fit to the data. 
 
-The discrete profiling method has the advantage of providing a natural handling of the uncertainty associated with choice of background function. The methdo relies on the fact that 
+The discrete profiling method was introduced because the underlying functional form of a background distribution is generally not known. Several different families of function could in principle be chosen to parametrise the background distributions, all giving acceptable agreement with the data. Within a given family, it is not always clear which order to choose, or how to process the uncertainty associated with a particular choice of functional form.  %An common solution is to make an arbitrary choice of functional form and try to estimate the bias introduced by pikcing that shape, and trying to assign some systematic uncertainty to compensate.
+The discrete profiling method seeks to provide an alternative solution to making an arbitrary choice of function. %Since the chosen functional form itself is not of interest, it can be treated as a discrete nuisance parameter and profiled in the likelihood fit.
+and provides a natural way to handle of the uncertainty associated with the choice of background parametrisation. 
 
-\subsection{Bias studies?}
+When extracting the best-fit value of a parameter of interest using a \NLL minimisation, nuisance parameters representing systematic uncertainties are typically profiled: their value is allowed to be varied during the minimisation, and the final value is not of interest. The additional freedom yields a wider \NLL curve, representing the additional uncertainty attributed the nuisance. 
+If the value of the nuisance parameter is instead fixed at the best-fit value, the width of the resulting \NLL curve will be narrower narrower but still with minimum at the same place as for the full profiled \NLL curve. This width represents the uncertainty of the measurement without the effect of the fixed nuisance parameter. If the procedure is repeated for a different fixed values of the nuisance parameter, different \NLL curves, not necessarily at the minimum, will be produced. In the limit that many different values of the fixed nuisance parameter are sampled, the minimum envelope of all the fixed-nuisance \NLL curves will converge to the full profiled \NLL. The uncertainty can then be obtained from the envelope as for a usual \NLL curve. This property is true also for discrete nuisance parameters. The procedure is illustrated in \Fig~\ref{fig:model:bkg_envelope}. When parametrising the background distribution, since the functional form itself is not of interest it can be treated as a discrete nuisance parameter and the method as described above can be used to assess the uncertainty associated with the parametrisation of the background. The fact that different functional forms can have different numbers of degrees of freedom is taken into account by adding a penalty term to the \NLL proportional tot he number of parameters in the functional form. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.8\textwidth]{modellingFigures/envelope_cartoon.pdf} 
+\caption{An illustration of construction of the envelope to estimate the effect of a nuisance parameter. The NLL (denoted as $\Lambda$) curve obtained when performing a likelihood scan of parameter of interest $x$ if the nuisance parameter is profiled is shown in black. The NLL curve obtained by fixing the nuisance to the best-fit value is shown in blue. The NLL curves for various fixed values of the nuisance other than the best-fit are shown in red. The minimum envelope of these curves, shown in green, approximates the original NLL curve obtained by profiling the nuisance parameter.~\cite{DiscreteProfiling}.}
+
+\label{fig:model:bkg_envelope}
+\end{figure}
+
+A complete set of all analytic functions should be considered for an exact result. In practice, it is only necessary to include a subset of all analytic function which give a good description of the data. In this analysis, the following four families of functions are considered:
+
+\begin{itemize}
+\item Sums of exponentials: $$ f_{N}(x)= \sum^{N}_{i=1} p_{2i} e^{p_{2i+1} x} ,$$
+\item Sums of polynomials (in the Bernstein basis): $$ f_{N}(x) = \sum^{N}_{i=0} p_{i} b_{(i,N)}, \text{ where } b_{(i,N)}:= \begin{pmatrix} N \\ i \end{pmatrix} x^i (1-x)^{N-i} ,$$
+\item Laurent series: $$ f_{N}(x)= \sum^{N}_{i=1} p_{i} x^{-4 + \sum^{i}_{j=1} (-1)^{j} (j-1)},$$
+\item Sums of power-law functions: $$ f_{N}(x)= \sum^{N}_{i=1} p_{2i} x^{-p_{2i+1}},$$
+\end{itemize}
+where for all $k$, the $p_k$ are a set of floating parameters in the fits, and $N$ represents the \emph{order} of a particular function in the family.  
+
+%The representations of the function families are chosen such that their members are nested: a function of a particular order can reproduce the shape of the functions of lower order for a suitable choice of parameter values. It is therefore only necessary to consider a single representative function from each family when applying the discrete profiling method. 
+The maximum order of the candidate function from each family is obtained using the following procedure, separately for each analysis category. Starting with the lowest-order function in the family, the parameters of the candidate function are varied to minimize the \NLL with respect to the $m_{\gamma\gamma}$ distribution. A penalty of 0.5 times the number of parameters in the functional form is added to the value of the \NLL to account for differences in the number of degrees of freedom. The same procedure is applied to the function of next-highest order in the family. 
+In the limit of large sample size, the difference in the \NLL between functions of successive orders $N$ and $N+1$, $2 \Delta NLL_{N+1} = 2(NLL_{N+1} - NLL_{N})$, is distributed as a $\chi^2$ with $M$ degrees of freedom where, $M$ is the difference in the number of free parameters in the order-$N+1$ function and order-$N$ functions. A p-value is then calculated as:
+
+$$ \text{p-value} = p(2 \Delta NLL > 2 \Delta NLL_{N+1}| \chi^2(M)). $$
+
+If the p-value is less than a predetermined threshold, chosen as $0.05$, the higher order function is supported by the data, otherwise the higher order function is assumed too flexible given the data. In the former case, the next-highest order function is then considered, an so on. Otherwise, the procedure terminates having found the highest-order suitable function.  An additional constraint is applied to remove low order functions which do not fit the data well. The remaining functions from each of the four families are added to the final set of candidate functions to be used in the discrete profiling, which are shown for each category in \Fig\s~\ref{fig:model_bkg)multipdf_inc} and~\ref{fig:model:bkg_multipdf_exc}.
+
+A series of tests demonstrated that this method provides good coverage of the uncertainty associated with the choice of the function and provides an unbiased estimate of the signal strength. These tests are described in detail in~\cite{DiscreteProfilingMethod}. 
+
+\begin{figure}
+ \begin{center}
+ \subfloat[UntaggedTag 0]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_UntaggedTag_0.pdf}}
+ \subfloat[UntaggedTag 1]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_UntaggedTag_1.pdf}}\\
+ \subfloat[UntaggedTag 2]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_UntaggedTag_2.pdf}}
+ \subfloat[UntaggedTag 3]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_UntaggedTag_3.pdf}}\\
+ \caption{The set of candidate functions chosen to parametrise the background using the discrete profiling method in the inclusive categories.}
+ \label{fig:model_bkg)multipdf_inc}
+ \end{center}
+\end{figure}
+
+\begin{figure}
+ \begin{center}
+ \subfloat[VBFTag 0]      {\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_VBFTag_0.pdf}}
+ \subfloat[VBFTag 1]      {\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_VBFTag_1.pdf}}\\
+ \subfloat[TTHLeptonicTag]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_TTHLeptonicTag.pdf}}
+ \subfloat[TTHHadronicTag]{\includegraphics[width=0.48\textwidth]{modellingFigures/multipdf/multipdf_TTHHadronicTag.pdf}}\\
+ \caption{The set of candidate functions chosen to parametrise the background using the discrete profiling method in the \VBFTag and \TTHTag categories.} 
+ \label{fig:model:bkg_multipdf_exc}
+ \end{center}
+\end{figure}
+
+The expected number of background events per $\GeV$ around $125\GeV$ is shown in \Table~\ref{tab:model:sig_bkg_yields} alongside the expecte number of signal events for each category, which is broken down by the contribution of each production mode. The \effSigma (the width of the smallest widnow containing $68.3\%$ of the distribution) and $\sigma_{HM}$ (the width of the distribution at half of the maximum value) of the signal model for each category are also shown. The expected number of background events is taken in a $\pm 1 \effSigma$ window around $125\GeV$ using the best-fit background function from the set of candidate functions in each category.
+
+ \begin{table}
+  \resizebox{\textwidth}{!}{
+\input{modellingFigures/SigBgYields.tex}
+}
+ \caption{ The expected number of signal and background events per category. The \effSigma of the signal model is also provided as an estimate of the $m_{\gamma\gamma}$ resolution in that category. The expected number of background events is quoted per \GeV in a $\pm 1 \effSigma$ window around 125 \GeV.}
+ \label{tab:model:sig_bkg_yields}
+\end{table}
 
 \section{Sumamry of systematic uncertainties and their handling}
 
