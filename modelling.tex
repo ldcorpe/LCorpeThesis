@@ -1,8 +1,8 @@
 \chapter{Signal and background modelling}
 \label{chap:model}
 
-The statistical interpretation of the data relies on accurate modelling the shape and normalisation of the \mgg distribution for the signal and background processes in each category. %The signal here refers to the diphoton events produced by one of the main Higgs production processes \ggH, \VBF, \ttH, and \VH, where the latter can be further split into \WH and \ZH. 
-For the signal processes, this distribution takes the form of a resonant peak around \mH, the width of which is entirely dominated by detector resolution. The construction of the signal model is described in \Sec~\ref{model:sec:signal_model}. By contrast, the invariant mass distribution of background events is a continuously falling non-resonant continuum. The data-driven method by which the background model is produced is described in \Sec~\ref{model:sec:background_model}. Finally, the handling of the systematic uncertainties is described in \Sec~\ref{model:sec:systematics}. 
+The statistical interpretation of the data requires models of the expected \mgg distribution for the signal and background processes in each category. These models must account for the sources of systematic uncertainty which affect the analysis. %The signal here refers to the diphoton events produced by one of the main Higgs production processes \ggH, \VBF, \ttH, and \VH, where the latter can be further split into \WH and \ZH. 
+For the signal processes, the \mgg distribution takes the form of a resonant peak around \mH, the width of which is entirely dominated by detector resolution. The construction of the signal model is described in \Sec~\ref{model:sec:signal_model}. By contrast, the \mgg distribution for background events is a falling non-resonant continuum. The data-driven method by which the background model is produced is described in \Sec~\ref{model:sec:background_model}. Finally, the handling of the systematic uncertainties is described in \Sec~\ref{model:sec:systematics}. 
 
 \section{Signal modelling}
 \label{model:sec:signal_model}
@@ -10,13 +10,13 @@ For the signal processes, this distribution takes the form of a resonant peak ar
 \subsection{Parametrisation of the signal \mgg distributions}
 
 The signal model is constructed from samples of simulated \Hgg events from each production mode. The events from the \VH mode are further split into \WH and \ZH samples. % are reconstructed, selected and categorised as described in Chapters~\ref{} and ~\ref{}. 
-The shape of the \mgg distribution is parametrised separately for each process in each event category. Since the vertex choice affects the shape of the \mgg  of the distribution, as was mentioned in \Sec~\ref{}, the modelling is done separately for cases where the \RV or \WV  was selected. 
+The shape of the \mgg distribution is parametrised separately for each process in each event category. Since the vertex choice affects the shape of the \mgg  distribution, as was mentioned in \Sec~\ref{reco:sec:vertex}, the modelling is done separately for cases where the \RV or \WV  was selected. 
 
-The signal \mgg distributions are all parametrised using a \DCB~\ref{} function with an additional Gaussian function sharing the same mean. This is in contrast with the functional form used in~\cite{HIG-16-020}, which was a sum of up to five Gaussian functions, where the number of functions in th sum was tuned for each \mgg distribution. %The \CB functional form is used in \HEP to model processes which involve losses, for example in the semiparmetric regression described in Sec~\ref{}, where it is used to model the energy of individual photons. 
+The signal \mgg distributions are all parametrised using a \DCB function~\cite{CrystalBallFunction} summed with an additional Gaussian function sharing the same mean. We refer to this functional form hereafter as a \DCBpG function. %The \CB functional form is used in \HEP to model processes which involve losses, for example in the semiparmetric regression described in Sec~\ref{}, where it is used to model the energy of individual photons. 
 The \DCB shape consists of a Gaussian function core and two tails which are described by power laws. The Gaussian core represents the intrinsic width of the distribution being modelled, while the tails model the under- or over-estimation of the value of the parameter of interest. %For example, the \DCB shape is used iin the semiparmetric regression described in \Sec~\ref{} to model photon energy distribution. The lower tail captures the fact that a certain amount of energy of the photon can be lost in the reconstruction process, this leading to a long non-Gaussian tail of events. Ont he other side, the upper tailis motivated theenergy of the photon shower can be over-estimated, for example because of the inclsuio of showers due to \PU.  
-The \DCB shape has five parameters: the width and mean of the Gaussian core, the cross-over points to the power laws on each side, and the order of the two power laws. The functional \DCBpG form also incorporates an additional Gaussian function, which shares the same mean as the \DCB, leading to a total of seven parameters once the extra Gaussian width and mixing fraction are accounted for. 
+The \DCB shape has five parameters: the width and mean of the Gaussian core, the cross-over points to the power laws on each side, and the order of the two power laws. The \DCBpG function therefore has a total of seven parameters. This is in contrast with the functional form used in~\cite{PAS-HIG-16-020}, which was a sum of up to five Gaussian functions, where the number of functions in the sum was tuned for category, leading to up to 
 
-The choice of the \DCBpG functional form to parametrise the signal distributions was motivated by the fact that the resulting parametrisation of the signal shape gave closer agreement to the simulated distributions than the simple sum of Gaussian function, but with substantially fewer degrees of freedom. The \DCB shape is also better motivated physically than an arbitrary sum of Gaussian functions. 
+The choice of the \DCBpG functional form to parametrise the signal \mgg distributions was motivated by the fact that the resulting parametrisation of the signal shape gave closer agreement to the simulated distributions than the simple sum of Gaussian function, but with substantially fewer degrees of freedom. The \DCB shape is also better motivated physically than an arbitrary sum of Gaussian functions. 
 
 The values of the parameters of the functioanl form are determined perfoming a \NLL fit of functional for to the simulated \mgg distrubutions. The resulting parametrisations of the \mgg distributions for the \ggH process (with $\mH=125\GeV$) in the inclusive categories are shown in \Fig~\ref{fig:model:functionalform} for both the \DCBpG and sum of Gaussians functional forms. The improvement in the agreement between the distribution and the parametrisation can be seen by comparing the $\chi^2$ value and the number of degrees of freedom. The \DCBpG always gives a better agreement with a smaller numer of degrees of freedom, and this is also true for the other processes and categories.
 
@@ -199,8 +199,112 @@ The expected number of background events per $\GeV$ around $125\GeV$ is shown in
  \label{tab:model:sig_bkg_yields}
 \end{table}
 
-\section{Sumamry of systematic uncertainties and their handling}
+\section{Systematic uncertainties}
+\label{model:sec:systematics}
 
-\subsection{theory uncertainties}
-\subsection{experimental uncertainties}
+The systematic uncertainties considered in this analysis pertain to either the signal or background modelling. Since the background model is obtained from data, the only uncertainty to take into account is associated with the choice functional form for the parametrisation. This is handled directly by the discrete profiling method described in \Sec~\ref{}. The uncertainties which affect the signal model are more numerous, and the way that each is handled is described in this chapter. They are implemented differently depending on their effect on the signal model. 
 
+Systematic uncertainties which affect the shape of the \mgg distribution are built directly into the signal models described in \Sec~\ref{}. Most systematics of this type affect the photon energy, and therefore the invariant mass. For systematics of this type, the effect of the variation is propagated to the mean, \effSigma and normalisation of the signal \mgg distribution for each category and signal process. Corresponding nuisance parameters are then inserted which can modify the normalisation, mean and widths of the \DCBpG parametrisation in each category (one exception is the nuisance corresponding to the vertex efficiency, which instead modifies the relative mixing fraction of the \RV and \WV components of the model). The nuisances parameters are then Gaussian-constrained and allowed to be profiled in the \NLL minimisation when making measurements of the parameters of interest. Nuisances of this type are referred to hereafter as \emph{shape nuisances}. 
+
+Uncertainties on selection efficiencies typically do not affect the shape of the \mgg distribution, but do change the final event count (or \emph{yield}) of the signal mode for each category. Uncertainties of this type are implemented as nuisance parameters which scale the yield of each process and category. Depending on the source of the systematic uncertainty, categories can be scaled differently, although all categories will simultaneously either increase or decrease. The corresponding nuisance parameters are profiled in the \NLL minimisation with a \lnN constraint~\cite{}, which cannot give rise to negative yields. Systematics of this type are referred to as \emph{yield nuisances}, which are either symmetric or asymmetric. In the symmetric case, the upward and downward variations of the uncertainty are the same size. In the asymmetric case, the upward and downward variations are of different sizes.
+
+Finally, certain sources of systematic uncertainty affect the categorisation of events. In this case, the variations in such uncertainties can cause events to move from one event category to another, or altogether out of the acceptance of the analysis. These systematic uncertainties are implemented as nuisance parameters which change the relative yield of event categories, and are referred to as \emph{category migration nuisances}. They are implemented analogously to yield nuisances, except that the yield of certain categories will increase while the yield of others must decrease to preserve the overall normalisation. Furthermore, separate nuisances are implemented to account for different types of migration: for instance, between the individual \VBFTag categories on the one hand, and then between all \VBFTag and all \Untagged categories on the other.
+
+\subsection{Theory uncertainties}
+
+\subsubsection{Parton Distribution Functions}
+
+The uncertainty on signal process \crosssection\s due to \PDF uncertainties is modelled in two ways: the overall effect on the signal yields is is modelled with a set of yield nuisances, while the relative variation on the category yields are modelled with a set of category migration nuisances. 
+
+One symmetric yield nuisance for each signal process is included, accounting for both \PDF and \alphaS uncertainties. Each varies the category yields according to the corresponding uncertainty in the process \crosssection, as provided by the \LHCHXSWG recommendation~\ref{}. Namely, the \ggH, \VBF, \WH, \ZH, and \ttH process \crosssection\s are scaled by 3.2\%, 2.1\%, 1.9\%, 1.6\% and 3.6\% respectively. 
+
+The relative yield change is modelled using a series of category migration nuisances. The size of the variations is determined according to the PDF4LHC prescription~\cite{}, by re-weighting individual events according to the NNPDF30 \PDF set. The effect of the variations is normalised by their effect on the overall yield, such that they represent only migrations. The procedure results in 60 uncorrelated symmetric migration nuisances. The largest migrations are of the order of 2\% of category yields, but are typically below 0.4\%.
+
+\subsubsection{Strong force coupling constant}
+
+The effect of uncertainty on the value of the strong force coupling constant \alphaS is modelled as described in the \PDF uncertainty section. The yield nuisances for the \PDF uncertainties also incorporate the uncertainty on \alphaS. Three additional asymmetric category migration nuisances are included, the effect of which is determined according to the PDF4LHC prescription~\cite{} normalised by the overall effect on the signal yield. The largest migrations are of the order of $3.7\%$ of the category yield. 
+
+\subsubsection{QCD scale}
+The uncertainty on the scale of the \QCD interaction is parametrised in terms of the renormalisation ($\mu_{Renorm.}$) and factorisation ($\mu_{Fact.}$) scales. The asymmetric yield nuisances corresponding to variations of these parameters are taken direction from the \LHCHXSWG recommendations for \crosssection\s~\cite{}. The size of the effect for \ggH, \VBF, \WH, \ZH and \ttH processes is $+4.6\%/-6.7\%$, $+0.4\%/-0.3\%$, $+0.5\%/-0.7\%$, $+3.8\%/-3.0\%$ and $+5.8\%/-9.2\%$ respectively. Three additional asymmetric category migration nuisances are also included. The size of their effect is estimated at generator level, by varying the values of $\mu_{Renorm.}$ and $\mu_{Fact.}$ by factors of $2$ (upward variation ) or $0.5$ (downward variation). The three category migration nuisance correspond to three scenarios: varying $\mu_{Renorm.}$ up or down while keeping $\mu_{Fact.}$ constant ; varying $\mu_{Fact.}$ up or down while keeping $\mu_{Renorm.}$ constant ; varying both $\mu_{Renorm.}$ and $\mu_{Fact.}$ up or down uniformly. In each case the migrations are found to be of the order of 5-10\% of the category yield.
+
+\subsubsection{\Hgg branching ratio}
+The uncertainty on the \Hgg \BR is taken directly from the \LHCHXSWG recommendation~\ref{}. In is implemented as a yield nuisance affecting all analysis categories, and the variation is of 2.08\% on the category yield.
+
+\subsubsection{Underlying event and parton shower}
+The uncertainty on the \emph{underlying event} is introduced because different models exist to describe the interactions of quarks and gluons in \pp collision, each giving different predictions. In particular, this affects the modelling of jets. This uncertainty is taken into account as a set of category migration nuisances. The sizes of the variations are obtained from dedicated simulated samples where the parameters of the generators have been tuned differently. The category migrations evaluated are between: \VBFTag 0 and \VBFTag 1 categories (of the order of 7\%); and all \VBFTag categories and all \Untagged categories (of the order of 9\%).
+
+The \emph{parton shower} refers to the emission of \QCD radiation from partons during \pp collisions. As for the underlying event, an uncertainty is introduced because different models and generators give different predictions, in particular in the reconstruction of jets. The resulting uncertainty is modelled analogously to the underlying event uncertainty.  The category migrations evaluated are between: \VBFTag 0 and \VBFTag 1 categories (of the order of 7\%); and all \VBFTag categories and all \Untagged categories (of the order of 9\%).
+
+\subsubsection{Gluon fusion contamination of \VBFTag and \TTHTag categories}
+
+The theoretical prediction for the jet multiplicity in gluon fusion events is unreliable in can cases with large number of jets. This leads to the introduction of an uncertainty on the contamination of \ggH events in other analysis categories which use jets in their selections. 
+
+For \VBFTag categories, the uncertainty is estimated using the Stewart-Tackmann procedure~\cite{StewartTackmann}. This results in a set of category migration nuisances: a migration between \VBFTag categories (at most $39\%$ on category yield) and a migration between \Untagged and \VBFTag categories (at most $10\%$ on category yield); %jetveto
+
+For the \TTHTag categories, this uncertainty is modelled by three yield nuisances:
+\begin{itemize}
+\item shower modelling uncertainty, which is estimated by comparing the jet multiplicity in data and simulation for $\Ptop \APtop \rightarrow \text{jets}$ events, where the tops quarks both decay to leptons, leading to variations of the order of 45\% on the yield of the \TTHTag categories; 
+\item gluon splitting modelling, which is estimated from the observed ratio of \crosssection\s of  $\Ptop \Ptop \Pbottom \Pbottom$ and $\Ptop \Ptop +2\text{jet}$) events in 13\TeV data;
+\item an additional nuisance included due to the small size of the simulated samples used in these studies.
+\end{itemize}
+
+\subsection{Photon energy uncertainties}
+
+\subsubsection{Photon energy scale and resolution}
+
+After the calibration of the \ECAL described in \Sec~\ref{}, there are still some discrepancies in the photon energy scale and resolution between simulation and data. Since electrons and photons are both reconstructed as \SC\s, the photon energy scale and resolutions discrepancies can be studied using \Zee events where the electrons are reconstructed as photons.
+For \SC\s in eight \RNINE and $|\eta|$ classes, the invariant mass distributions in data and simulation are both fitted with a Breit-Wigner (which models the natural shape of the \PZ peak) convoluted with a \CB function (which describes the \ECAL resolution effect and losses due to unrecovered energy from bremsstrahlung). The natural width and pole mass of the $PZ$ boson are fixed to their accepted values~\cite{PDF} in this parametrisation. 
+
+The corrections to the photon energy scale are given by the relative differences between the best-fit means of the \CB in data and simulation, divided by the $\PZ$ boson pole mass, in each bin. The corrections to the photon energy resolution is applied by adding additional smearing terms to the width of the \CB in quadrature. The additional scale and resolution corrections described above each have uncertainties, which are related to choices made for the \Zee event selection and classification, as well as the difference between the final electron and photon energy regression \BDT\s. The uncertainties on the energy scale and resolution are quantified for each photon class, and propagated to the \mgg distribution in each analysis category. This results in a shape nuisance for the photon energy scale in four (high and low \RNINE, each for \EB and \EE), and eight shape nuisances for the photon energy smearing (as for the photon energy scale, but parametrised also as constant and stochastic contributions). 
+
+The size of the systematic uncertainties are of the order of 0.15\% to 0.5\% depending on the photon class. The effect on the mean of the \mgg distribution is at most 0.25\%, while the effect on the \effSigma is at most 20\%, depending on the analysis category.
+
+\subsubsection{Preselection}
+The efficiency of the photon preselection is quantified using the \TagAndProbe method described in \Sec~\ref{}, which also provided systematic uncertainties for different photon classes. The systematic uncertainties are propagated to a yield nuisance,
+the effect of which is around 4\% on the category yields.
+
+\subsubsection{Per-photon energy resolution}
+The uncertainty of the per-photon energy resolution is conservatively evaluated by scaling the output of the \PhoEnergyBdt described in \Sec~\ref{} by $\pm5\%$. This uncertainty is propagated throughout the analysis and modelled as a yield nuisance. The size of the variation is at most 3\% depending on the analysis category.
+
+\subsubsection{Non-uniformity of the light collection}
+The uncertainty on the response of the \ECAL crystals depending on their position in \eta, is estimated by xxx. It is modelled separately as shape nuisances for photons in the barrel and in the endcaps. The size of the uncertainty is 0.07\% on the photon energies. The effect is propagated to the \mgg distribution of each category and applied as separate shape nuisances in the \EE and \EB, which vary the mean by up to 0.2\% and the \effSigma by up to 5\%.
+
+\subsubsection{Non-linearity of detector response}
+The uncertainty associated with the fact that the \ECAL response is not linear is estimated by comparing boosted \Zee decays in data and simulation. Individual photon energies are affected by up to 0.2\%. The effect is propagated as a shape nuisance, which varies the mean of the \mgg distribution by 0.1\% in each category.
+
+\subsubsection{Modelling of detector response in \Geant}
+The imperfect modelling of electromagnetic showers in the detector simulation software \Geant is modelled with a shape nuisance, as it impacts the photon energy scale. The size of the variation was determined with a dedicated simulated sample where the parameters of shower modelling were modified, leading to a small uncertainty on the photon energy scale. The size of the effect is approximately 0.05\% on the mean of the \mgg distribution in each category.
+
+\subsubsection{Modelling of the material budget}
+The imperfect modelling of the amount of material between the vertex and the \ECAL affects the simulation of the photon and electron showers. The uncertainty related to this effect is estimated with dedicated samples there the amount of simulated material is uniformly varied by $\pm 5\%$. It is treated as two separate shape nuisances, for \EB and \EE photons separately, which affect the mean of the \mgg distribution by at most 0.1\% (0.03\%)nd the \effSigma by at most 3.5\% (7.6\%) for the \EB (\EE) photons.
+
+\subsubsection{Shower shape corrections}
+The uncertainty deriving from the imperfect modelling of shower shape variables is estimated using simulated samples with and without the corrections. This effect is of order 0.064\% on the photon energy scale, and is implemented as four shape nuisances for photons in different $\eta$ and \RNINE classes, which vary the \mgg distribution mean by at most 0.2\% and \effSigma by at most 1.8\%.
+
+\subsection{Diphoton/per event}
+
+\subsubsection{Vertex-finding efficiency}
+The uncertainty on the vertex-finding efficiency is determined by comparing the fraction of correctly identified vertices in \Zmumu between data and simulation. The uncertainty is modelled as a shape nuisance which alters the \RV/\WV mixing fraction of each signal model. The variation is of the order of 1.5\% on the \RV fraction..
+
+\subsubsection{Jet energy scale and resolution}
+The uncertainties on the jet energy scale are described by migrations nuisances: between \VBFTag 0 and \VBFTag 1 (at most 13.6\% on the category yield); between all \VBF and \Untagged categories (at most 12\%) ; and between \TTHTag and \Untagged categories (at most 15\%).
+
+The nuisances for the jet energy resolution are treated analogously, with migrations of at most 2.2\% between \VBFTag 0 and \VBFTag 1 categories; at most 2.9\% between \VBF and \Untagged categories ; and at most 12.8\% between \TTHTag and \Untagged categories.
+
+\subsubsection{Integrated luminosity}
+The uncertainty on the value of the integrated luminosity of the data sample is modelled as a scale nuisance, the size of which is 6.2\% on the yield of all signal processes. 
+
+\subsubsection{Trigger efficiency}
+The uncertainty on the trigger efficiency is estimated using a \TagAndProbe method as described in \Sec~\ref{}. The uncertainty is applied yield nuisance parameter of size 0.1\%.
+
+\subsubsection{$\Pbottom$-tagging  efficiency}
+The uncertainty on the tagging of $\Pbottom$ jets is evaluated by varying the ratio between the measured b-tagging efficiency in data and simulation within their uncertainty. This is propagated to a yield nuisance, has an effect of the order of 2\% for \TTHTag categories.
+
+\subsubsection{Lepton reconstruction efficiencies}
+The uncertainty on the reconstruction of electrons and muons is determined by considering the ration of leptons reconstructed in data and simulation. The result implemented as a yield uncertainty for the \TTHTag categories of the order of 1\%.
+
+\subsubsection{Unmatched \PU}
+The uncertainty relating unmatched \PU is described by migrations nuisances: between \VBFTag 0 and \VBFTag 1 (at most 1.2\% on the category yield); and between all \VBF and \Untagged categories (at most 1.3\%).
+
+\subsubsection{Jet width shift}
+The uncertainties on \PU rejection using the selection of the jet width are described by a migrations nuisances between all \VBF and \Untagged categories (at most 3.5\%).
