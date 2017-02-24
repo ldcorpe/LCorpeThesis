@@ -219,10 +219,10 @@ The performance of the \PhoEnergyBdt is illustrated using a simulated sample of 
 \begin{figure}[h]
 \centering
   \subfloat[EB]{
-\includegraphics[width=0.45\textwidth]{recoFigures/RegressionEB_Hgg.pdf}
-}
+\includegraphics[width=0.8\textwidth]{recoFigures/RegressionEB_Hgg.pdf}
+}\\
   \subfloat[EE]{
-\includegraphics[width=0.45\textwidth]{recoFigures/RegressionEE_Hgg.pdf}
+\includegraphics[width=0.8\textwidth]{recoFigures/RegressionEE_Hgg.pdf}
 }
 \caption{The ratio of the \SC energy, shown before the \PhoEnergyBdt correction is applied ($E_{raw}$) and after the correction is applied ($E_{cor}$), and true energy ($E_{true}$) of simulated photons in a sample of \Hgg decays where $\mH=125\GeV$, separately for the EB (a) and the EE (b). All distributions have been fitted to DCB functions.}
 
@@ -240,7 +240,8 @@ The \PhoIdBdt is validated by comparing the output score for data and simulation
 
 \begin{figure}[hptb]
 \centering \hspace{0.1cm}
-\includegraphics[width=0.47\textwidth]{recoFigures/validation_phoID_ICHEP_4sideTicks.pdf}
+%\includegraphics[width=0.47\textwidth]{recoFigures/validation_phoID_ICHEP_4sideTicks.pdf}
+\includegraphics[width=0.85\textwidth]{recoFigures/validation_phoID_ICHEP_4sideTicks.pdf}
 \caption{
 The distribution of the \PhoIdBdt output score for the lower-scoring photon in each diphoton pair in the range $100 < m_{\gamma \gamma} < 180\GeV$ for data and simulation. The simulation is composed of signal (\Hgg photons with $\mH=125\GeV$) and background, which has been split into $\gamma$-$\gamma$, $\gamma$-$\textrm{jet}$ and $\textrm{jet}$-$\textrm{jet}$ components. The sum of the background components has been scaled to match the number of events in data.}
 \label{fig:reco:photon_id_score_hgg_bkg}
@@ -248,7 +249,8 @@ The distribution of the \PhoIdBdt output score for the lower-scoring photon in e
 
 \begin{figure}[hptb]
 \centering 
-\includegraphics[width=0.53\textwidth]{recoFigures/idmva_syst_combined.pdf}
+%\includegraphics[width=0.53\textwidth]{recoFigures/idmva_syst_combined.pdf}
+\includegraphics[width=0.95\textwidth]{recoFigures/idmva_syst_combined.pdf}
 \caption{ The $\text{BDT}_{\gamma\text{ ID}}$ output score for \Zee events in data and simulation (labelled MC), where 
 the electrons are reconstructed as photons with the electron veto requirement inverted.}
 \label{fig:reco:photon_id_zee_validation}
@@ -306,8 +308,8 @@ The efficiency of the \VtxIdBdt to select the right vertex within 1\cm of the tr
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{recoFigures/Pt2016PU125BSReweighted12.pdf}
-\includegraphics[width=0.6\textwidth]{recoFigures/Nvtx2016PU125BSReweighted12.pdf}
+\includegraphics[width=0.8\textwidth]{recoFigures/Pt2016PU125BSReweighted12.pdf}\\
+\includegraphics[width=0.8\textwidth]{recoFigures/Nvtx2016PU125BSReweighted12.pdf}
 \caption{The efficiency to select a vertex within 1\cm of the true vertex in simulated \Hgg events as a function \pT and the number of vertices in the event. The estimated probability that the vertex is chosen within 1\cm is superimposed. The uncertainty on the vertex-finding probability is determined using \Zmumu events. The simulation is reweighted such that the distribution of the number of vertices and the width of the interaction region matched in data and simulation. }
 \label{fig:reco:vtxidbdt_eff}
 \end{figure}

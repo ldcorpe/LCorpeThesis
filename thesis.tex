@@ -6,6 +6,10 @@
 \usepackage{ptdr-definitions}
 \usepackage{LC-shortcuts}
 \usepackage{slashed}
+%\usepackage{bm}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{upgreek}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{amssymb}
@@ -13,6 +17,7 @@
 \usepackage{colortbl}
 \usepackage{hhline}
 \usepackage{feynmp}
+%\defaultfontfeatures{Mapping=tex-text}
 
 
 %% You can set the line spacing this way
@@ -34,7 +39,8 @@
 \newcommand{\ttbar}{\ensuremath{\Pqt\Paqt}\xspace}
 \newcommand{\ZToTauTau}{\ensuremath{\PZ\to\Pgt\Pgt}\xspace}
 \newcommand{\HToTauTau}{\ensuremath{\PH\to\Pgt\Pgt}\xspace}
-
+\newcommand{\boldth}{{\mathbb{\theta}}}
+%\DeclareRobustCommand{\bvec}[1]{\mymath{\bm{#1}}\xspace}
 \renewcommand{\listfigurename}{List of figures}
 \renewcommand{\listtablename}{List of tables}
 
@@ -60,7 +66,7 @@
 \@ifpackageloaded{hyperref}{%
 \hypersetup{%
 hidelinks=true,
-pdftitle = {Observation of the Higgs boson decaying to photons with the CMS detector},
+pdftitle = {Study of Higgs boson production through its decay to two photons using data collected at a centre-of-mass energy of 13 TeV with the CMS detector},
 pdfsubject = {Louie Dartmoor Corpe's PhD thesis},
 pdfkeywords = {CMS, H, physics, LHC, Higgs},
 pdfauthor = {\textcopyright\ Louie Dartmoor Corpe},
@@ -71,7 +77,7 @@ colorlinks=false
 \makeatother
 
 %% Define the thesis title and author
-\title{Observation of the Higgs boson decaying to photons with the CMS detector using p-p collisions at 13 TeV}
+\title{Study of Higgs boson production through its decay to two photons using data collected at a centre-of-mass energy of 13 TeV with the CMS detector}
 \author{Louie Dartmoor Corpe}
 
 %% Start the document
@@ -93,7 +99,7 @@ colorlinks=false
   \input{reconstruction}
   \input{categorisation}
   \input{modelling}
-  %\input{statandresults}
+  \input{statandresults}
   \input{conclusions}
   %\import{}{run2} %relegated to declaration
 
