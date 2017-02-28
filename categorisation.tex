@@ -43,12 +43,12 @@ The background for the training is composed of simulated diphotons originating f
 \begin{figure}[h]
 \centering
  \subfloat[]{
-\includegraphics[width=0.6\textwidth]{catFigures/stack_scaled_resultFlat_mc_cat0_noratio.pdf}
+\includegraphics[width=0.55\textwidth]{catFigures/stack_scaled_resultFlat_mc_cat0_noratio.pdf}
 \label{fig:cat:diphobdt_a}
 }
 \\
  \subfloat[]{
-\includegraphics[width=0.65\textwidth]{catFigures/BDTTransfSyst_TrasfBDT_lin_1sigma_shiftPlusTransf_new_noratio.pdf}
+\includegraphics[width=0.60\textwidth]{catFigures/BDTTransfSyst_TrasfBDT_lin_1sigma_shiftPlusTransf_new_noratio.pdf}
 \label{fig:cat:diphobdt_b}
 }
 \caption{ (a) The transformed \DiPhoBdt score for simulated signal and background events in the range $100 < \mgg < 180\GeV$. The transformation flattens the signal distribution. (b) The transformed \DiPhoBdt score for \Zee events in data and simulation, where the electrons are reconstructed as photons. The pink shading represents the systematic uncertainty associated with the \PhoIdBdt and the \PhoEnergyBdt. For both (a) and (b), the vertical dashed lines represent the boundaries of the Untagged categories described in \Sec~\ref{cat:sec:untagged}, while the grey shading represents the area for which diphotons are rejected.}
@@ -119,54 +119,54 @@ The distributions of the \DiPhoDiJetBdt output scores for each simulated signal 
 Two \VBFTag categories (labelled 0 and 1) are defined by selections on the \DiPhoDiJetBdt output score. 
 The location of the two boundaries is optimised first by maximising the value of the signal-to-background ratio in the \VBFTag 0 category, and then repeating the procedure after fixing the first boundary to maximise the signal-to-background ratio in the \VBFTag 1 category. Of the simulated signal events in the \VBFTag 0 category, approximately 72\% are \VBF events and 27\% are \ggH events. The corresponding values for the \VBFTag 1 category are 55\% for \VBF events and 43\% for \ggH events. Events for which the \DiPhoDiJetBdt output score is below the lowest boundary fail the \VBFTag categorisation, but may be still included in other analysis categories. Repeating the optimisation procedure for three \VBF-tagged categories did not lead to an improvement in the expected sensitivity of the analysis.
 
-\section{\VHTag categories}
-\label{cat:sec:vhtag}
-
-\emph{\textbf{README this section will be updated with the final selections once the tags are finalised by Michael. This section uses the information from the legacy analysis as a placeholder.}}
-
-Higgs boson events resulting from \VH production can be selected using the decay products of the $\PW$ or $\PZ$ vector boson. The vector bosons can decay leptonically via $\PW \rightarrow \Plepton \Pneutrino$ or $\PZ \rightarrow \Plepton^{+} \Plepton^{-}$. The vector bosons can also decay to quarks which hadronize to form jets. Finally, the $\PZ$ can decay to a pair of neutrinos, which are reconstructed as a large amount of missing energy. In this analysis, the \VHLeptonicTag, \VHHadronicTag and \VHMETTag categories are respectively defined to target the final states listed above. %Although the addition of the \VHTag categories does not appreciably improve the overall sensitivity of the analysis, it allows the measurement of the cross-section of the \VH production mode. 
-
-%For all \VHTag categories, events must pass the preselection defined in \Sec~\ref{reco:sec:pho:preselection}. 
-The \pT spectrum of Higgs decay particles is shifted towards higher values for \VH events than for \ggH events (due to recoil against the vector boson), and therefore the leading photon \pT requirement is increased to $\pT/\mgg >1/2$ for all \VHTag categories. The \VHLeptonicTag categories target events with at least one charged lepton, and are further split into \VHLooseLeptonicTag and \VHTightLeptonicTag categories in order to maximise the sensitivity. In both cases, fewer than three jets with $\pT>20\GeV$, $|\eta|<2.4$ or within $\Delta R <0.5$ of the photons or leptons must be reconstructed in the event, to avoid selecting events from the \ttH process. The \VHTightLeptonicTag category targets events with a fully reconstructed final state (from $\PZ$ decay) or large \MET. Events which enter this category must satisfy the following requirements:
-\begin{itemize}
-\item the event must contain either: one reconstructed lepton with $\pT>20\GeV$ and $\MET > 35\GeV$, or two opposite-signed same-flavour leptons both with $\pT>10\GeV$ and invariant mass in the range $[70,110]\GeV$;
-\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-\end{itemize}
-
-Events falling in the \VHLooseLeptonicTag category must satisfy a less stringent requirement on the amount of \MET, but in this case additional selections must be added to suppress the \SM background:
-\begin{itemize}
-\item the event must contain exactly one reconstructed lepton with $\pT>20\GeV$ and have $\MET < 35\GeV$;
-\item the invariant mass of both possible electron-photon systems must be more than 10\GeV away from the mass of the $\PZ$ boson. This is designed to reduce the contribution of $\PZ\gamma$ events, where \Zee and one of the electrons is misreconstructed as a photon, thus being misidentified as an \VH event with a leptonic $\PW$ decay; 
-\item each photon in the diphoton must be separated from any reconstructed tracks by $\Delta R >1.0$ to reduce the contribution from \DY events where an electron is also misreconstructed as a photon;
-\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-\end{itemize}
-
-The \VHMETTag category targets events where the $\PZ$ decays to two neutrinos, and thus leaves no energy in the detector. This results in a large amount of reconstructed \MET in addition to the high-\pT photons from the Higgs boson decay. Events selected by the \VHMETTag category must satisfy the following requirements, in addition to the same restriction on the number of jets as imposed on the \VHLeptonicTag categories:
-\begin{itemize}
-\item the event must contain $\MET > 70\GeV$;
-\item the \MET direction and the momentum of the diphoton system must be separated in the $\phi$-direction by at least 2.1 radians, since they are expected to be back-to-back due to momentum conservation;
-\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-%\item the direction of the jet with the highest \pT must be separated from the diphoton direction in the $\phi$-direction by at no more than 2.7 due to an observed correlation between t
-\end{itemize}
-
-Finally, the \VHHadronicTag category targets events where the vector boson decays to quarks, leading to two jets in the event. 
-The following selections are used for this category:
-\begin{itemize}
-\item the leading (subleading) photon must satisfy $\pT/\mgg > 1/2$ ($\pT > 25\GeV$ FIXME to be justified);
-\item the event must contain at least two jets with $\pT>30\GeV$ and $|\eta|<2.4$;
-\item the invariant mass of the dijet system must be in the range $[60,120]\GeV$;
-\item the invariant-mass-scaled transverse momentum of the diphoton system must be greater than $130\mgg/120$ FIXME to be justified; 
-\item the angle $\theta^{*}$ between the diphoton direction in the diphoton-dijet rest frame and the detector frame must satisfy $|\cos{\theta^{*}}| <0.5$ to exploit differences in the angular correlation of the diphoton and the dijet for \VH events.
-\end{itemize}
-
-Events which fail the selections for the \VHTag categories may still be selected for other categories.
+%\section{\VHTag categories}
+%\label{cat:sec:vhtag}
+%
+%\emph{\textbf{README this section will be updated with the final selections once the tags are finalised by Michael. This section uses the information from the legacy analysis as a placeholder.}}
+%
+%Higgs boson events resulting from \VH production can be selected using the decay products of the $\PW$ or $\PZ$ vector boson. The vector bosons can decay leptonically via $\PW \rightarrow \Plepton \Pneutrino$ or $\PZ \rightarrow \Plepton^{+} \Plepton^{-}$. The vector bosons can also decay to quarks which hadronize to form jets. Finally, the $\PZ$ can decay to a pair of neutrinos, which are reconstructed as a large amount of missing energy. In this analysis, the \VHLeptonicTag, \VHHadronicTag and \VHMETTag categories are respectively defined to target the final states listed above. %Although the addition of the \VHTag categories does not appreciably improve the overall sensitivity of the analysis, it allows the measurement of the cross-section of the \VH production mode. 
+%
+%%For all \VHTag categories, events must pass the preselection defined in \Sec~\ref{reco:sec:pho:preselection}. 
+%The \pT spectrum of Higgs decay particles is shifted towards higher values for \VH events than for \ggH events (due to recoil against the vector boson), and therefore the leading photon \pT requirement is increased to $\pT/\mgg >1/2$ for all \VHTag categories. The \VHLeptonicTag categories target events with at least one charged lepton, and are further split into \VHLooseLeptonicTag and \VHTightLeptonicTag categories in order to maximise the sensitivity. In both cases, fewer than three jets with $\pT>20\GeV$, $|\eta|<2.4$ or within $\Delta R <0.5$ of the photons or leptons must be reconstructed in the event, to avoid selecting events from the \ttH process. The \VHTightLeptonicTag category targets events with a fully reconstructed final state (from $\PZ$ decay) or large \MET. Events which enter this category must satisfy the following requirements:
+%\begin{itemize}
+%%\item the event must contain either: one reconstructed lepton with $\pT>20\GeV$ and $\MET > 35\GeV$, or two opposite-signed same-flavour leptons both with $\pT>10\GeV$ and invariant mass in the range $[70,110]\GeV$;
+%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+%\end{itemize}
+%
+%Events falling in the \VHLooseLeptonicTag category must satisfy a less stringent requirement on the amount of \MET, but in this case additional selections must be added to suppress the \SM background:
+%\begin{itemize}
+%\item the event must contain exactly one reconstructed lepton with $\pT>20\GeV$ and have $\MET < 35\GeV$;
+%\item the invariant mass of both possible electron-photon systems must be more than 10\GeV away from the mass of the $\PZ$ boson. This is designed to reduce the contribution of $\PZ\gamma$ events, where \Zee and one of the electrons is misreconstructed as a photon, thus being misidentified as an \VH event with a leptonic $\PW$ decay; 
+%\item each photon in the diphoton must be separated from any reconstructed tracks by $\Delta R >1.0$ to reduce the contribution from \DY events where an electron is also misreconstructed as a photon;
+%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+%\end{itemize}
+%
+%The \VHMETTag category targets events where the $\PZ$ decays to two neutrinos, and thus leaves no energy in the detector. This results in a large amount of reconstructed \MET in addition to the high-\pT photons from the Higgs boson decay. Events selected by the \VHMETTag category must satisfy the following requirements, in addition to the same restriction on the number of jets as imposed on the \VHLeptonicTag categories:
+%\begin{itemize}
+%\item the event must contain $\MET > 70\GeV$;
+%\item the \MET direction and the momentum of the diphoton system must be separated in the $\phi$-direction by at least 2.1 radians, since they are expected to be back-to-back due to momentum conservation;
+%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+%%\item the direction of the jet with the highest \pT must be separated from the diphoton direction in the $\phi$-direction by at no more than 2.7 due to an observed correlation between t
+%\end{itemize}
+%
+%Finally, the \VHHadronicTag category targets events where the vector boson decays to quarks, leading to two jets in the event. 
+%The following selections are used for this category:
+%\begin{itemize}
+%\item the leading (subleading) photon must satisfy $\pT/\mgg > 1/2$ ($\pT > 25\GeV$ FIXME to be justified);
+%\item the event must contain at least two jets with $\pT>30\GeV$ and $|\eta|<2.4$;
+%\item the invariant mass of the dijet system must be in the range $[60,120]\GeV$;
+%\item the invariant-mass-scaled transverse momentum of the diphoton system must be greater than $130\mgg/120$ FIXME to be justified; 
+%\item the angle $\theta^{*}$ between the diphoton direction in the diphoton-dijet rest frame and the detector frame must satisfy $|\cos{\theta^{*}}| <0.5$ to exploit differences in the angular correlation of the diphoton and the dijet for \VH events.
+%\end{itemize}
+%
+%Events which fail the selections for the \VHTag categories may still be selected for other categories.
 
 \section{\TTHTag categories}
 \label{cat:sec:tthtag}
 
 Events where a Higgs boson is produced in association with a pair of top quarks will contain a pair of $\Pbottom$ quarks and $\PW$ bosons from their decay. The $\PW$ bosons will then decay either hadronically or leptonically. The cross-section of \ttH production is low, so the benefit to the analysis in terms of final significance of an observation is small. However, the categorisation of \ttH-like events is important because it allows an estimate of the strength of the interaction of the Higgs boson with top quarks. Various extensions to the \SM predict enhanced values of the strength of the \ttH interaction, and such models can be tested through the experimental measurement of the cross-section of \ttH events decaying to \Hgg.
 
-Two exclusive \TTHTag categories are defined in this analysis. On the one hand, the \TTHLeptonicTag category aims to select \ttH events where at least one of the $\PW$ bosons decayed leptonically. On the other hand, the \TTHHadronicTag category targets events where both $\PW$ bosons decayed to quarks. In addition to the usual preselection applied to candidate events, the requirement on the leading photon \pT is increased to $\pT>\mgg/2$, for the same reason as described in \Sec~\ref{cat:sec:vhtag}. %The selections for each of these categories are defined separately and are described below.
+Two exclusive \TTHTag categories are defined in this analysis. On the one hand, the \TTHLeptonicTag category aims to select \ttH events where at least one of the $\PW$ bosons decayed leptonically. On the other hand, the \TTHHadronicTag category targets events where both $\PW$ bosons decayed to quarks. In addition to the usual preselection applied to candidate events, the requirement on the leading photon \pT is increased to $\pT>\mgg/2$, because the \pT spectrum of Higgs decay particles is shifted towards higher values for \ttH events than for \ggH events (due to recoil against the vector boson). %for the same reason as described in \Sec~\ref{cat:sec:vhtag}. %The selections for each of these categories are defined separately and are described below.
 
 The leptons which are used to choose events for the \TTHLeptonicTag category must satisfy certain requirements to be used for selection purposes. Muons are required to be within $|\eta|<2.4$, pass a selection based on the properties of their tracks in the tracker and muon chambers and satisfy requirements on their \PU-corrected isolation. Electrons must pass loose identification requirements and the invariant mass of both possible electron-photon systems must be more than 10\GeV away from the mass of the $\PZ$ boson. In order to be included in the \TTHLeptonicTag category, events must satisfy the following conditions:
 \begin{itemize}
