@@ -44,6 +44,27 @@
 \renewcommand{\listfigurename}{List of figures}
 \renewcommand{\listtablename}{List of tables}
 
+\newcommand{\whichFig}{13ifb}
+\newcommand{\figWidth}{0.53}
+\newcommand{\totaldatatwentysixteen}{35.9}
+\newcommand{\thisanalysislumi}{12.9}
+\newcommand{\finaldatatakingmonth}{\ensuremath{\,\text{July}}\xspace}
+\newif\ifNewAnalysis % will put in MORIOND17 plots instead of ICHEP16 plots
+
+%\NewAnalysisfalse
+\NewAnalysistrue
+
+\ifNewAnalysis
+\renewcommand{\whichFig}{36ifb}
+\renewcommand{\figWidth}{1}
+\renewcommand{\thisanalysislumi}{35.9}
+\renewcommand{\finaldatatakingmonth}{\ensuremath{\,\text{November}}\xspace}
+\else
+\renewcommand{\whichFig}{13ifb}
+\renewcommand{\figWidth}{0.53}
+\renewcommand{\thisanalysislumi}{12.9}
+\renewcommand{\finaldatatakingmonth}{\ensuremath{\,\text{July}}\xspace}
+\fi
 
 \DeclareGraphicsRule{.1}{mps}{*}{}
 \DeclareGraphicsRule{.2}{mps}{*}{}

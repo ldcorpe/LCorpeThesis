@@ -1,4 +1,4 @@
-\chapter{Introduction and theory}
+\chapter{Theory}
 \label{chap:theory}
 
 \section{The Standard Model of particle physics}
@@ -145,7 +145,7 @@ The Lagrangian can also accommodate a term for $A_{\alpha}$ propagating freely t
 \mathcal{L}_{\textrm{boson}} = -\frac{1}{16\pi} F^{\alpha\beta}F_{\alpha\beta} + \frac{1}{8\pi} m_{\textrm{boson}} A^{\alpha} A_{\alpha},
 \end{equation}
 where $F^{\alpha \beta} =(\partial^{\alpha} A^{\beta} - \partial^{\beta} A^{\alpha})$ and $m_{\textrm{boson}}$ is the mass of the spin-1 boson. 
-\Eq~\ref{eq:th:proca} is locally gauge invariant so long as $m_{\textrm{boson}}=0$, i.e. the boson is required to be massless.
+\Eq~\ref{eq:th:proca} is locally gauge invariant so long as $m_{\textrm{boson}}=0$, i.e.~the boson is required to be massless.
 
 %The full Lagrangian for QED is therefore composed of a Lagrangian for: a free fermion,  a free spin-1 boson and a term for interactions between the boson and the fermion. 
 
@@ -174,16 +174,16 @@ The local gauge transformation is equivalent to applying a unitary $1\times1$ ma
 \subsubsection{Quantum Chromodynamics}
 
 The strategy described in \Sec~\ref{sec:th:qed} can be used to derive the Lagrangian for \QCD, which codifies the dynamics of the strong force~\cite{griffiths2008introduction}.  %~\cite{Han:1965pf,Fritzsch:1973pi}. 
-The situation is more complicated because the underlying group is not $U(1)$ but $SU(3)$, which has eight degrees of freedom. This leads to eight massless gluons. In \QED, the interaction between the boson and the fermion is dictated by electric charge; the analogue for \QCD is \emph{colour charge}. However, colour charge cannot be represented by a single quantity. Colours charges are instead linear combinations of three quantities, designated \emph{red, green} and \emph{blue}. Each \SM quark has three identical copies with different colour charge. Another important difference is that $U(1)$ is abelian while $SU(3)$ is not. The consequence of this is that unlike the \QED photon, which carries no electric charge, the \QCD gluons do carry colour charge. Gluons can therefore feel the strong force and self-interact. This fact leads \QCD to display properties such as confinement of quarks and asymptotic freedom~\cite{PhysRevLett.30.1346,PhysRevLett.30.1343}. The gauge group for \QCD, $SU(3)_{\textrm{C}}$, is generally written with a subscript to indicate that it generates colour charge. 
+The situation is more complicated because the underlying group is not $U(1)$ but $SU(3)$, which has eight degrees of freedom. This leads to eight massless gluons. In \QED, the interaction between the boson and the fermion is dictated by electric charge; the analogue for \QCD is \emph{colour charge}. However, colour charge cannot be represented by a single quantity. Colours charges are instead linear combinations of three quantities, designated \emph{red, green} and \emph{blue}. Each \SM quark has three identical copies with different colour charge. Another important distinction is that $U(1)$ is abelian while $SU(3)$ is not. The consequence of this is that unlike the \QED photon, which carries no electric charge, the \QCD gluons do carry colour charge. Gluons can therefore feel the strong force and self-interact. This fact leads \QCD to display properties such as confinement of quarks and asymptotic freedom~\cite{PhysRevLett.30.1346,PhysRevLett.30.1343}. The gauge group for \QCD, $SU(3)_{\textrm{C}}$, is generally written with a subscript to indicate that it generates colour charge. 
 
 \subsubsection{Electroweak unification}
 
 %Although an equivalent of \QED exists for the weak force, \QFD, 
-The developement of a combined theory of the electromagnetic and weak forces, called \EWT, was a major achievement by Glashow, Weinberg and Salam~\cite{GlashowPartialSymmetries,WeinbergModelOfLeptons,SalamNobelSymposium}. %, thus superseding \QFD. 
-\EWT considers the gauge group $SU(2)_{\textrm{L}} \times U(1)_{\textrm{Y}}$. The $SU(2)_{\textrm{L}}$ group has three degrees of freedom, so three gauge bosons are obtained from imposing local gauge invariance. The conserved charge is \emph{weak isospin}. This quantity is a vector, the third component of which is labelled $i_3$. The subscript in $SU(2)_{\textrm{L}}$ indicates that only left-handed particles carry nonzero weak isospin charge. The $U(1)_{\textrm{Y}}$ group behaves as in \QED, but generates \emph{weak hypercharge} $y$. The electric charge $q$ is related to weak isospin and weak hypercharge by the relation $q=y/2 + i_3$. The subscript in $U(1)_{\textrm{Y}}$ refers to the fact hypercharge is the generated charge.
+The development of a combined theory of the electromagnetic and weak forces, called \EWT, was a major achievement by Glashow, Weinberg and Salam~\cite{GlashowPartialSymmetries,WeinbergModelOfLeptons,SalamNobelSymposium}. %, thus superseding \QFD. 
+\EWT considers the gauge group $SU(2)_{\textrm{L}} \times U(1)_{\textrm{Y}}$. The $SU(2)_{\textrm{L}}$ group has three degrees of freedom, so three gauge bosons are obtained from imposing local gauge invariance. The conserved charge is \emph{weak isospin}. This quantity is a vector, the third component of which is labelled $i_3$. The subscript in $SU(2)_{\textrm{L}}$ indicates that only left-handed particles carry nonzero weak isospin charge. The $U(1)_{\textrm{Y}}$ group behaves as in \QED, but generates \emph{weak hypercharge} $y$. The electric charge $q$ is related to weak isospin and weak hypercharge by the relation $q=y/2 + i_3$. The subscript in $U(1)_{\textrm{Y}}$ refers to the fact that hypercharge is the generated charge.
 
-Right- and left-handed fermions are considered separately in \EWT. It is helpful to think of the right-handed fermion spinors as \emph{singlets}, or column vectors of one spinor. For example, this is labelled $\Pe_{R}$, for the right-handed electron singlet.
-The left-handed fermions come in \emph{doublets} (a column vector of two fermion spinors), e.g.:
+Right- and left-handed fermions are considered separately in \EWT. It is helpful to think of the right-handed fermion spinors as \emph{singlets}, or column vectors of one spinor. For example, the right-handed electron singlet is labelled $\Pe_{R}$. 
+The left-handed fermions come in \emph{doublets} (a column vector of two fermion spinors), e.g.~:
 $$
 L_{\textrm{L}}=\binom{\Pnue}{\Pe}_{\textrm{L}},
 $$
@@ -257,8 +257,8 @@ which can be substituted back into \Eq~\ref{eq:th:higgs_lagrangian}. Expanding o
 \begin{split}
 %\mathcal{L}_{\phi} = \frac{1}{2} (\partial_{\alpha} H) (\partial^{\alpha} H) - \frac{1}{2} \mu^{2} H^2 + \frac{v^2}{8}( g_{\textrm{W}} \PWp_{\alpha}\PWp^{\alpha} + g_{\textrm{W}} \PWm_{\alpha}\PWm^{\alpha} + (g^2_{\textrm{W}}+g^2_{\textrm{EM}})  \PZ_{\alpha}\PZ^{\alpha}) + ...,
   \mathcal{L}_{\phi}  =  \frac{1}{2} & (\partial_{\alpha} H) (\partial^{\alpha} H) -  \mu^{2} H^2 \\
-&  + \frac{v^2}{8}( g_{\textrm{W}} \PWp_{\alpha}\PWp^{\alpha} + g_{\textrm{W}} \PWm_{\alpha}\PWm^{\alpha} + (g^2_{\textrm{W}}+g^2_{\textrm{EM}}) \PZ_{\alpha}\PZ^{\alpha}) + ... \\
-\end{split}
+&  + \frac{v^2}{8}( g_{\textrm{W}} \PWp_{\alpha}\PWp^{\alpha} + g_{\textrm{W}} \PWm_{\alpha}\PWm^{\alpha} + (g^2_{\textrm{W}}+g^2_{\textrm{EM}}) \PZ_{\alpha}\PZ^{\alpha}) + ...
+\end{split},
 \end{equation}
 \label{eq:th:higgs_lagrangian}
 where terms which are not mass-like have been omitted.
@@ -287,12 +287,12 @@ To summarise, the Brout-Englert-Higgs mechanism adds gauge-invariant terms to th
 Since the Higgs boson was postulated in the 1960s, there have been many efforts to try to detect it. Theoretical considerations precluded large Higgs boson masses above the order of 1\TeV~\cite{Heller:1993yv}. 
 %Experiments conducted before the start of \LEP operation excluded a Higgs boson of mass below the order of 10\GeV~\cite{Wu:2014vva}. 
 A Higgs boson of mass below about 10\GeV was already excluded before the start of \LEP~\cite{Wu:2014vva}.
-Direct searches at \LEP and the Tevatron excluded a Higgs boson mass below 114\GeV~\cite{Barate:2003sz,TEVNPH:2012ab}, and precision measurements of the electroweak parameters suggested that the Higgs boson mass should be below 200\GeV~\cite{Renton:2004wd}. The search for the Higgs boson was one of the goals prompting the construction of the \LHC at \CERN. Two multi-purpose detectors, \ATLAS and \CMS, were designed with the Higgs observation as one of their main physics goals. In 2012, the two experiments jointly announced the observation of a Higgs-like particle, ending a 50-year interval between postulation and discovery~\cite{CMSHDisc,ATLASHDisc}. The most precise measurement of the Higgs boson's mass to date is $\mH=125.09\pm0.24$~\cite{PhysRevLett.114.191803}.
+Direct searches at \LEP and the Tevatron excluded a Higgs boson mass below 114\GeV~\cite{Barate:2003sz,TEVNPH:2012ab}, and precision measurements of the electroweak parameters suggested that the Higgs boson mass should be below 200\GeV~\cite{Renton:2004wd}. The search for the Higgs boson was one of the goals prompting the construction of the \LHC at \CERN. Two multi-purpose detectors, \ATLAS and \CMS, were designed with the Higgs observation as one of their main physics goals. In 2012, the two experiments jointly announced the observation of a Higgs-like particle, ending a 50-year interval between postulation and discovery~\cite{CMSHDisc,ATLASHDisc}. The most precise measurement of the Higgs boson's mass to date is $\mH=125.09\pm0.24\GeV$~\cite{PhysRevLett.114.191803}.
 
 \subsection{Higgs boson production at the LHC}
 \label{sec:th:higgs_production_modes}
 
-According to the \SM, the Higgs boson interacts with particles proportional to their masses. Four types of process can lead to the production of a Higgs boson in \pp collisions at the \LHC. The Feynman diagrams for these processes can be seen in \Fig~\ref{fig:theory:higgsproduction}. The most likely production mode for $\mH=125\GeV$ is \ggH via a loop of top quarks, which has a cross section of approximately 49\pb at 13\TeV. The other production modes are \VBF at 3.8\pb, \VH at 2.3\pb, and \ttH at 0.5\pb~\cite{LHCHXSWGYR4}. The \VH production can be further split into \WH (1.4\pb) and \ZH (0.6\pb), which have different final states.
+According to the \SM, the Higgs boson interacts with particles proportional to their masses. Four types of process can lead to the production of a Higgs boson in \pp collisions at the \LHC. The Feynman diagrams for these processes can be seen in \Fig~\ref{fig:theory:higgsproduction}. The most likely production mode for $\mH=125\GeV$ is \ggH via a loop of top quarks, which has a \crosssection of approximately 49\pb at 13\TeV. The other production modes are \VBF at 3.8\pb, \VH at 2.3\pb, and \ttH at 0.5\pb~\cite{LHCHXSWGYR4}. The \VH production can be further split into \WH (1.4\pb) and \ZH (0.6\pb), which have different final states.
 
   \begin{figure}[h!]
 
@@ -314,7 +314,7 @@ According to the \SM, the Higgs boson interacts with particles proportional to t
       \fmflabel{$g$}{i3}
       \fmflabel{$H$}{ox}
   \end{fmfgraph*} 
-  }
+  } \hspace{1cm}
   \subfloat[]{
     \begin{fmfgraph*}(150,100)
       \fmfright{o0,o1,o2,o3,o4}
@@ -336,7 +336,7 @@ According to the \SM, the Higgs boson interacts with particles proportional to t
       \fmf{dashes}{v3,o2}
       \fmflabel{$H$}{o2}
   \end{fmfgraph*} 
-  }\\
+  }\\\vspace{1cm}
   \subfloat[]{
     \begin{fmfgraph*}(150,100)
       \fmfright{o0,o1,o2,o3,o4}
@@ -351,7 +351,7 @@ According to the \SM, the Higgs boson interacts with particles proportional to t
       \fmf{dashes,label=$H$,label.side=left}{v2,o4}
       %\fmflabel{$H$}{o2}
   \end{fmfgraph*}
-  }
+  } \hspace{1cm}
   \subfloat[]{
     \begin{fmfgraph*}(150,100)
       \fmfright{o0,o1,o2,o3,o4}
@@ -375,7 +375,7 @@ According to the \SM, the Higgs boson interacts with particles proportional to t
       \fmf{dashes}{v3,o2}
       \fmflabel{$H$}{o2}
   \end{fmfgraph*} 
-  }
+  }vspace{1cm}
   \caption{Higgs production modes at the LHC: (a) gluon-gluon fusion, via a loop of top quarks, (b) vector boson fusion, with associated quark production, (c) associated vector boson production with either the \PZ or \PW boson and (d) top quark fusion with associated top quark production. }
   \label{fig:theory:higgsproduction}
   \end{figure}
@@ -384,8 +384,8 @@ According to the \SM, the Higgs boson interacts with particles proportional to t
 \label{th:sec:higgs_decays}
 
 The \SM Higgs boson can decay either directly to pairs of particles, or via virtual loops.
-In direct decays to pairs of particles, the  branching ratios are proportional to the mass of the decay product. The most likely direct decay modes to massive particles for a \SM Higgs boson with $\mH=125\GeV$ are $\PH \rightarrow \Pbottom \Pbottom$ (58.2\%), $\PH \rightarrow \PW \PW^{*}$ (21.4\%, where $\PW^{*}$ refers to a virtual $\PW$), $\PH \rightarrow \Ptau \Ptau$ (6.3\%),$\PH \rightarrow \Pcharm \Pcharm$ (2.8\%), $\PH \rightarrow \PZ \PZ^{*}$ (2.6\%, where $\PZ^{*}$ refers to a virtual $\PZ$)~\cite{LHCHXSWGYR4}. The production of a pair of $t$ quarks is strongly suppressed by kinematics. The Higgs boson's couplings to electrons, muons, up quarks, down quarks and strange quarks are very small due to the mass of the decay products. In the \SM, the neutrinos do not have mass, so no \SM coupling is predicted.
-In addition, Higgs boson decays can occur via a loop of virtual massive particles to a pair of gluons (8.2\%), to a pair of photons (0.23\%) or to $\PZ\gamma$ (0.02\%)~\cite{LHCHXSWGRY4}. 
+In direct decays to pairs of particles, the  branching ratios are proportional to the mass of the decay product for fermions and the square root of the mass of the decay product for vector boson. The most likely direct decay modes to massive particles for a \SM Higgs boson with $\mH=125\GeV$ are $\PH \rightarrow \Pbottom \Pbottom$ (58.2\%); $\PH \rightarrow \PW \PW^{*}$ (21.4\%, where $\PW^{*}$ refers to a virtual $\PW$); $\PH \rightarrow \Ptau \Ptau$ (6.3\%); $\PH \rightarrow \Pcharm \Pcharm$ (2.8\%); $\PH \rightarrow \PZ \PZ^{*}$ (2.6\%, where $\PZ^{*}$ refers to a virtual $\PZ$)~\cite{LHCHXSWGYR4}. The production of a pair of $t$ quarks is strongly suppressed by kinematics. The Higgs boson's couplings to electrons, muons, up quarks, down quarks and strange quarks are very small due to the mass of the decay products. In the \SM, the neutrinos do not have mass, so no coupling to the Higgs boson is predicted.
+In addition, Higgs boson decays can occur via a loop of virtual massive particles to a pair of gluons (8.2\%), to a pair of photons (0.23\%) or to $\PZ\gamma$ (0.02\%)~\cite{LHCHXSWGYR4}. 
 
 %During the search for the Higgs boson in the first run of the \LHC, the five decay channels which were of most interest were the decays to  
 %Despite the low branching fraction, the decay \Hgg played a key role in the discovery of the Higgs boson. 
@@ -397,7 +397,7 @@ These other channels have a higher rate but difficulties in reconstructing the d
 \subsection{Studying the Higgs boson using the \Hgg decay}
 %%Need to find a witty title here
 
-The work presented in this thesis focusses on the observation of the Higgs boson and a measurement of its properties via the \Hgg decay, for which the leading order Feynman diagrams are shown in \Fig~\ref{fig:theory:higgstogammagamma}. The data collected by the \CMS detector are selected for such measurements if they contain two photons which are candidates to have originated from a Higgs boson decay. The analysis of these data involves defining categories which target the different production modes of the Higgs boson presented in \Sec~\ref{sec:th:higgs_production_modes}. Indeed, the different final states of each production mode lead to different signatures in the detector, which can be exploited for the purposes of categorisation. This approach not only increases the overall sensitivity of the analysis, but also gives a handle with which to probe the SM predictions for the rate at which the Higgs boson is produced in different modes, as well as the strength of its interaction with SM particles. Many extensions to the \SM predict variations in these properties, so such measurements help put limits on different models or could yield clues to the nature of physics beyond the \SM.
+The work presented in this thesis focusses on the observation of the Higgs boson and a measurement of its properties via the \Hgg decay, for which the leading order Feynman diagrams are shown in \Fig~\ref{fig:theory:higgstogammagamma}. The data collected by the \CMS detector are selected for such measurements if they contain two photons which are candidates to have originated from a Higgs boson decay. The analysis of these data involves defining categories which target the individual production modes of the Higgs boson presented in \Sec~\ref{sec:th:higgs_production_modes}. Indeed, the final states of each production mode lead to different signatures in the detector, which can be exploited for the purposes of categorisation. This approach not only increases the overall sensitivity of the analysis, but also gives a handle with which to probe the SM predictions for the rate at which the Higgs boson is produced in each mode, as well as the strength of its interaction with SM particles. Many extensions to the \SM predict variations in these properties, so such measurements could put limits on new models or could yield clues to the nature of physics beyond the \SM.
 
 \begin{figure}[h!]
 \subfloat[]{

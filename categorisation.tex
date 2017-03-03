@@ -6,12 +6,20 @@
 
 The basic experimental method for the observation of the \Hgg decay is to search for a resonance above the diphoton continuum background. The sensitivity of this method is enhanced by the categorisation of events according to their expected signal-to-background ratio. Furthermore the use of additional particles in the event allows the measurement of the cross-section of each production mode individually, thus probing the strength of the Higgs boson's interaction with different types of particle. %These considerations motivate the following categorisation scheme. 
 
-The most common production mode, \ggH, produces a Higgs boson in isolation. This leaves only the photons resulting from \Hgg decay in the final state. The other production modes (\VBF, \VH and \ttH) produce the Higgs boson accompanied by additional particles. The \VBF mode has two quarks in the final state, which hadronize to form jets. The \VH mode produces a Higgs boson in association with a \PW or \PZ boson, which then decays to charged leptons, neutrinos or quarks, leading to reconstructed leptons, \MET or jets. Finally, the \ttH mode produces the Higgs boson in association with two top quarks, which decay to bottom quarks and either hadrons or leptons. These reconstructed additional particles can be used to categorise events. The \BDT used for categorisation of diphoton events is described in \Sec~\ref{cat:sec:dipho_bdt}. The categorisation of \VBF, \VH and \ttH events is then discussed in \Sec\s~\ref{cat:sec:vbftag},~\ref{cat:sec:vhtag} and~\ref{cat:sec:tthtag}. Finally, the inclusive \Untagged categories and the categorisation hierarchy are discussed in \Sec\s~\ref{cat:sec:untagged} and~\ref{cat:sec:hierarchy}.
+The most common production mode, \ggH, produces a Higgs boson in isolation. This leaves only the photons resulting from \Hgg decay in the final state. The other production modes (\VBF, \VH and \ttH) produce the Higgs boson accompanied by additional particles. The \VBF mode has two quarks in the final state, which hadronize to form jets. The \VH mode produces a Higgs boson in association with a \PW or \PZ boson, which then decays to charged leptons, neutrinos or quarks, leading to reconstructed leptons, \MET or jets. Finally, the \ttH mode produces the Higgs boson in association with two top quarks, which decay to bottom quarks and either hadrons or leptons. These reconstructed additional particles can be used to categorise events. 
+
+The \BDT used for categorisation of diphoton events is described in \Sec~\ref{cat:sec:dipho_bdt}. 
+\ifNewAnalysis
+The categorisation of \VBF, \VH and \ttH events is then discussed in \Sec\s~\ref{cat:sec:vbftag},~\ref{cat:sec:vhtag} and~\ref{cat:sec:tthtag}. 
+\else
+The categorisation of \VBF and \ttH events is then discussed in \Sec\s~\ref{cat:sec:vbftag} and~\ref{cat:sec:tthtag}. This analysis does not have any categories which specifically target \VH events.
+\fi
+Finally, the inclusive \Untagged categories and the categorisation hierarchy are respectively discussed in \Sec\s~\ref{cat:sec:untagged} and~\ref{cat:sec:hierarchy}.
 
 \section{Diphoton BDT}
 \label{cat:sec:dipho_bdt}
 
-For diphotons reconstructed and selected as described in Chapter~\ref{chap:reconstruction}, a \BDT referred to as \DiPhoBdt is used rank diphotons by their expected signal-to-background ratio. The \DiPhoBdt is required to assess diphotons independently of their invariant mass, otherwise the \mH value of the training sample would introduce a bias in the output score. The input variables for the \DiPhoBdt are therefore chosen to be uncorrelated with the invariant mass of the diphoton system:
+For events reconstructed and selected as described in Chapter~\ref{chap:reconstruction}, a \BDT referred to as \DiPhoBdt is used rank diphotons by their expected signal-to-background ratio. The \DiPhoBdt is required to assess diphotons independently of their invariant mass, otherwise the \mH value of the training sample would introduce a bias in the output score. The input variables for the \DiPhoBdt are therefore chosen to be uncorrelated with the invariant mass of the diphoton system:
 
 \begin{itemize}
 \item the transverse momentum of each photon, divided by $\mgg$ to remove the correlation with \mH;
@@ -32,7 +40,7 @@ However, if the vertex was incorrectly identified, the uncertainty on the openin
 \sigmawv= \sqrt{(\sigmarv)^2 +(\sigma^V_{\gamma\gamma}/\mgg)^2 }.
 \end{equation} 
 
-The \DiPhoBdt is trained on simulated samples of signal and background processes. For the signal samples, events from different productions modes (all with $\mH=125\GeV$) are mixed according to their cross-sections. The signal events used for training are also re-weighted by a factor $w$ given by: 
+The \DiPhoBdt is trained on simulated samples of signal and background processes. For the signal samples, events from different productions modes (all with $\mH=125\GeV$) are mixed according to their \SM cross-sections. The signal events used for training are also re-weighted by a factor $w$ given by: 
 \begin{equation}
 w= \frac{p_{rv}}{\sigmarv}+\frac{1-p_{rv}}{\sigmawv},
 \end{equation} 
@@ -40,15 +48,15 @@ which codifies the fact that the signal-to-background ratio is inversely proport
 The background for the training is composed of simulated diphotons originating from the irreducible and reducible \SM background processes. 
 
 \Fig~\ref{fig:cat:diphobdt_a} shows the transformed \DiPhoBdt output score for signal and background events in the range $100 < \mgg < 180\GeV$. The transformation is applied to the \DiPhoBdt output score to give a flat distribution for signal events. The transformed \DiPhoBdt output score is validated using \Zee events in data and simulation, as can be seen in \Fig~\ref{fig:cat:diphobdt_b}.
-\begin{figure}[h]
+\begin{figure}[hpt]
 \centering
  \subfloat[]{
-\includegraphics[width=0.55\textwidth]{catFigures/stack_scaled_resultFlat_mc_cat0_noratio.pdf}
+\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/BDTgg.pdf}
 \label{fig:cat:diphobdt_a}
 }
 \\
  \subfloat[]{
-\includegraphics[width=0.60\textwidth]{catFigures/BDTTransfSyst_TrasfBDT_lin_1sigma_shiftPlusTransf_new_noratio.pdf}
+\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/BDTgg_Zee.pdf}
 \label{fig:cat:diphobdt_b}
 }
 \caption{ (a) The transformed \DiPhoBdt score for simulated signal and background events in the range $100 < \mgg < 180\GeV$. The transformation flattens the signal distribution. (b) The transformed \DiPhoBdt score for \Zee events in data and simulation, where the electrons are reconstructed as photons. The pink shading represents the systematic uncertainty associated with the \PhoIdBdt and the \PhoEnergyBdt. For both (a) and (b), the vertical dashed lines represent the boundaries of the Untagged categories described in \Sec~\ref{cat:sec:untagged}, while the grey shading represents the area for which diphotons are rejected.}
@@ -67,10 +75,10 @@ For events passing the dijet preselection described above, the \VBFTag categoris
 A further \BDT referred to as the \DiPhoDiJetBdt, which treats \ggH events as neither signal nor background, is used to include the expected signal-to-background ratio of the diphoton. The \DiPhoDiJetBdt has the \DiPhoBdt and the \DiJetBdt output scores as its inputs variables. It is thus able to combine the \VBF-like dijet identification power of one \BDT with with mass resolution information from the other. %In the \DiPhoDiJetBdt, \ggH events cannot be treated as background since the \DiPhoBdt would not be well-behaved. So \ggH events are treated as neither signal nor background when training the \DiPhoDiJetBdt. 
 A selection on the output score of the \DiPhoDiJetBdt is then used to categorise the candidate \VBFTag events.
 
-The \DiJetBdt is trained on simulated samples of diphoton events where the signal is defined as \VBF (\Hgg) events and the background consists of samples of \SM events with a diphoton and a dijet in the final state, in addition to a simulated sample of \ggH events where dijets are formed from \PU and initial or final state radiation. The input variables for this \BDT are listed below:
+The \DiJetBdt is trained on simulated samples of diphoton events where the signal is defined as \VBF (\Hgg) events. The background consists of samples of \SM events with a diphoton and a dijet in the final state, in addition to a simulated sample of \ggH events where dijets are formed from \PU and initial or final state radiation. The input variables for this \BDT are listed below:
 \begin{itemize}
 \item the invariant-mass-scaled transverse momentum ($\pT/\mgg$) for the leading and subleading photons in the diphoton candidate;
-\item $\pt^{\text{j}_1}$ and $\pt^{\text{j}_2}$, the transverse momenta of the leading and subleading jets in the dijet;
+\item the transverse momenta of the leading and subleading jets in the dijet;
 \item \mjj;
 \item $|\eta_{\text{j}_1} - \eta_{\text{j}_2}|$, the separation of the jets in the dijet in the $\eta$-direction;
 \item $\eta^{*} = |\eta_{\gamma\gamma} - (\eta_{j_1}+\eta_{j_2})/2|$, the \emph{Zeppenfeld} variable~\cite{Zeppenfeld};
@@ -93,7 +101,7 @@ The \DiJetBdt output scores for each simulated signal sample are shown in \Fig~\
 \label{fig:cat:dijet_bdt}
 \end{figure}
 
-The \DiPhoDiJetBdt is trained on simulated events where the signal is a sample of \VBF \Hgg events, while the background is composed of the \SM diphoton background samples, as for the \DiJetBdt training. In the training the \ggH events are used neither as signal nor as background. The inputs to the \BDT are the following:
+The \DiPhoDiJetBdt is trained on simulated events where the signal is a sample of \VBF \Hgg events, while the background is composed of the \SM diphoton background samples, as for the \DiJetBdt training. In this case, the \ggH events are used neither as signal nor as background. The inputs to the \BDT are the following:
 \begin{itemize}
 \item the output score of the \DiPhoBdt;
 \item the output score of the \DiJetBdt;
@@ -116,51 +124,55 @@ The distributions of the \DiPhoDiJetBdt output scores for each simulated signal 
 \label{fig:cat:vbf_bdts}
 \end{figure}
 
+\ifNewAnalysis
+Four \VBFTag categories (labelled 0, 1, 2, 3 from tightest to loosest) are defined by selections on the \DiPhoDiJetBdt output score. 
+The location of the boundaries is optimised first by maximising the value of the signal-to-background ratio in the \VBFTag 0 category, and then repeating the procedure after fixing the first boundary to maximise the signal-to-background ratio in the \VBFTag 1 category, and so on. Of the simulated signal events in the \VBFTag categories, a non-negligible proportion originate from the \ggH process. The exact composition of the categories is shown in \Table~\ref{tab:model:sig_bkg_yields} in Chapter~\ref{chap:model}. Events for which the \DiPhoDiJetBdt output score is below the lowest boundary fail the \VBFTag categorisation, but may be still included in other analysis categories. Repeating the optimisation procedure for five \VBF-tagged categories did not lead to an improvement in the expected sensitivity of the analysis.
+\else
 Two \VBFTag categories (labelled 0 and 1) are defined by selections on the \DiPhoDiJetBdt output score. 
 The location of the two boundaries is optimised first by maximising the value of the signal-to-background ratio in the \VBFTag 0 category, and then repeating the procedure after fixing the first boundary to maximise the signal-to-background ratio in the \VBFTag 1 category. Of the simulated signal events in the \VBFTag 0 category, approximately 72\% are \VBF events and 27\% are \ggH events. The corresponding values for the \VBFTag 1 category are 55\% for \VBF events and 43\% for \ggH events. Events for which the \DiPhoDiJetBdt output score is below the lowest boundary fail the \VBFTag categorisation, but may be still included in other analysis categories. Repeating the optimisation procedure for three \VBF-tagged categories did not lead to an improvement in the expected sensitivity of the analysis.
+\fi
 
-%\section{\VHTag categories}
-%\label{cat:sec:vhtag}
-%
-%\emph{\textbf{README this section will be updated with the final selections once the tags are finalised by Michael. This section uses the information from the legacy analysis as a placeholder.}}
-%
-%Higgs boson events resulting from \VH production can be selected using the decay products of the $\PW$ or $\PZ$ vector boson. The vector bosons can decay leptonically via $\PW \rightarrow \Plepton \Pneutrino$ or $\PZ \rightarrow \Plepton^{+} \Plepton^{-}$. The vector bosons can also decay to quarks which hadronize to form jets. Finally, the $\PZ$ can decay to a pair of neutrinos, which are reconstructed as a large amount of missing energy. In this analysis, the \VHLeptonicTag, \VHHadronicTag and \VHMETTag categories are respectively defined to target the final states listed above. %Although the addition of the \VHTag categories does not appreciably improve the overall sensitivity of the analysis, it allows the measurement of the cross-section of the \VH production mode. 
-%
-%%For all \VHTag categories, events must pass the preselection defined in \Sec~\ref{reco:sec:pho:preselection}. 
-%The \pT spectrum of Higgs decay particles is shifted towards higher values for \VH events than for \ggH events (due to recoil against the vector boson), and therefore the leading photon \pT requirement is increased to $\pT/\mgg >1/2$ for all \VHTag categories. The \VHLeptonicTag categories target events with at least one charged lepton, and are further split into \VHLooseLeptonicTag and \VHTightLeptonicTag categories in order to maximise the sensitivity. In both cases, fewer than three jets with $\pT>20\GeV$, $|\eta|<2.4$ or within $\Delta R <0.5$ of the photons or leptons must be reconstructed in the event, to avoid selecting events from the \ttH process. The \VHTightLeptonicTag category targets events with a fully reconstructed final state (from $\PZ$ decay) or large \MET. Events which enter this category must satisfy the following requirements:
-%\begin{itemize}
-%%\item the event must contain either: one reconstructed lepton with $\pT>20\GeV$ and $\MET > 35\GeV$, or two opposite-signed same-flavour leptons both with $\pT>10\GeV$ and invariant mass in the range $[70,110]\GeV$;
-%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-%\end{itemize}
-%
-%Events falling in the \VHLooseLeptonicTag category must satisfy a less stringent requirement on the amount of \MET, but in this case additional selections must be added to suppress the \SM background:
-%\begin{itemize}
-%\item the event must contain exactly one reconstructed lepton with $\pT>20\GeV$ and have $\MET < 35\GeV$;
-%\item the invariant mass of both possible electron-photon systems must be more than 10\GeV away from the mass of the $\PZ$ boson. This is designed to reduce the contribution of $\PZ\gamma$ events, where \Zee and one of the electrons is misreconstructed as a photon, thus being misidentified as an \VH event with a leptonic $\PW$ decay; 
-%\item each photon in the diphoton must be separated from any reconstructed tracks by $\Delta R >1.0$ to reduce the contribution from \DY events where an electron is also misreconstructed as a photon;
-%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-%\end{itemize}
-%
-%The \VHMETTag category targets events where the $\PZ$ decays to two neutrinos, and thus leaves no energy in the detector. This results in a large amount of reconstructed \MET in addition to the high-\pT photons from the Higgs boson decay. Events selected by the \VHMETTag category must satisfy the following requirements, in addition to the same restriction on the number of jets as imposed on the \VHLeptonicTag categories:
-%\begin{itemize}
-%\item the event must contain $\MET > 70\GeV$;
-%\item the \MET direction and the momentum of the diphoton system must be separated in the $\phi$-direction by at least 2.1 radians, since they are expected to be back-to-back due to momentum conservation;
-%\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
-%%\item the direction of the jet with the highest \pT must be separated from the diphoton direction in the $\phi$-direction by at no more than 2.7 due to an observed correlation between t
-%\end{itemize}
-%
-%Finally, the \VHHadronicTag category targets events where the vector boson decays to quarks, leading to two jets in the event. 
-%The following selections are used for this category:
-%\begin{itemize}
-%\item the leading (subleading) photon must satisfy $\pT/\mgg > 1/2$ ($\pT > 25\GeV$ FIXME to be justified);
-%\item the event must contain at least two jets with $\pT>30\GeV$ and $|\eta|<2.4$;
-%\item the invariant mass of the dijet system must be in the range $[60,120]\GeV$;
-%\item the invariant-mass-scaled transverse momentum of the diphoton system must be greater than $130\mgg/120$ FIXME to be justified; 
-%\item the angle $\theta^{*}$ between the diphoton direction in the diphoton-dijet rest frame and the detector frame must satisfy $|\cos{\theta^{*}}| <0.5$ to exploit differences in the angular correlation of the diphoton and the dijet for \VH events.
-%\end{itemize}
-%
-%Events which fail the selections for the \VHTag categories may still be selected for other categories.
+\ifNewAnalysis
+\section{\VHTag categories}
+\label{cat:sec:vhtag}
 
+Higgs boson events resulting from \VH production can be selected using the decay products of the $\PW$ or $\PZ$ vector boson. The vector bosons can decay leptonically via $\PW \rightarrow \Plepton \Pneutrino$ or $\PZ \rightarrow \Plepton^{+} \Plepton^{-}$. The vector bosons can also decay to quarks which hadronize to form jets. Finally, the $\PZ$ can decay to a pair of neutrinos, which are reconstructed as a large amount of missing energy. In this analysis, the \VHLeptonicTag, \VHHadronicTag and \VHMETTag categories are respectively defined to target the final states listed above. %Although the addition of the \VHTag categories does not appreciably improve the overall sensitivity of the analysis, it allows the measurement of the cross-section of the \VH production mode. 
+
+%For all \VHTag categories, events must pass the preselection defined in \Sec~\ref{reco:sec:pho:preselection}. 
+The \pT spectrum of Higgs decay particles is shifted towards higher values for \VH events than for \ggH events (due to recoil against the vector boson), and therefore the leading photon \pT requirement is increased to $\pT/\mgg >1/2$ for all \VHTag categories. The \VHLeptonicTag categories target events with at least one charged lepton, and are further split into \VHLooseLeptonicTag and \VHTightLeptonicTag categories in order to maximise the sensitivity. In both cases, fewer than three jets with $\pT>20\GeV$, $|\eta|<2.4$ or within $\Delta R <0.5$ of the photons or leptons must be reconstructed in the event, to avoid selecting events from the \ttH process. The \VHTightLeptonicTag category targets events with a fully reconstructed final state (from $\PZ$ decay) or large \MET. Events which enter this category must satisfy the following requirements:
+\begin{itemize}
+%\item the event must contain either: one reconstructed lepton with $\pT>20\GeV$ and $\MET > 35\GeV$, or two opposite-signed same-flavour leptons both with $\pT>10\GeV$ and invariant mass in the range $[70,110]\GeV$;
+\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+\end{itemize}
+
+Events falling in the \VHLooseLeptonicTag category must satisfy a less stringent requirement on the amount of \MET, but in this case additional selections must be added to suppress the \SM background:
+\begin{itemize}
+\item the event must contain exactly one reconstructed lepton with $\pT>20\GeV$ and have $\MET < 35\GeV$;
+\item the invariant mass of both possible electron-photon systems must be more than 10\GeV away from the mass of the $\PZ$ boson. This is designed to reduce the contribution of $\PZ\gamma$ events, where \Zee and one of the electrons is misreconstructed as a photon, thus being misidentified as an \VH event with a leptonic $\PW$ decay; 
+\item each photon in the diphoton must be separated from any reconstructed tracks by $\Delta R >1.0$ to reduce the contribution from \DY events where an electron is also misreconstructed as a photon;
+\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+\end{itemize}
+
+The \VHMETTag category targets events where the $\PZ$ decays to two neutrinos, and thus leaves no energy in the detector. This results in a large amount of reconstructed \MET in addition to the high-\pT photons from the Higgs boson decay. Events selected by the \VHMETTag category must satisfy the following requirements, in addition to the same restriction on the number of jets as imposed on the \VHLeptonicTag categories:
+\begin{itemize}
+\item the event must contain $\MET > 70\GeV$;
+\item the \MET direction and the momentum of the diphoton system must be separated in the $\phi$-direction by at least 2.1 radians, since they are expected to be back-to-back due to momentum conservation;
+\item the diphoton must pass a loose requirement on its \DiPhoBdt output score, which keeps X\% of the signal while rejecting Y\% of the background events.
+%\item the direction of the jet with the highest \pT must be separated from the diphoton direction in the $\phi$-direction by at no more than 2.7 due to an observed correlation between t
+\end{itemize}
+
+Finally, the \VHHadronicTag category targets events where the vector boson decays to quarks, leading to two jets in the event. 
+The following selections are used for this category:
+\begin{itemize}
+\item the leading (subleading) photon must satisfy $\pT/\mgg > 1/2$ ($\pT > 25\GeV$ FIXME to be justified);
+\item the event must contain at least two jets with $\pT>30\GeV$ and $|\eta|<2.4$;
+\item the invariant mass of the dijet system must be in the range $[60,120]\GeV$;
+\item the invariant-mass-scaled transverse momentum of the diphoton system must be greater than $130\mgg/120$ FIXME to be justified; 
+\item the angle $\theta^{*}$ between the diphoton direction in the diphoton-dijet rest frame and the detector frame must satisfy $|\cos{\theta^{*}}| <0.5$ to exploit differences in the angular correlation of the diphoton and the dijet for \VH events.
+\end{itemize}
+
+Events which fail the selections for the \VHTag categories may still be selected for other categories.
+\fi
 \section{\TTHTag categories}
 \label{cat:sec:tthtag}
 
