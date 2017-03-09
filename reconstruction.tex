@@ -213,7 +213,7 @@ The training is done using a \emph{semiparametric likelihood} technique. In this
 
 \begin{equation}
 \label{reco:eq:regression:dcb}
- - \ln \mathcal{L} = - \sum_{\textrm{photons}} \ln P_{DCB}( \frac{E_{true}}{E_{SC}} | \mu_{DCB}, \sigma_{DCB}, \alpha_{DCB}^{L},n_{DCB}^{L}, \alpha_{DCB}^{R},n_{DCB}^{R} ) , 
+ - 2\ln \mathcal{L} = -2 \sum_{\textrm{photons}} \ln P_{DCB}( \frac{E_{true}}{E_{SC}} | \mu_{DCB}, \sigma_{DCB}, \alpha_{DCB}^{L},n_{DCB}^{L}, \alpha_{DCB}^{R},n_{DCB}^{R} ) , 
 \end{equation}
  where $P_{DCB}$ is the \DCB probability distribution and all the \DCB parameters are functions of $\vec{x}$, the set of input variables for \PhoEnergyBdt. The nonparametric dependence of the \DCB parameters on $\vec{x}$ is obtained using separate \BDT\s, where a new tree is produced for each iteration of the \NLL fit. The most probable value of $E_{true}$ is then given by $\mu_{DCB}(\vec{x}) \times E_{SC}$ and the relative energy resolution for each photon is approximated by $\sigma_{DCB}(\vec{x}) / \mu_{DCB}(\vec{x})$.
 
@@ -238,7 +238,7 @@ The performance of the \PhoEnergyBdt is illustrated using a simulated sample of 
 To reduce the large background originating from the decay of neutral hadrons (predominantly neutral pions) a per-photon \BDT referred to as \PhoIdBdt is applied to photon candidates which pass the preselection described in \Sec~\ref{reco:sec:pho:preselection}. The \PhoIdBdt is trained on a \gammaJet sample where the photon candidates which are geometrically matched to a generator-level photon from a \pp interaction are defined as signal. Photon candidates which have no generator-level photon match, and are therefore likely to have resulted from a misidentified neutral hadron or jet, are defined as the background. In both cases, photon candidates are required to pass the event preselection. To reduce the dependence of the \PhoIdBdt on the kinematics of the photon, the signal photons are reweighted such that their \pT and $\eta$ distributions match those of the background photons. The input variables for the \PhoIdBdt are $\sigma_{\eta}$, $cov_{\eta \phi}$ , $S_{4} $, \RNINE , $\sigma_{\eta} $, $\sigma_{\phi }$, $\sigma_{RR}$, $Iso^{\textrm{PF}\gamma}_{R=0.3}$, $Iso^{\textrm{PF ch. had.}}_{R=0.3}(\textrm{selected vertex})$, $Iso^{\textrm{PF ch. had.}}_{R=0.3}(\textrm{wrong vertex})$, $\rho$, $\eta_{SC}$ and $E_{SC}$. 
 
 A loose requirement on the output of the \PhoIdBdt is applied to all photons considered in the analysis, such that 99\% of the signal photon candidates are kept while a large fraction of background photon candidates are removed. The \PhoIdBdt output score of each photon is then used as a measure of the ``quality'' of each photon, and used as an input for the classification \BDT described in \Sec~\ref{cat:sec:dipho_bdt}.
-The \PhoIdBdt is validated by comparing the output score for data and simulation for diphoton events (\Fig~\ref{fig:reco:photon_id_score_hgg_bkg}) and for $\Zee$ events (\Fig~\ref{fig:reco:photon_id_zee_validation}) where the electron veto requirement is inverted.
+The \PhoIdBdt is validated by comparing the output score for data and simulation for diphoton events (\Fig~\ref{fig:reco:photon_id_score_hgg_bkg}) and for $\Zee$ events (\Fig~\ref{fig:reco:photon_id_zee_validation}) where the electron veto requirement is inverted. A systematic uncertainty of approximately $3\%$ on the value of the \PhoIdBdt output score is introduced to account for the differences between data and simulation.
 
 
 \begin{figure}[hptb]
@@ -254,8 +254,8 @@ The \PhoIdBdt output score for the lower-scoring photon in each diphoton pair in
 \centering 
 %\includegraphics[width=0.53\textwidth]{recoFigures/idmva_syst_combined.pdf}
 \includegraphics[width=\figWidth\textwidth]{recoFigures/\whichFig/idmva_syst.pdf}
-\caption{ The $\text{BDT}_{\gamma\text{ ID}}$ output score for \Zee events in data and simulation (labelled MC), where 
-the electrons are reconstructed as photons with the electron veto requirement inverted.}
+\caption{ The \PhoIdBdt output score for \Zee events in data and simulation (labelled MC), where 
+the electrons are reconstructed as photons with the electron veto requirement inverted. The red shaded region corresponds to a systematic uncertainty of approximately 3\% on the value of the output score, to cover discrepancies between data and simulation.}
 \label{fig:reco:photon_id_zee_validation}
 \end{figure}
 
