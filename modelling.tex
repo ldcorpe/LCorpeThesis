@@ -110,7 +110,7 @@ Furthermore, the \SSF method reduces the total number of parameters used to dete
 The \SSF method is applied separately for each process, category and \RV or \WV case, using seven different \mH values: 120, 123, 124, 125, 126, 127 and 130\GeV. The description of the parameters of the \DCBpG function uses polynomials of order 1. Polynomials of order 0 and 2 were also tested. No substantial improvement in the agreement was observed when using an order greater than 1: the floating parameters were not sufficiently constrained by the simulated \mgg distributions to bring any meaningful improvement.
 
 The signal models for the \RV and \WV contributions are then combined. %according to their relative event content. 
-The fraction of events where the selected vertex was within $1\cm$ in the $z$-direction from the true vertex is evaluated for each \mH sample, and then parametrised as a first order polynomial to get a smooth dependence on \mH for the \RV/\WV mixing fraction. 
+The fraction of events where the selected vertex was within $1\cm$ in the $z$-direction from the true vertex is evaluated for each \mH sample, and then parametrised as a first order polynomial to get a smooth dependence on \mH for the \RV/\WV mixing fraction.
 
 
 \subsection{Normalisation of signal models}
@@ -131,7 +131,7 @@ The dependence on \mH of these values is parametrised by polynomial fits.
 \end{figure}
 
 The final normalisation of the signal models for an arbitrary value of \mH can then be obtained from the parametrised \effxacc multiplied by the relevant \crosssection, branching fraction and integrated luminosity.
-As an example, the dependence of the full normalised parametric signal model on \mH for the \ggH process in each of the inclusive analysis categories is shown in \Fig\s~\ref{fig:model:sig_interpolation}.
+As an example, the dependence of the full normalised parametric signal model on \mH for the \ggH process in each of the inclusive analysis categories is shown in \Fig\s~\ref{fig:model:sig_interpolation}. The equivalent figures for all processes in all categories are available in \App~\ref{app:modelling} in \Fig\s~\ref{fig:model:sig_interpolation_ggh}, ~\ref{fig:model:sig_interpolation_vbf}, ~\ref{fig:model:sig_interpolation_tth}, ~\ref{fig:model:sig_interpolation_wh}, and~\ref{fig:model:sig_interpolation_zh}.
 
 \begin{figure}[htp!]
 \centering
@@ -174,6 +174,7 @@ As an example, the dependence of the full normalised parametric signal model on 
 
 \ifNewAnalysis
 %The dependence of the full normalised parametric signal model on \mH for the \ggH process in each of the analysis categories is shown in \Fig\s~\ref{fig:model:sig_interpolation}, ~\ref{fig:model:sig_interpolation_bis} and~\ref{fig:model:sig_interpolation_tris}.
+The normalised signal models for each process and category, evaluated at $\mH=125\GeV$ after parametrising all mass points with the \DCBpG and interpolating using \SSF, are available in \App~\ref{app:modelling} in \Fig\s~\ref{fig:model:sig_model_per_ggh}, ~\ref{fig:model:sig_model_per_vbf}, ~\ref{fig:model:sig_model_per_tth}, ~\ref{fig:model:sig_model_per_wh}, and~\ref{fig:model:sig_model_per_zh}.
 The normalised signal models for each process are summed together to obtain the expected signal \mgg distribution for all categories combined (as shown in \Fig\s~\ref{fig:model:sig_model_all}), or for individual analysis categories (as shown in \Fig\s~\ref{fig:model:sig_model_per_category},~\ref{fig:model:sig_model_per_category_bis} and~\ref{fig:model:sig_model_per_category_tris}).
 \else
 %The dependence of the full normalised parametric signal model on \mH for the \ggH process in each of the analysis categories is shown in \Fig\s~\ref{fig:model:sig_interpolation} and~\ref{fig:model:sig_interpolation_bis}.
@@ -267,7 +268,7 @@ In the limit of large sample size, the difference in the minimum \NLL between fu
 
 $$ \text{\pvalue} = \text{prob}(2 \Delta NLL > 2 \Delta NLL_{N+1}| \chi^2(M)). $$
 
-If the \pvalue is less than a predetermined threshold, chosen as $0.05$, the higher-order function is supported by the data, otherwise the higher-order function is assumed unnecessarily flexible given the data. In the former case, the next-highest order function is then considered, and so on. Otherwise, the procedure terminates having found the highest-order suitable function. An additional constraint is applied to remove low order functions which do not fit the data well. These would not contribute to the minimum envelope anyway, and removing them reduces the amount of time needed to perform the final minimisation described in Chapter~\ref{chap:statandresults}. The remaining functions from each of the four families are added to the final set of candidate functions to be used in the discrete profiling. As an example, the chosen functions are shown for the \Untagged categories are shown in \Fig~\ref{fig:model_bkg_multipdf}. For each category, the candidate functions give acceptable agreement with the data, but can lead to large variations in the predicted number of events in the region of interest between $120$ and $130\GeV$. %and~\ref{fig:model:bkg_multipdf_bis}.
+If the \pvalue is less than a predetermined threshold, chosen as $0.05$, the higher-order function is supported by the data, otherwise the higher-order function is assumed unnecessarily flexible given the data. In the former case, the next-highest order function is then considered, and so on. Otherwise, the procedure terminates having found the highest-order suitable function. An additional constraint is applied to remove low order functions which do not fit the data well. These would not contribute to the minimum envelope anyway, and removing them reduces the amount of time needed to perform the final minimisation described in Chapter~\ref{chap:statandresults}. The remaining functions from each of the four families are added to the final set of candidate functions to be used in the discrete profiling. As an example, the chosen functions are shown for the \Untagged categories are shown in \Fig~\ref{fig:model_bkg_multipdf}. The equivalent figures for the other analysis categories are available in \App{app:modelling} in \Fig~\ref{fig:model_bkg_multipdf_bis}. For each category, the candidate functions give acceptable agreement with the data, but can lead to large variations in the predicted number of events in the region of interest between $120$ and $130\GeV$. %and~\ref{fig:model:bkg_multipdf_bis}.
 
 A series of tests demonstrated that this method provides good coverage of the uncertainty associated with the choice of the function and provides an unbiased estimate of the signal strength. These tests are described in detail in~\cite{DiscreteProfiling}. 
 

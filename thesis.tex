@@ -17,14 +17,17 @@
 \usepackage{colortbl}
 \usepackage{hhline}
 \usepackage{feynmp}
-%\defaultfontfeatures{Mapping=tex-text}
+%\defaultfontfeatures{Mapping=tex-text}%
+%% Handle the A4 default paper size
+%\ifx\@useAFour\@empty\else%
+%  \PassOptionsToClass{}{scrbook}%
 
 
 %% You can set the line spacing this way
 %\setallspacing{double}
 %% or a section at a time like this
 %\setfrontmatterspacing{double}
-
+\renewcommand{\autodot}{}%
 
 %% Define a few useful shorthands
 \newcommand{\emu}{\Pe\Pgm}
@@ -70,6 +73,16 @@
 \newcommand{\obsSigAtMin}{6.1}
 \newcommand{\expSigAtRunIBF}{6.3}
 \newcommand{\expSigAtMin}{6.3}
+\newcommand{\obsMuBreakdown}{\hat{\mu} = 0.94^{+0.21}_{-0.18} = 0.94 \pm  0.16 \text{~(stat.)~} ^{+0.10}_{-0.07} \text{~(exp. syst.)~} ^{+0.08}_{-0.05} \text{~(theo. syst.)}}
+\newcommand{\obsMuV}{\muVhat = 1.52^{+0.89}_{-0.77}}
+\newcommand{\obsMuF}{\muFhat = 0.81^{+0.27}_{-0.25}}
+\newcommand{\obsMuggH}{\hat{\mu}_{\text{ggH}} = 0.78^{+0.25}_{-0.23}}
+\newcommand{\obsMuttH}{\hat{\mu}_{\text{ttH}} = 1.54^{+0.9}_{-0.8}}
+\newcommand{\obsMuVBF}{\hat{\mu}_{\text{VBF}} = 1.86^{+1.5}_{-1.2}}
+\newcommand{\obskV}{\hat{\kappa}_{\text{V}} = 0.93^{+0.11}_{-0.10}}
+\newcommand{\obskF}{\hat{\kappa}_{\text{f}} = 0.68^{+0.45}_{-0.22}}
+\newcommand{\obskGlu}{\hat{\kappa}_{g} = 0.66^{+0.27}_{-0.19}}
+\newcommand{\obskPho}{\hat{\kappa}_{\gamma} = 1.26^{+0.25}_{-0.27}}
 \fi
 
 \DeclareGraphicsRule{.1}{mps}{*}{}
@@ -104,7 +117,7 @@ colorlinks=false
 \makeatother
 
 %% Define the thesis title and author
-\title{Study of Higgs boson production through its decay to two photons using data collected at a centre-of-mass energy of 13 TeV with the CMS detector}
+\title{\Large Study of Higgs boson production through its decay to two photons using data collected at a centre-of-mass energy of 13~TeV with the CMS detector}
 \author{Louie Dartmoor Corpe}
 
 %% Start the document
@@ -121,6 +134,7 @@ colorlinks=false
   %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
   \cleardoublepage
   \pagenumbering{arabic}
+  \input{intro}
   \input{theory}
   \input{detector}
   \input{reconstruction}
@@ -135,10 +149,11 @@ colorlinks=false
 \end{mainmatter}
 
 %% Produce the appendices
-%%\begin{appendices}
+\begin{appendices}
 %\appendix
-%  \input{sigmodellingappendix}
-%\end{appendices}
+  \input{modellingappendix}
+  \input{statandresultsappendix}
+\end{appendices}
 
 
 %% Produce the un-numbered back matter (e.g. colophon,
