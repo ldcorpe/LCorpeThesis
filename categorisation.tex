@@ -6,7 +6,8 @@
 
 The basic experimental method for the observation of the \Hgg decay is to search for a resonance above the diphoton continuum background. The sensitivity of this method is enhanced by the categorisation of events according to their expected signal-to-background ratio. Furthermore the use of additional particles in the event allows the measurement of the cross-section of each production mode individually, thus probing the strength of the Higgs boson's interaction with different types of particle. %These considerations motivate the following categorisation scheme. 
 
-The most common production mode, \ggH, produces a Higgs boson in isolation. This leaves only the photons resulting from \Hgg decay in the final state. The other production modes (\VBF, \VH and \ttH) produce the Higgs boson accompanied by additional particles. The \VBF mode has two quarks in the final state, which hadronize to form jets. The \VH mode produces a Higgs boson in association with a \PW or \PZ boson, which then decays to charged leptons, neutrinos or quarks, leading to reconstructed leptons, \MET or jets. Finally, the \ttH mode produces the Higgs boson in association with two top quarks, which decay to bottom quarks and either hadrons or leptons. These reconstructed additional particles can be used to categorise events. 
+The most common production mode, \ggH, produces a Higgs boson in isolation. This leaves only the photons resulting from \Hgg decay in the final state. The other production modes (\VBF, \VH and \ttH) produce the Higgs boson accompanied by additional particles. The \VBF mode has two quarks in the final state, which hadronize to form jets. 
+The \VH mode produces a Higgs boson in association with a \PW or \PZ boson, which then decays to charged leptons, neutrinos or quarks, leading to reconstructed leptons, \MET or jets. Finally, the \ttH mode produces the Higgs boson in association with two top quarks, which decay to bottom quarks and either hadrons or leptons. These reconstructed additional particles can be used to categorise events. 
 
 The \BDT used for categorisation of diphoton events is described in \Sec~\ref{cat:sec:dipho_bdt}. 
 \ifNewAnalysis
@@ -14,7 +15,7 @@ The categorisation of \VBF, \VH and \ttH events is then discussed in \Sec\s~\ref
 \else
 The categorisation of \VBF and \ttH events is then discussed in \Sec\s~\ref{cat:sec:vbftag} and~\ref{cat:sec:tthtag}. This analysis does not have any categories which specifically target \VH events.
 \fi
-Finally, the inclusive categories and the categorisation hierarchy are respectively discussed in \Sec\s~\ref{cat:sec:untagged} and~\ref{cat:sec:hierarchy}.
+Finally, the inclusive categories and the categorisation hierarchy are respectively discussed in \mbox{\Sec\s}~\ref{cat:sec:untagged} and~\ref{cat:sec:hierarchy}.
 
 \section{Diphoton BDT}
 \label{cat:sec:dipho_bdt}
@@ -40,7 +41,7 @@ However, if the vertex was incorrectly identified, the uncertainty on the openin
 \sigmawv= \sqrt{(\sigmarv)^2 +(\sigma^V_{\gamma\gamma}/\mgg)^2 }.
 \end{equation} 
 
-The \DiPhoBdt is trained on simulated samples of signal and background processes. For the signal samples, events from different productions modes (all with $\mH=125\GeV$) are mixed according to their \SM cross-sections. The signal events used for training are also re-weighted by a factor $w^{\text{sig}}$ given by: 
+The \DiPhoBdt is trained on simulated samples of signal and background processes. For the signal samples, events from different productions modes (all with $\mH=125\GeV$) are mixed according to their \SM cross-sections. The signal events used for training are also reweighted by a factor $w^{\text{sig}}$ given by: 
 \begin{equation}
 w^{\text{sig}}= \frac{p_{rv}}{\sigmarv}+\frac{1-p_{rv}}{\sigmawv},
 \end{equation} 
@@ -142,7 +143,7 @@ The location of the two boundaries is optimised first by maximising the value of
 Higgs boson events resulting from \VH production can be selected using the decay products of the $\PW$ or $\PZ$. The vector bosons can decay leptonically via $\PW \rightarrow \Plepton \Pneutrino$ or $\PZ \rightarrow \Plepton^{+} \Plepton^{-}$, or they can decay to quarks which hadronize to form jets. Finally, the $\PZ$ can decay to a pair of neutrinos, which are reconstructed as a large amount of missing energy. In this analysis, five categories are defined to exploit these final states, and their selections are defined in this section. %Although the addition of the \VHTag categories does not appreciably improve the overall sensitivity of the analysis, it allows the measurement of the cross-section of the \VH production mode. 
 %For all \VHTag categories, events must pass the preselection defined in \Sec~\ref{reco:sec:pho:preselection}. 
 
-The \VHLeptonicTag categories target events with at least one high-\pT charged lepton. Signal events which enter these categories are most often \WH events, which have a larger rate than \ZH when \crosssection and branching fraction to leptons are taken into account. The majority of signal events therefore contain a single high-\pT lepton and large \MET from the neutrino. Such events are targeted by the \WHLeptonicTag category. Conversely, the reconstructible \ZH events contain two leptons, which allows such events to be selected with a good signal-to-background ratio by the \ZHLeptonicTag category. A less sensitive \VHLeptonicLooseTag category is also defined, the purpose of which is to select events from \WH or \ZH where one of the leptons or the magnitude of the \MET was mis-reconstructed. 
+The \VHLeptonicTag categories target events with at least one high-\pT charged lepton. Signal events which enter these categories are most often \WH events, which have a larger rate than \ZH when \crosssection and branching fraction to leptons are taken into account. The majority of signal events therefore contain a single high-\pT lepton and large \MET from the neutrino. Such events are targeted by the \WHLeptonicTag category. Conversely, the reconstructible \ZH events contain two leptons, which allows such events to be selected with a good signal-to-background ratio by the \ZHLeptonicTag category. A less sensitive \VHLeptonicLooseTag category is also defined, the purpose of which is to select events from \WH or \ZH where one of the leptons or the magnitude of the \MET was misreconstructed. 
 %The \pT spectrum of Higgs decay particles is shifted towards higher values for \VH events than for \ggH events (due to recoil against the vector boson), and therefore the leading photon \pT requirement is increased, with the value the selection depending on the category.% to $\pT/\mgg >1/2$ for all \VHTag categories. 
 
 All \VHLeptonicTag categories have some common elements in their selection:
@@ -186,7 +187,7 @@ Events where a Higgs boson is produced in association with a pair of top quarks 
 
 Two exclusive \TTHTag categories are defined in this analysis. On the one hand, the \TTHLeptonicTag category aims to select \ttH events where at least one of the $\PW$ bosons decayed leptonically. On the other hand, the \TTHHadronicTag category targets events where both $\PW$ bosons decayed to quarks. In addition to the usual preselection applied to candidate events, the requirement on the leading photon \pT is increased to $\pT>\mgg/2$, because the \pT spectrum of Higgs decay particles is shifted towards higher values due to recoil against the $\Ptop \Ptop$ system. %for the same reason as described in \Sec~\ref{cat:sec:vhtag}. %The selections for each of these categories are defined separately and are described below.
 
-The leptons which are used in the selection must pass the same identification requirements as those uised for the \VHLeptonicTag categories. In order to be included in the \TTHLeptonicTag category, events must satisfy the following conditions:
+The leptons which are used in the selection must pass the same identification requirements as those used for the \VHLeptonicTag categories. In order to be included in the \TTHLeptonicTag category, events must satisfy the following conditions:
 \begin{itemize}
 \item the diphoton must satisfy a loose selection on the \DiPhoBdt output which has approximately 70\% signal selection efficiency and 15\% background selection efficiency; 
 \item the event must contain at least one selected lepton with $\pT>20\GeV$; %If the lepton is an electron,n;%$Muons are required to be within $|\eta|<2.4$, pass a selection based on the properties of the tracks it leaves in the tracker and muon chambers and satisfy a requirement on its \PU-corrected charged hadron, neutral hadron and photon isolations (with cone size $R=0.4$). Electrons are required to be within the \ECAL

@@ -11,7 +11,7 @@ The \LHC is the last stage in a series of machines which form the \CERN accelera
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/accelerators.jpg}
-\caption{Schematic view of the CERN accelerator complex, showing the chain of machines which allow the energies of the particles to increase to 6.5\TeV: LINAC2, PS Booster, PS, SPS and finally LHC\quad\cite{Christiane:1260465}.}
+\caption[Schematic view of the CERN accelerator complex, showing the chain of machines which allow the energies of the particles to increase to 6.5\TeV: LINAC2, PS Booster, PS, SPS and finally LHC\quad\cite{Christiane:1260465}.]{Schematic view of the CERN accelerator complex, showing the chain of machines which allow the energies of the particles to increase to 6.5\TeV: LINAC2, PS Booster, PS, SPS and finally LHC~\cite{Christiane:1260465}.}
 \label{fig:accelerators}
 \end{figure}
 
@@ -31,7 +31,7 @@ where $n_{b}$ is the number of bunches in each beam, $N_{b}$ is the number of pa
 
 The \LHC began operation at $\sqrt{s}=7\TeV$ in 2010, collecting 44\ipb of data in 2010 and 6.1\ifb in 2011. In 2012, the collision energy was successfully increased to $\sqrt{s}=8\TeV$ and 23.3\ifb of data were recorded. This period corresponded to the first physics run of the \LHC (\RunI). After a shutdown period for planned upgrades to the machine, the \LHC began \RunII and raised its collision energy to $\sqrt{s}=13\TeV$, delivering 4.3\ifb in 2015 and \totaldatatwentysixteen\ifb in 2016, as can be seen in \Fig~\ref{fig:totalintlumi}. 
 \ifNewAnalysis
-The analysis of the full 2016 dataset is presented in this thesis.
+The analysis of the full 2016 dataset is presented in this thesis, which amounts to \thisanalysislumi\ifb once the data collection efficiency of \CMS is accounted for.
 \else
 The analysis of the first \thisanalysislumi\ifb collected in 2016 is presented in this thesis.
 \fi
@@ -39,8 +39,8 @@ The peak instantaneous luminosity of the \LHC, achieved at the start of periods 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{detectorFigures/int_lumi_cumulative_pp_2_280916.pdf}
-\caption{Overview of the integrated luminosity delivered by the LHC throughout its operation until the time of writing, as recorded by CMS\quad\cite{CMSLumiPublic}.}
+\includegraphics[width=1.0\textwidth]{detectorFigures/int_lumi_cumulative_pp_2_210317.pdf}
+\caption[Overview of the integrated luminosity delivered by the LHC throughout its operation until the time of writing, as recorded by CMS\quad\cite{CMSLumiPublic}.]{Overview of the integrated luminosity delivered by the LHC throughout its operation until the time of writing, as recorded by CMS~\cite{CMSLumiPublic}.}
 \label{fig:totalintlumi}
 \end{figure}
 
@@ -63,7 +63,7 @@ The \LHC experiments use a right-handed coordinate system whereby the $x$-axis p
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/cms-perspective.png}
-\caption{A cutaway diagram of the CMS detector, showing the main components and subdetectors, which are described in \Sec~\ref{sec:cms}\quad\cite{CMSTDR}.}
+\caption[A cutaway diagram of the CMS detector, showing the main components and \subdetector\s, which are described in \Sec \ref{sec:cms}\quad\cite{CMSTDR}.]{A cutaway diagram of the CMS detector, showing the main components and \subdetector\s, which are described in \Sec~\ref{sec:cms}~\cite{CMSTDR}.}
 \label{fig:cms-exploded}
 \end{figure}
 
@@ -79,7 +79,7 @@ The short interval between collisions (25\ns) requires the tracker to have a fas
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/trackerSchematic.png}
-\caption{A diagram showing the layout of the CMS tracker components: the pixel tracker (labelled PIXEL) is the nearest to the interaction region marked by the black dot. The various sections of the strip tracker (TIB, TID, TOB, TEC$+$ and TEC$-$) are arranged around the pixel tracker\quad\cite{CMSTDR}.}
+\caption[A diagram showing the layout of the CMS tracker components: the pixel tracker (labelled PIXEL) is the nearest to the interaction region marked by the black dot. The various sections of the strip tracker (TIB, TID, TOB, TEC$+$ and TEC$-$) are arranged around the pixel tracker\quad\cite{CMSTDR}.]{A diagram showing the layout of the CMS tracker components: the pixel tracker (labelled PIXEL) is the nearest to the interaction region marked by the black dot. The various sections of the strip tracker (TIB, TID, TOB, TEC$+$ and TEC$-$) are arranged around the pixel tracker~\cite{CMSTDR}.}
 \label{fig:trk}
 \end{figure}
 
@@ -105,7 +105,7 @@ The \ECAL crystal front faces are 22\mm $\times$ 22\mm squares, corresponding to
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/ecalEBEE.png}
-\caption{Schematic \crosssection of one quadrant of the ECAL, showing the arrangement of crystals in the ECAL barrel and endcaps. The shower detector (SE, referred to as ES in the text) is also visible, as is the hadron calorimeter barrel (HB) and the tracker (TK)\quad\cite{CMSEcalTDR}.}
+\caption[Schematic \crosssection of one quadrant of the ECAL, showing the arrangement of crystals in the ECAL barrel and endcaps. The shower detector (SE, referred to as ES in the text) is also visible, as is the hadron calorimeter barrel (HB) and the tracker (TK)\quad\cite{CMSEcalTDR}.]{Schematic \crosssection of one quadrant of the ECAL, showing the arrangement of crystals in the ECAL barrel and endcaps. The shower detector (SE, referred to as ES in the text) is also visible, as is the hadron calorimeter barrel (HB) and the tracker (TK)~\cite{CMSEcalTDR}.}
 \label{fig:ecal}
 \end{figure}
 
@@ -133,14 +133,14 @@ The resolution of the \ECAL crystals is modelled with the following equation:
 \begin{equation} 
 \left( \frac{\sigma}{E}\right) ^2= \left( \frac{S}{\sqrt{E}} \right)^2 + \left( \frac{N}{E} \right)^2 + C^2,
 \end{equation}
-where $S$ represents the stochastic term, $N$ represents the noise term and $C$ represents a constant term~\cite{CMSTDR}. The design values of these parameters are approximately $S=2.8\%$ GeV$^\frac{1}{2}$, $ N= 0.12$ GeV and $C=0.3 \%$. 
+where $S$ represents the stochastic term, $N$ represents the noise term and $C$ represents a constant term~\cite{CMSTDR}. The design values of these parameters are approximately $S=2.8\%\GeV^\frac{1}{2}$, $ N= 0.12\GeV$ and $C=0.3 \%$. 
 
 As can be seen in \Fig~\ref{fig:det:energy_resol}, for individual \Hgg photons in \RunI, an energy resolution of about 1\% was achieved for unconverted photons in the barrel, and about 2.5\% in the endcaps. For converted photons, an energy resolution of about 1.3\% was observed up to $|\eta| = 1$, rising to about 2.5\% at $|\eta| = 1.4$, and 3-4\% in the endcaps~\cite{CMS-PAS-EGM-14-001}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{detectorFigures/effSigma_vs_Eta_mva.pdf}
-\caption{The relative energy resolution of individual simulated \Hgg photons in \RunI as a function of $|\eta|$, shown separately for converted photons (black circles) and unconverted photons (open red squares). The vertical lines represent the boundaries between the ECAL modules in the barrel, while the grey band indicates the transition region between the EB and the EE, where photons are not reconstructed\quad\cite{CMS-PAS-EGM-14-001}.}
+\caption[The relative energy resolution of individual simulated \Hgg photons in \RunI as a function of $|\eta|$, shown separately for converted photons (black circles) and unconverted photons (open red squares). The vertical lines represent the boundaries between the ECAL modules in the barrel, while the grey band indicates the transition region between the EB and the EE, where photons are not reconstructed\quad\cite{CMS-PAS-EGM-14-001}.]{The relative energy resolution of individual simulated \Hgg photons in \RunI as a function of $|\eta|$, shown separately for converted photons (black circles) and unconverted photons (open red squares). The vertical lines represent the boundaries between the ECAL modules in the barrel, while the grey band indicates the transition region between the EB and the EE, where photons are not reconstructed~\cite{CMS-PAS-EGM-14-001}.}
 \label{fig:det:energy_resol}
 \end{figure}
 
@@ -166,9 +166,10 @@ The calibration of the \ECAL involves using various techniques and physics objec
 
 The first step is to make a time-dependent correction for the transparency in the crystals. Indeed, the response of \ECAL crystals varies because of radiation induced transparency loss and recovery through spontaneous annealing. Continuous monitoring and correction of the response of the crystals is required. This is achieved using a laser which periodically (every 40 minutes) injects photons of wavelength 440\nm into each crystal via a network of optical fibres. The change of the response as measured and corrected for using this mechanism is tracked in \Fig~\ref{fig:cms:ecal:lasercorrections}. The effect of the corrections on the measured mass of the $\pi^0$ in its decay to photons can be seen in \Fig~\ref{fig:cms:ecal:pizeroLMcorr}.
 
+
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{detectorFigures/EcalLaserCorrections.jpg}
+\includegraphics[width=1.0\textwidth]{detectorFigures/EcalLaserCorrections_2.pdf}
 \caption{The response of the CMS ECAL lead tungstate crystals is shown as a function of time, and for different pseudorapidity ranges. The crystal response decreases as data are collected, due to transparency loss caused by exposure to radiation, and recovers during spontaneous annealing at times when no beams are present\quad\cite{CMSECALPublic}.}
 \label{fig:cms:ecal:lasercorrections}
 \end{figure}
@@ -176,7 +177,7 @@ The first step is to make a time-dependent correction for the transparency in th
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/pi0_EB_plus_1.jpg}
-\caption{The normalised value of the invariant mass of the $\pi^0$ particle in its decay to photons, as measured by the CMS ECAL barrel, with and without the Laser Monitoring (LM) corrections for crystal transparency loss, showing the degradation of the response of the lead tungstate crystals, even over a period of hours\quad\cite{CMSECALPublic}.}
+\caption[The normalised value of the invariant mass of the $\pi^0$ particle in its decay to photons, as measured by the CMS ECAL barrel, with and without the Laser Monitoring (LM) corrections for crystal transparency loss, showing the degradation of the response of the lead tungstate crystals, even over a period of hours. This example is from the afternoon of 28 May 2016\quad\cite{CMSECALPublic}.]{The normalised value of the invariant mass of the $\pi^0$ particle in its decay to photons, as measured by the CMS ECAL barrel, with and without the Laser Monitoring (LM) corrections for crystal transparency loss, showing the degradation of the response of the lead tungstate crystals, even over a period of hours. This example is from the afternoon of 28 May 2016~\cite{CMSECALPublic}.}
 \label{fig:cms:ecal:pizeroLMcorr}
 \end{figure}
 
@@ -195,7 +196,7 @@ The \CMS \HCAL is a sampling calorimeter, consisting of active material between 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/cms_hcal.png}
-\caption{Schematic \crosssection of one quadrant of the HCAL, showing the arrangement of the various components of the \subdetector: The HB and HE surrounding the ECAL, with the HF at high $\eta$ and the HO just outside of the solenoid\quad\cite{CMSatLHC}.}
+\caption[Schematic \crosssection of one quadrant of the HCAL, showing the arrangement of the various components of the \subdetector: The HB and HE surrounding the ECAL, with the HF at high $\eta$ and the HO just outside of the solenoid\quad\cite{CMSatLHC}.]{Schematic \crosssection of one quadrant of the HCAL, showing the arrangement of the various components of the \subdetector: The HB and HE surrounding the ECAL, with the HF at high $\eta$ and the HO just outside of the solenoid~\cite{CMSatLHC}.}
 \label{fig:hcal}
 \end{figure}
 
@@ -213,7 +214,7 @@ The \CMS muon detection system consists of both endcap and barrel sections and i
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{detectorFigures/cmsMuonSystem.png}
-\caption{Schematic \crosssection of one quadrant of the CMS muon detector, showing the arrangement of the various components of the sub-detector: The DTs in the barrel, and CSCs in the endcaps and the RPCs in both\quad\cite{MuonReco}.}
+\caption[Schematic \crosssection of one quadrant of the CMS muon detector, showing the arrangement of the various components of the sub-detector: The DTs in the barrel, and CSCs in the endcaps and the RPCs in both\quad\cite{MuonReco}.]{Schematic \crosssection of one quadrant of the CMS muon detector, showing the arrangement of the various components of the sub-detector: The DTs in the barrel, and CSCs in the endcaps and the RPCs in both~\cite{MuonReco}.}
 \label{fig:muonssystem}
 \end{figure}
 

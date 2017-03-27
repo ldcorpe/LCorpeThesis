@@ -1,6 +1,9 @@
 \chapter{Statistical analysis and results}
 \label{chap:statandresults}
 
+\section{Introduction}
+\label{sec:statandresults:Intro}
+
 \ifNewAnalysis
 The signal and background models described in \Chapter~\ref{chap:model} are used to perform the statistical interpretation of the \thisanalysislumi\ifb of data. The result is an independent observation of the Higgs boson in the diphoton decay channel and measurements of some of its properties. %The objective is to twofold:
 \else
@@ -9,7 +12,7 @@ The signal and background models described in \Chapter~\ref{chap:model} are used
 Due to the scaling of the \SM Higgs boson and background \crosssection\s moving from 7 or 8\TeV to 13\TeV, the dataset used in this thesis has roughly the same statistical sensitivity as the full \RunI dataset, which had an integrated luminosity of $24.8\ifb$. The final analysis of the \RunI dataset~\cite{LegacyHgg} led to an independent observation of the Higgs boson in the diphoton decay channel. The objective of the work presented in this thesis is therefore to make a confirmation of the observation (or ``rediscovery'') of the Higgs boson in the diphoton decay channel, and measurements of some of its properties.
 \fi
 
-The statistical analysis proceeds in several stages. The first step is to determine the best signal-plus-background fit of the models to the data. The floating parameters of the signal and background models are varied simultaneously in each analysis category to obtain the closest overall agreement with the observed invariant mass distributions. This procedure is described in \Sec~\ref{sec:statandresults:bestfit}, and leads to a Higgs boson signal being measured in the data. The next step is to quantify the significance of this signal and formally reject the hypothesis that there is no Higgs boson. The procedure for hypothesis testing and calculation of the significance is detailed in \Sec~\ref{sec:statandresults:significance}. Having established the existence of a \SM-like Higgs boson which decays to photons, the final step is to make measurements of some of its properties, in particular those which relate to the rate at which it is produced or interacts with other \SM particles. These measurements are described in \Sec~\ref{sec:statandresults:sigstrength} and \Sec~\ref{sec:statandresults:kappas}. 
+The statistical analysis proceeds in several stages. The first step is to determine the best signal-plus-background fit of the models to the data. The floating parameters of the signal and background models are varied simultaneously in each analysis category to obtain the closest overall agreement with the observed invariant mass distributions. This procedure is described in \Sec~\ref{sec:statandresults:bestfit}, and leads to a Higgs boson signal being measured in the data. The next step is to quantify the significance of this signal and formally reject the hypothesis that there is no Higgs boson. The procedure for hypothesis testing and calculation of the significance is detailed in \Sec~\ref{sec:statandresults:significance}. Having established the existence of a \SM-like Higgs boson which decays to photons, the final step is to make measurements of some of its properties, in particular those which relate to the rate at which it is produced or to its interactions with other \SM particles. These measurements are described in \Sec~\ref{sec:statandresults:sigstrength} and \Sec~\ref{sec:statandresults:kappas}. 
  
 As with all Higgs boson analyses performed within the \CMS collaboration, the statistical interpretation uses the frequentist approach. The corresponding statistical tools and techniques are briefly explained as they are needed throughout this chapter.
 
@@ -19,22 +22,22 @@ As with all Higgs boson analyses performed within the \CMS collaboration, the st
 The observed \mgg distributions obtained from the data (labelled $ \mgg^{obs}$ hereafter) are parametrised with models consisting of signal and background components. The tool which is used determine the model parameters and to assess the agreement with the data in a category $C$ is called the \emph{likelihood function},
 \begin{equation}
 \label{eq:statandresults:likelihood_function}
-\mathcal{L}_C(\mu, \mH; \mathbf{n} | \mgg^{obs,C} ) = \mu \cdot f^C_S(\mgg^{obs,C} |\mH ; \mathbf{n}_S) + f^C_B(\mgg^{obs,C} | \mathbf{n}_B ). 
+\mathcal{L}_C(\mu, \mH; \mathbf{n} | \mgg^{obs,C} ) = \mu \cdot f^C_S(\mgg^{obs,C} |\mH; \mathbf{n}_S) + f^C_B(\mgg^{obs,C} | \mathbf{n}_B ). 
 \end{equation}
 In the definition above:
 \begin{itemize}
 \item $\mu = \sigma^{H} / \sigma^{H}_{SM}$ is a \POI called the signal strength, where in this context $\sigma^H$ is the observed Higgs boson cross section, and $\sigma^H_{SM}$ is the \SM Higgs boson \crosssection. The mass of the Higgs boson \mH is a second \POI. The likelihood function can in fact be generalised for an arbitrary number of \POI\s (as in \Sec\s~\ref{sec:statandresults:sigstrength} and~\ref{sec:statandresults:kappas}); 
 \item $\mathbf{n}$ is a set of floating nuisance parameters, composed of those which affect the signal model and those which affect the background model, labelled $\mathbf{n}_S$ and $\mathbf{n}_B$ respectively;
 \item $\mgg^{obs,C}$ is the invariant mass distribution for a particular category $C$;
-\item $f^C_S$ and $f^C_B$ represent the probability distribution functions of the signal and background components of the model in category $C$, normalised to the expected number of signal and background events in that category respectively. Some of the nuisances parameters can modify the normalisation of $f^C_S$ and $f^C_B$. 
+\item $f^C_S$ and $f^C_B$ represent the probability distribution functions of the signal and background components of the model in category $C$, normalised to the expected number of signal and background events in that category respectively. Some of the nuisance parameters can modify the normalisation of $f^C_S$ and $f^C_B$. 
 \end{itemize}
 
 The construction of the signal component of the model in each category, $f^C_S$, was described in \Sec~\ref{model:sec:signal_model}, and is comprised of the individual models for each Higgs boson production process, each normalised to their respective expected number of events:
 \begin{equation}
 \label{eq:statandresults:f_s_breakdown}
 \begin{split}
- f^C_S(\mgg^{obs,C} |\mH ; \mathbf{n}_S) ={} & f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)  + f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)\\
-  & + f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)+ f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S).\\
+ f^C_S(\mgg^{obs,C} |\mH; \mathbf{n}_S) ={} & f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)  + f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)\\
+  & + f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)+ f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S).\\
 \end{split}
 \end{equation}
 
@@ -52,14 +55,14 @@ The overall likelihood function $\mathcal{L}$ for the simultaneous fit of all ca
 \mathcal{L}(\mu, \mH; \mathbf{n} | \mgg^{obs} ) = \prod_{C} \mathcal{L}_C(\mu, \mH; \mathbf{n} | \mgg^{obs,C} ).
 \end{equation}
 
-%The fit is obtained by minimising twice the negative log-likelihood ($ -2 \ln \mathcal{L}(\mu, \mH ; \mathbf{n}| \mgg^{obs}$) or \NLL). 
+%The fit is obtained by minimising twice the negative log-likelihood ($ -2 \ln \mathcal{L}(\mu, \mH; \mathbf{n}| \mgg^{obs}$) or \NLL). 
 The fit is obtained by minimising twice the negative log-likelihood (\NLL). 
 The best-fit values of the \POI\s and nuisance parameters are denoted as $\hat{\mu}$, $\hat{\mH}$ and $\hat{\mathbf{n}}$, such that:
 \begin{equation}
 %(\hat{\mu}, \hat{\mH} , \hat{\mathbf{n}}) = 
-\{ (\mu, \mH, \mathbf{n}) : -2 \ln \mathcal{L}(\hat{\mu}, \hat{\mH} ;\hat{\mathbf{n}}| \mgg^{obs}) = \min _{\mu,\mH , \mathbf{n}}(-2 \ln \mathcal{L}(\mu, \mH; \mathbf{n}| \mgg^{obs})) \},
+\{ (\mu, \mH, \mathbf{n}) : -2 \ln \mathcal{L}(\hat{\mu}, \hat{\mH};\hat{\mathbf{n}}| \mgg^{obs}) = \min _{\mu,\mH , \mathbf{n}}(-2 \ln \mathcal{L}(\mu, \mH; \mathbf{n}| \mgg^{obs})) \},
 \end{equation}
-where $\displaystyle\min_{ \mu, \mH ,\mathbf{n}}$ represents the global minimum evaluated over all allowed values of $\mu$, \mH and $\mathbf{n}$, taking into account their constraints. The parameters in this analysis are constrainted in one of three possible ways: for the systematic uncertainties described by shape nuisances, a Gaussian constraint is applied ; for the systematic uncertainties described by yield or migration nuisances, a log-normal constrain is applied ; for all other nuisances, the constraint is flat. 
+where $\displaystyle\min_{ \mu, \mH ,\mathbf{n}}$ represents the global minimum evaluated over all allowed values of $\mu$, \mH and $\mathbf{n}$, taking into account their constraints. The parameters in this analysis are constrained in one of three possible ways: for the systematic uncertainties described by shape nuisances, a Gaussian constraint is applied; for the systematic uncertainties described by yield or migration nuisances, a log-normal constraint is applied; for all other nuisances, the constraint is flat. 
 
  In general, the \NLL cannot be minimized analytically. Instead, this task is handled numerically with the \Minuit minimizer~\cite{minuit}, as part of the \RooFit software package~\cite{RooFit}. 
 The resulting parametrisations of the observed data are shown for each analysis category separately in \Fig\s~\ref{fig:statandresults:s_b_fits} and~\ref{fig:statandresults:s_b_fits_bis}. The combined parametrisation and data resulting from a direct sum of each category is shown in \Fig~\ref{fig:statandresults:s_b_fits_direct_sum}, while the sum weighted by the $S/(S+B)$ in $\pm \effSigma$ around the best-fit $\mH$ in each category is shown in \Fig~\ref{fig:statandresults:s_b_fits_s_sb_sum}. 
@@ -129,7 +132,7 @@ A common choice, which is found to maximise $\beta$~\cite{Cowan}, is to define t
 \begin{equation}
 \label{eq:statandresults:test_statistic}
 q_{\mu} = \begin{cases} 
-% -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu} ; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH} ;\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
+% -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH};\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
  -2 \ln \mathcal{L}(\mu,\mH; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\mH;\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
  0 & \text{when } \hat{\mu} < 0, 
  \end{cases}
@@ -175,7 +178,7 @@ This fact is used to produce a measurement of the global signal strength $\mu$.
 Two modifications are made to the definition of the test statistic in \Eq~\ref{eq:statandresults:test_statistic}. First, the \mH parameter is profiled in the minimisation at each step, which means that it is allowed to float with a flat constraint. Second, the requirement that the test-statistic is nonzero only for positive values of $\hat{\mu}$ is relaxed, since this was a enforced to simplify the calculation of \pvalue\s. The new definition of the test statistic is therefore given by: 
 \begin{equation}
 \label{eq:statandresults:test_statistic_profMH}
-q_{\mu} = -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu} ; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH} ;\hat{\mathbf{n}}| \mgg^{obs} ), 
+q_{\mu} = -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH};\hat{\mathbf{n}}| \mgg^{obs} ), 
 \end{equation}
 where $\hat{\mathbf{\mH}}^{\mu}$ denotes the best-fit \mH for a fixed value of $\mu$. %Other treatements of the \mH paramater are possible (for instance, fixing it to the central value from the current best measurement, or Gaussian-constraining it within the uncertainties of the best measurement), but these do not signifiancelty change the final measurement of the signal strength.
 
@@ -214,15 +217,15 @@ The result is shown in \Fig~\ref{fig:statandresults:mu_vs_mh}, where the best-fi
 \label{sec:statandresults:rvrf}
 
 When making the measurement of the global signal strength as in \Sec~\ref{sec:statandresults:sigstrength_global}, a single \POI which uniformly scales all production processes in all categories is defined. However, this measurement makes the assumption that the contribution of each production process to the total Higgs boson \crosssection is in proportion to the \SM prediction. 
-In order to test this assumption, the single \POI representing to global signal strength can be split up into components. For example, the contributions from the production modes where the Higgs boson is produced from fermions (\ggH and \ttH) and vector bosons (\VBF and \VH) are separated, to test if they individually agree with the \SM expectation. 
+In order to test this assumption, the single \POI representing to global signal strength can be split up into components. In this section, the contributions from the production modes where the Higgs boson is produced from fermions (\ggH and \ttH) and vector bosons (\VBF and \VH) are separated, to test if they individually agree with the \SM expectation. 
 
 A modified likelihood function is required, which is amended from \Eq~\ref{eq:statandresults:likelihood_function} to include two \POI\s, \muF and \muV in the place of $\mu$:
 \begin{equation}
 \label{eq:statandresults:likelihood_function_muVmuF}
 \begin{split} 
 \mathcal{L}(\muF, \muV,{}& \mH; \mathbf{n} | \mgg^{obs} ) = \prod_{C} \big[ f^C_B(\mgg^{obs,C} | \mathbf{n}_B )   \\
-& +\muF \cdot ( f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) + f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) ) \\ 
-& +\muV \cdot ( f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) + f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) )\big].
+& +\muF \cdot ( f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) + f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) ) \\ 
+& +\muV \cdot ( f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) + f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) )\big].
  \end{split} 
 \end{equation}
 %In the definition above, $f^C_{S,{\text{ggH}}}$, $f^C_{S,{\text{ttH}}}$, $f^C_{S,{\text{VBF}}}$ and $f^C_{S,{\text{VH}}}$ represent the probability distribution functions of the signal models resulting from each production process, as defined in \Eq~\ref{eq:statandresults:f_s_breakdown}.
@@ -234,7 +237,7 @@ The result of the two-dimensional scan can be seen in \Fig~\ref{fig:statandresul
 %The $z$-axis, representing the value of \DNLL, has been omitted for clarity. 
 The black cross shows the location of the best-fit point, with the red diamond indicating the \SM expectation. In two-dimensional \DNLL scans, the $1\sigma$ and $2\sigma$ contours are the intersections with $\DNLL=2.30$ and $\DNLL=6.18$ respectively~\cite{Cowan}, and these are shown as solid and dashed lines in the figure. 
 
-The plot shows that the observed best-fit point is consistent with the \SM within $1\sigma$. The elliptical shape of the contours reflects the fact that the \Untagged categories, which are by far the most sensitive due to their high event content and $S/(S+B)$, are populated chiefly by \ggH events. This results in a strong constraint on the \muF parameter, and a somewhat looser one on the \muV parameter. The uncertainty ellipses are also slightly inclined, which can be understood by the fact that the \VBF-targeting categories contain a non-negligible amount of \ggH events, and vice-versa. This leads to slight correlation: an increase in \muF typically must come at the expense of a decrease in \muV to ensure a good fit in all analysis categories.
+The plot shows that the observed best-fit point is consistent with the \SM within $1\sigma$. The asymmetric shape of the contours reflects the fact that the \Untagged categories, which are by far the most sensitive due to their high event content and $S/(S+B)$, are populated chiefly by \ggH events. This results in a strong constraint on the \muF parameter, and a somewhat looser one on the \muV parameter. The uncertainty ellipses are also slightly inclined, which can be understood by the fact that the \VBF-targeting categories contain a non-negligible amount of \ggH events, and vice-versa. This leads to slight anti-correlation: an increase in \muF typically must come at the expense of a decrease in \muV and vice-versa, to ensure a good fit in all analysis categories.
 
 
 \begin{figure}[ht!]
@@ -247,7 +250,7 @@ The plot shows that the observed best-fit point is consistent with the \SM withi
 
 To correctly extract the uncertainties on  the \muF and \muV parameters individually, a \DNLL scan of each is performed while profiling the other. This is achieved by modifying the test statistic to treat the profiled \POI analogously to \mH in \Eq~\ref{eq:statandresults:test_statistic_profMH}. 
 
-The resulting scans are available in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandresults:mu_per_rv_and_rf}, which give rise to the following measurements:
+The resulting scans are available in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandresults:mu_per_rv_and_rf}, which give rise to the following measurements, which take the statistical and systematic uncertainties into account:
 \begin{equation*}
 %\muFhat=0.82^{+0.27}_{-0.24} \text{ and } \muVhat=1.60^{+0.90}_{-0.76}.
 \begin{split}
@@ -268,17 +271,17 @@ Using a similar procedure to that described in \Sec~\ref{sec:statandresults:rvrf
 \label{eq:statandresults:likelihood_function_muProc}
 \begin{split}
 \mathcal{L}(\muggH, \muttH,\muVBF,\muVH, \mH; \mathbf{n} | \mgg^{obs} ) = \prod_C \big[{} &f^C_B(\mgg^{obs,C} | \mathbf{n}_B ) \\ 
-&+\muggH\cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\ 
-&+\muttH\cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\ 
-&+\muVBF\cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\
-&+\muVH \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S){}\big], \\ 
+&+\muggH\cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
+&+\muttH\cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
+&+\muVBF\cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\
+&+\muVH \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S){}\big], \\ 
 \end{split}
 \end{equation}
 The technique described above exploits the categorisation scheme described in \Chapter~\ref{chap:categorisation}: in particular, the fact that the relative contribution from each process to the overall signal model differs from category to category. This means that varying each per-process signal strength has a different effect on the overall likelihood function. However, since no \VHTag categories are included in this analysis, it is not possible to resolve the effect of varying \muVH from other \POI\s, in particular \muggH, since most \VH events are included in the \Untagged categories along with the \ggH events. To break the degeneracy, when making the measurements of the other \POI\s, the parameter \muVH is fixed to a value of 1. 
 
-The measurements of the \muggH, \muVBF, and \muttH are performed by producing a \DNLL scan of each parameter, while profiling the others, where the \DNLL definition has been suitably modified to accommodate the new likelihood function defined in \Eq~\ref{eq:statandresults:likelihood_function_muProc}. The \mH parameter is also profiled. The best-fit values and their uncertainties are shown on \Fig~\ref{fig:statandresults:mu_per_proc}. The measurement of the global signal strength obtained in \Sec~\ref{fig:statandresults:global_mu} is shown as the vertical black line with green bands showing the $1\sigma$ uncertainties. The \SM expectation is shown as the vertical dashed red line. The per-process signal strength measurements are all compatible with the \SM expectation within $1\sigma$. The measurements also agree with those presented in~\cite{CMS-PAS-HIG-16-020} within one unit of the smallest significant figure for \muggH, and within $5\%$ for \muVBF and \muttH, which is small compared to the $1\sigma$ uncertainties. 
+The measurements of the \muggH, \muVBF, and \muttH are performed by producing a \DNLL scan of each parameter, while profiling the others, where the \DNLL definition has been suitably modified to accommodate the new likelihood function defined in \Eq~\ref{eq:statandresults:likelihood_function_muProc}. The \mH parameter is also profiled. The best-fit values and their uncertainties are shown in \Fig~\ref{fig:statandresults:mu_per_proc}. The measurement of the global signal strength obtained in \Sec~\ref{fig:statandresults:global_mu} is shown as the vertical black line with green bands showing the $1\sigma$ uncertainties. The \SM expectation is shown as the vertical dashed red line. The per-process signal strength measurements are all compatible with the \SM expectation within $1\sigma$. The measurements also agree with those presented in~\cite{CMS-PAS-HIG-16-020} within one unit of the smallest significant figure for \muggH, and within $5\%$ for \muVBF and \muttH. This difference is small compared to the $1\sigma$ uncertainties. 
 
-This result is of particular interest because certain extension to the \SM predict modified values of the per-process signal strengths. In particular, if a heavy top-like particle exists (as predicted by many theories to resolve the hierarchy problem), then an anomalous value of $\muttH$ could be observed. However, the variations in the value of \muttH predicted by such models are typically smaller than 10\%. There is evidently plenty of room to accommodate such variations in the current measurement. As more data are collected over the course of the \LHC programme, this type of measurement will become increasingly important since it could reveal clues to the nature of physics beyond the \SM, or put strong constraints on proposed extensions. This result also shows that the bulk of the sensitivity of the analysis resides in the \Untagged categories, which are largely composed of \ggH events.
+This result is of particular interest because certain extensions to the \SM predict modified values of the per-process signal strengths. In particular, if a heavy top-like particle exists (as predicted by many theories to resolve the hierarchy problem), then an anomalous value of $\muttH$ could be observed. However, the variations in the value of \muttH predicted by such models are typically smaller than 10\%. There is evidently plenty of room to accommodate such variations in the current measurement. As more data are collected over the course of the \LHC programme, this type of measurement will become increasingly important since it could reveal clues to the nature of physics beyond the \SM, or put strong constraints on proposed extensions. This result also shows that the bulk of the sensitivity of the analysis resides in the \Untagged categories, which are largely composed of \ggH events.
 
 \begin{figure}[h!]
 \centering
@@ -295,13 +298,13 @@ This result is of particular interest because certain extension to the \SM predi
 Using an analogous method to the one described in \Sec~\ref{sec:statandresults:mu_per_proc}, it is possible to make a measurement of the signal strength for each category separately. In this case, one \POI per analysis category is defined, which scales the yield of the signal models of all processes uniformly, but independently within each category. The full likelihood function is therefore expressed as:
 \begin{equation}
 \label{eq:statandresults:likelihood_function}
-\mathcal{L}(\{\mu_C\}, \mH; \mathbf{n} | \mgg^{obs} ) = \prod_C \big[\mu_C \cdot f^C_S(\mgg^{obs,C} |\mH ; \mathbf{n}_S) + f^C_B(\mgg^{obs,C} | \mathbf{n}_B )\big], 
+\mathcal{L}(\{\mu_C\}, \mH; \mathbf{n} | \mgg^{obs} ) = \prod_C \big[\mu_C \cdot f^C_S(\mgg^{obs,C} |\mH; \mathbf{n}_S) + f^C_B(\mgg^{obs,C} | \mathbf{n}_B )\big], 
 \end{equation}
 where $\{\mu_C\}$ represents the set of signal strengths for each category.
 
-Although the signal strengths $\{\mu_C\}$ do not have any direct physical meaning, they can be used to check that each category gives a result consistent with the overall measurement, and that no bias is introduced by any particular category. The result of the check is shown in \Fig~\ref{fig:statandresults:mu_per_tag}, which determines that all the per-category signal strengths are compatible with the \SM expectation and the overall result. The results for each per-category signal strength match those from~\cite{CMS-PAS-HIG-16-020} within a few a percent, as for previously quoted results. 
+Although the signal strengths $\{\mu_C\}$ do not have any direct physical meaning, they can be used to check that each category gives a result consistent with the overall measurement, and that no bias is introduced by any particular category. The result of the check is shown in \Fig~\ref{fig:statandresults:mu_per_tag}, which determines that all the per-category signal strengths are compatible with the \SM expectation and the overall result. The results for each per-category signal strength match those from~\cite{CMS-PAS-HIG-16-020} within a few percent, as for previously quoted results. 
 
-Of the eight categories which are included in this analysis, all but two of them (the \Untagged 2 and \VBFTag 0 categories ) fall within $1\sigma$ of the overall best-fit global signal strength, which roughly matches the expectation that a randomly distributed Gaussian variable falls within 1\sigma of the mean approximately 32\% of the time.
+Of the eight categories which are included in this analysis, all but two of them (the \Untagged 2 and \VBFTag 0 categories ) fall within $1\sigma$ of the overall best-fit global signal strength, which roughly matches the expectation that a randomly-distributed Gaussian variable falls within 1\sigma of the mean approximately 68\% of the time.
 
 \begin{figure}[ht!]
 \centering
@@ -312,7 +315,7 @@ Of the eight categories which are included in this analysis, all but two of them
 
 \end{figure}
 
-This result shows once again that the \Untagged categories are the ones which provide bulk of the sensitivity of the overall result. Another point of interest is that the $S/(S+B)$ of a given category does not necessarily correlate with the size of the uncertainty for that category. In particular, the category whose signal strength has the lowest uncertainty is the \Untagged 2 category, while \Fig~\ref{fig:model:sig_table_visualisation} shows that the \Untagged 0 category has the best $S/(S+B)$. This can be explained by the fact that the statistical component is still the dominating uncertainty in each measurement, and the lower $S/(S+B)$ of the \Untagged 2 category is compensated by the larger number of events which enter it. 
+This result shows once again that the \Untagged categories are the ones which provide the bulk of the sensitivity of the overall result. Another point of interest is that the $S/(S+B)$ of a given category does not necessarily correlate with the size of the uncertainty for that category. In particular, the category whose signal strength has the lowest uncertainty is the \Untagged 2 category, while \Fig~\ref{fig:model:sig_table_visualisation} shows that the \Untagged 0 category has the best $S/(S+B)$. This can be explained by the fact that the statistical component is still the dominating uncertainty in each measurement, and the lower $S/(S+B)$ of the \Untagged 2 category is compensated by the larger number of events which enter it. 
 
 \section{Measurements of Higgs boson coupling modifiers}
 \label{sec:statandresults:kappas}
@@ -320,21 +323,21 @@ This result shows once again that the \Untagged categories are the ones which pr
 
 The measurements presented so far have all dealt with Higgs boson signal strengths. Such observables are sensitive to variations in the rate at which the Higgs boson is produced, but do not take into account the possible variations in the partial width of the subsequent decay. An alternative set of measurements addresses this shortcoming by being sensitive to variations in the coupling strength of the Higgs boson with individual particles, relative to the \SM expectation. 
 
-The so-called \emph{kappa} framework assigns a modifier to the coupling strength of the Higgs boson to a particle or group of particles $X$ directly in the amplitude of the process. The corresponding modifier is labelled as $\kappa_{X}$. A detailed description of the scheme is available in~\cite{Khachatryan:2016vau}. 
+The so-called \emph{kappa} framework assigns a modifying factor $\kappa_{X}$ to the coupling strength of the Higgs boson to a particle or group of particles $X$ directly in the amplitude of the process. A detailed description of the scheme is available in~\cite{Khachatryan:2016vau}. 
 The assumptions which underly this framework are as follows: 
 \begin{itemize}
 \item any calculated deviations from the \SM prediction are due to only one Higgs-boson-like state with mass around 125\GeV;
 \item the natural width of this state is sufficiently small that it can be neglected, allowing the \crosssection and branching fraction for a process $ii\rightarrow H \rightarrow ff$ to be decomposed as $(\sigma_{ii}^{H} \cdot \Gamma_{ff}^{H}) / (\Gamma_H)$, where $\sigma_{ii}^{H}$ is the \crosssection for a Higgs boson to be produced from the initial state $ii$, $\Gamma^{H}_{ff}$ is the partial decay width of the Higgs boson into the state $ff$ and $\Gamma_{H}$ is the total width of the Higgs boson.
 \end{itemize}
 
-The \emph{coupling modifier} $\kappa_{X}$ for a particle $X$ interacting with the Higgs boson is applied directly as a factor to the corresponding \crosssection $\sigma_{XX}^{H}$ or partial decay width $\Gamma^{H}_{XX}$. For processes which only occur via loops of particles, an \emph{effective coupling modifier} is defined as a function of the coupling modifiers for particles in which play a large role in the loop, e.g.~$\kappa_{\gamma} = \kappa_{\gamma}(\kappa_b, \kappa_t) $ (for the decay \Hgg) and $\kappa_{g} = \kappa_{g}(\kappa_b, \kappa_t) $ (for \ggH production).
+The \emph{coupling modifier} $\kappa_{X}$ for a particle $X$ interacting with the Higgs boson is applied directly as a factor to the corresponding \crosssection $\sigma_{XX}^{H}$ or partial decay width $\Gamma^{H}_{XX}$. For processes which only occur via loops of particles, an \emph{effective coupling modifier} is defined as a function of the coupling modifiers for particles which play a large role in the loop, e.g.~$\kappa_{\gamma} = \kappa_{\gamma}(\kappa_W, \kappa_t) $ (for the decay \Hgg) and $\kappa_{g} = \kappa_{g}(\kappa_b, \kappa_t) $ (for \ggH production).
 Bosonic and fermionic coupling modifiers $\kf$ and $\kV$ are defined which uniformly scale the Higgs boson's interactions with all fermions and vector bosons respectively. The coupling modifiers applied to each of the main Higgs boson production processes and the \Hgg decay are shown in \Table~\ref{tab:statandresults:kappas}, adapted from~\cite{Khachatryan:2016vau}.
 
  \begin{table}[h]
  \resizebox{\textwidth}{!}{
 \input{statandresultsFigures/kappaDefinitions.tex}
 }
- \caption{Coupling strength modifiers attributed to each of the main Higgs boson production mechanism \crosssection\s and the partial width of the \Hgg decay, including QCD and EW corrections\quad\cite{Khachatryan:2016vau}.}
+ \caption[Coupling strength modifiers attributed to each of the main Higgs boson production mechanism \crosssection\s and the partial width of the \Hgg decay, including QCD and EW corrections\quad\cite{Khachatryan:2016vau}.]{Coupling strength modifiers attributed to each of the main Higgs boson production mechanism \crosssection\s and the partial width of the \Hgg decay, including QCD and EW corrections~\cite{Khachatryan:2016vau}.}
  \label{tab:statandresults:kappas}
 \end{table}
 
@@ -344,10 +347,10 @@ To make a measurement of fermionic and bosonic Higgs boson coupling modifiers, t
 \label{eq:statandresults:likelihood_function_kvkf}
 \begin{split}
 \mathcal{L}(\kf,\kV, \mH; \mathbf{n} | \mgg^{obs} ) ={}&\prod_C \big[  f^C_B(\mgg^{obs,C} | \mathbf{n}_B )  \\ 
-& + \kf^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\ 
-& + \kf^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)  \\ 
-& + \kV^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)  \\
-& + \kV^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)   \big]. 
+& + \kf^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
+& + \kf^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)  \\ 
+& + \kV^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)  \\
+& + \kV^2\cdot(1.59\cdot\kV^2 + 0.07\kf^2 - 0.66\kV\kf) \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)   \big]. 
 \end{split}
 \end{equation}
 The definition of the test statistic is also modified to take the new \POI\s into account:
@@ -357,15 +360,15 @@ The definition of the test statistic is also modified to take the new \POI\s int
 \end{equation}
 %where unlike \Eq~\ref{eq:statandresults:test_statistic_kvkf} there is no need to specify that the test statistic be null when the \POI\s are negative. The \mH parameter is profiled in this treatment.
 
-The result of a two-dimensional \DNLL scan of \kf and \kV is shown in \Fig~\ref{fig:statandresults:kappa_plots_kvkf}. The black cross indicates the best-fit while the red diamond indicates the \SM expectation. The $1\sigma$ and $2\sigma$ contours are indicated by solid and dashed lines. The best-fit indicates compatibility with the \SM.The location of the best-fit point agrees within a few percent with the equivalent result in the \App of~\cite{CMS-PAS-HIG-16-020}. Measurements of \kf and \kV can be made individually following the same method as described in~\Sec{sec:statandresults:rvrf}. The \DNLL of each \POI while profiling the others can be found in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandresults:kappa_per_v_and_f}, which yield the measurements:
+The result of a two-dimensional \DNLL scan of \kf and \kV is shown in \Fig~\ref{fig:statandresults:kappa_plots_kvkf}. The black cross indicates the best-fit while the red diamond indicates the \SM expectation. The $1\sigma$ and $2\sigma$ contours are indicated by solid and dashed lines. The best-fit indicates compatibility with the \SM. The location of the best-fit point agrees within a few percent with the equivalent result in the \App of \cite{CMS-PAS-HIG-16-020}. Measurements of \kf and \kV can be made individually following the same method as described in \Sec~\ref{sec:statandresults:rvrf}. The \DNLL of each \POI while profiling the others can be found in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandresults:kappa_per_v_and_f}, which yield the measurements:
 \begin{equation*}
 %\muFhat=0.82^{+0.27}_{-0.24} \text{ and } \muVhat=1.60^{+0.90}_{-0.76}.
 \begin{split}
 \obskV, \\
-\obskF.
+\obskF,
 \end{split}
 \end{equation*}
-
+where the uncertainties include both the statistical and systematic components.
 \begin{figure}[ht!]
 \centering
 \subfloat[\DNLL scan of \kf versus \kV]{
@@ -379,7 +382,7 @@ The result of a two-dimensional \DNLL scan of \kf and \kV is shown in \Fig~\ref{
 \label{fig:statandresults:kappa_plots_kvkf}
 \end{figure}
 
-An interesting feature of \Fig~\ref{fig:statandresults:kappa_plots_kvkf} is that a second local minimum exists where \kf takes negative values. In general, the coupling strength modifiers always occur squared in the amplitude. However, as noted in \Table~\ref{tab:statandresults:kappas}, the \Hgg amplitude contains destructive interference between the contributions of the $\Ptop$ and $\PW$ result in a term proportional to $(\kV\cdot\kf)$. This means that the measurement has a small amount of sensitivity to the sign of the coupling strength modifier $\kf$. In this measurement, the positive value is preferred, as expected by the \SM.
+An interesting feature of \Fig~\ref{fig:statandresults:kappa_plots_kvkf} is that a second local minimum exists where \kf takes negative values. In general, the coupling strength modifiers always occur squared in the amplitude. However, as noted in \Table~\ref{tab:statandresults:kappas}, the \Hgg amplitude contains destructive interference between the contributions of the $\Ptop$ and $\PW$ result in a term proportional to $(\kV\cdot\kf)$. This means that the measurement has a small amount of sensitivity to the relative sign of the coupling strength modifiers $\kf$ and $\kV$. By convention, $\kV$ is assumed to be positive, and $\kf$ is allowed to be positive or negative. In this measurement, the positive value of $\kf$ is preferred, as expected by the \SM.
 
 
 %\begin{figure}[ht!]
@@ -396,10 +399,10 @@ Alternatively, the measurement can be made in terms of the Higgs boson's effecti
 \label{eq:statandresults:likelihood_function_kgkg}
 \begin{split}
  \mathcal{L}(\kf,\kV, \mH; \mathbf{n} | \mgg^{obs} ) = \prod_C \big[{}&f^C_B(\mgg^{obs,C} | \mathbf{n}_B ) \\ 
-&+ \kGlu^2\cdot \kPho^2 \cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\ 
-&+ \kPho^2\cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\ 
-&+ \kPho^2\cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S) \\
-&+ \kPho^2\cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH ; \mathbf{n}_S)\quad\big].
+&+ \kGlu^2\cdot \kPho^2 \cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
+&+ \kPho^2\cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
+&+ \kPho^2\cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\
+&+ \kPho^2\cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S)\quad\big].
 \end{split}
 \end{equation}
 The test statistic $q(\kPho,\kGlu)$ is then defined analogously to \Eq~\ref{eq:statandresults:test_statistic_kvkf}.
@@ -422,9 +425,10 @@ The scans are available in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandres
 %\muFhat=0.82^{+0.27}_{-0.24} \text{ and } \muVhat=1.60^{+0.90}_{-0.76}.
 \begin{split}
 \obskGlu, \\
-\obskPho.
+\obskPho,
 \end{split}
 \end{equation*}
+where the uncertainties include both the statistical and systematic components.
 
 The best-fit point agrees with the \SM within the uncertainties. In this case, there is no sensitivity to negative values of the modifiers, since the \Hgg loop which contains a term proportional to $(\kV\cdot\kf)$ is contained in the effective coupling \kPho. 
 
