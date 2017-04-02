@@ -52,15 +52,15 @@ The background for the training is composed of simulated diphotons originating f
 \begin{figure}[hpt]
 \centering
  \subfloat[]{
-\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/BDTgg.pdf}
+\hspace{5mm}\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/BDTgg.pdf}
 \label{fig:cat:diphobdt_a}
 }
 \\
  \subfloat[]{
-\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/BDTgg_Zee.pdf}
+\includegraphics[width=0.54\textwidth]{catFigures/\whichFig/BDTgg_Zee.pdf}
 \label{fig:cat:diphobdt_b}
 }
-\caption{ (a) The transformed \DiPhoBdt score for simulated signal and background events in the range $100 < \mgg < 180\GeV$. The transformation flattens the signal distribution. (b) The transformed \DiPhoBdt score for \Zee events in data and simulation, where the electrons are reconstructed as photons. The pink shading represents the systematic uncertainty associated with the \PhoIdBdt and the \PhoEnergyBdt. For both (a) and (b), the vertical dashed lines represent the boundaries of the Untagged categories described in \Sec~\ref{cat:sec:untagged}, while the grey shading represents the area for which diphotons are rejected.}
+\caption[(a) The transformed \DiPhoBdt score for simulated signal and background events in the range $100 < \mgg < 180\GeV$. The transformation flattens the signal distribution. (b) The transformed \DiPhoBdt score for \Zee events in data and simulation, where the electrons are reconstructed as photons. The pink shading represents the systematic uncertainty associated with the \PhoIdBdt and the \PhoEnergyBdt. For both (a) and (b), the vertical dashed lines represent the boundaries of the Untagged categories described in \Sec~\ref{cat:sec:untagged}, while the grey shading represents the area for which diphotons are rejected\quad\cite{CMS-PAS-HIG-16-020}.]{(a) The transformed \DiPhoBdt score for simulated signal and background events in the range $100 < \mgg < 180\GeV$. The transformation flattens the signal distribution. (b) The transformed \DiPhoBdt score for \Zee events in data and simulation, where the electrons are reconstructed as photons. The pink shading represents the systematic uncertainty associated with the \PhoIdBdt and the \PhoEnergyBdt. For both (a) and (b), the vertical dashed lines represent the boundaries of the Untagged categories described in \Sec~\ref{cat:sec:untagged}, while the grey shading represents the area for which diphotons are rejected~\cite{CMS-PAS-HIG-16-020}.} 
 \label{fig:cat:diphobdt}
 \end{figure}
 
@@ -90,7 +90,7 @@ The \DiJetBdt is trained on simulated samples of diphoton events where the signa
 \item $|\phi_{\gamma\gamma} - \phi_\text{jj}|$, the separation of the dijet and the diphoton in the $\phi$-direction.
 \end{itemize}
 %The \DiJetBdt output scores for each simulated signal sample are shown in \Fig~\ref{fig:cat:dijetbdt_sig}. 
-The distributions of the \DiJetBdt output scores for data and simulated background samples (and some simulated signal samples) are shown in \Fig~\ref{fig:cat:dijetbdt_all}. 
+%The distributions of the \DiJetBdt output scores for data and simulated background samples (and some simulated signal samples) are shown in \Fig~\ref{fig:cat:dijetbdt_all}. 
 
 
 The \DiPhoDiJetBdt is trained on simulated events where the signal is a sample of \VBF \Hgg events, while the background is composed of the \SM diphoton background samples, as for the \DiJetBdt training. In this case, the \ggH events are used neither as signal nor as background. The inputs to the \BDT are the following:
@@ -100,7 +100,7 @@ The \DiPhoDiJetBdt is trained on simulated events where the signal is a sample o
 \item $\pT^{\gamma\gamma}/\mgg$, the invariant-mass-scaled momentum of the diphoton system, which is included since it has a significant correlation to both the other inputs.
 \end{itemize}
 %The distributions of the \DiPhoDiJetBdt output scores for each simulated signal sample are shown in \Fig~\ref{fig:cat:diphodijetbdt_sig}. 
-The distributions of the \DiJetBdt output scores for data and simulated background samples are shown in \Fig~\ref{fig:cat:diphodijetbdt_all}. 
+%The distributions of the \DiJetBdt output scores for data and simulated background samples are shown in \Fig~\ref{fig:cat:diphodijetbdt_all}. 
 
 %\begin{figure}[h]
 %\centering
@@ -112,21 +112,21 @@ The distributions of the \DiJetBdt output scores for data and simulated backgrou
 %\label{fig:cat:vbf_bdts}
 %\end{figure}
 
-\begin{figure}[tph]
-\centering
-% \subfloat[\DiJetBdt output by production mode.]{
-%\includegraphics[width=0.45\textwidth]{catFigures/\whichFig/stack_histogram_dijet_mva_signal_14-07-2016_.pdf}
-%\label{fig:cat:dijetbdt_sig}
-%}
- \subfloat[\DiJetBdt output comparing data and simulated signal and background.]{
-\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/stack_histogram_dijet_mva.pdf}
-\label{fig:cat:dijetbdt_all}} \\
- \subfloat[\DiPhoDiJetBdt output comparing data and simulated signal and background.]{
-\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/stack_histogram_dipho_dijet_mva.pdf}
-\label{fig:cat:diphodijetbdt_all}}
-\caption{The output scores of the \DiJetBdt (a) and \DiPhoDiJetBdt (b) split by simulated production mode and comparing data and simulation. The dijet preselection has been applied in both cases. }
-\label{fig:cat:dijet_bdt}
-\end{figure}
+%\begin{figure}[tph]
+%\centering
+%% \subfloat[\DiJetBdt output by production mode.]{
+%%\includegraphics[width=0.45\textwidth]{catFigures/\whichFig/stack_histogram_dijet_mva_signal_14-07-2016_.pdf}
+%%\label{fig:cat:dijetbdt_sig}
+%%}
+% \subfloat[\DiJetBdt output comparing data and simulated signal and background.]{
+%\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/stack_histogram_dijet_mva.pdf}
+%\label{fig:cat:dijetbdt_all}} \\
+% \subfloat[\DiPhoDiJetBdt output comparing data and simulated signal and background.]{
+%\includegraphics[width=0.5\textwidth]{catFigures/\whichFig/stack_histogram_dipho_dijet_mva.pdf}
+%\label{fig:cat:diphodijetbdt_all}}
+%\caption{The output scores of the \DiJetBdt (a) and \DiPhoDiJetBdt (b) split by simulated production mode and comparing data and simulation. The dijet preselection has been applied in both cases. }
+%\label{fig:cat:dijet_bdt}
+%\end{figure}
 
 \ifNewAnalysis
 Four \VBFTag categories (labelled 0, 1, 2, 3 from tightest to loosest) are defined by selections on the \DiPhoDiJetBdt output score. 
@@ -187,7 +187,8 @@ Events where a Higgs boson is produced in association with a pair of top quarks 
 
 Two exclusive \TTHTag categories are defined in this analysis. On the one hand, the \TTHLeptonicTag category aims to select \ttH events where at least one of the $\PW$ bosons decayed leptonically. On the other hand, the \TTHHadronicTag category targets events where both $\PW$ bosons decayed to quarks. In addition to the usual preselection applied to candidate events, the requirement on the leading photon \pT is increased to $\pT>\mgg/2$, because the \pT spectrum of Higgs decay particles is shifted towards higher values due to recoil against the $\Ptop \Ptop$ system. %for the same reason as described in \Sec~\ref{cat:sec:vhtag}. %The selections for each of these categories are defined separately and are described below.
 
-The leptons which are used in the selection must pass the same identification requirements as those used for the \VHLeptonicTag categories. In order to be included in the \TTHLeptonicTag category, events must satisfy the following conditions:
+%The leptons which are used in the selection must pass the same identification requirements as those used for the \VHLeptonicTag categories. 
+In order to be included in the \TTHLeptonicTag category, events must satisfy the following conditions:
 \begin{itemize}
 \item the diphoton must satisfy a loose selection on the \DiPhoBdt output which has approximately 70\% signal selection efficiency and 15\% background selection efficiency; 
 \item the event must contain at least one selected lepton with $\pT>20\GeV$; %If the lepton is an electron,n;%$Muons are required to be within $|\eta|<2.4$, pass a selection based on the properties of the tracks it leaves in the tracker and muon chambers and satisfy a requirement on its \PU-corrected charged hadron, neutral hadron and photon isolations (with cone size $R=0.4$). Electrons are required to be within the \ECAL
@@ -221,5 +222,5 @@ Each event is tested to see if it can be included in the categories described pr
 \ifNewAnalysis
 \TTHLeptonicTag, \WHLeptonicTag, \ZHLeptonicTag, \VHLeptonicLooseTag, \VHMetTag, \TTHHadronicTag, \VHHadronicTag, \VBFTag 0, \VBFTag 1, \VBFTag 2, \VBFTag 3, \Untagged 0, \Untagged 1, \Untagged 2, \Untagged 3.
 \else
-\TTHLeptonicTag, \TTHHadronicTag, \VHHadronicTag, \VBFTag 0, \VBFTag 1, \Untagged 0, \Untagged 1, \Untagged 2, \Untagged 3.
+\TTHLeptonicTag, \TTHHadronicTag, \VBFTag 0, \VBFTag 1, \Untagged 0, \Untagged 1, \Untagged 2, \Untagged 3.
 \fi

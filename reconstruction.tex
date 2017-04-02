@@ -8,22 +8,21 @@
 This chapter deals with the way in which the simulation and the data collected at the \CMS experiment are reconstructed for use in the \Hgg analysis. 
 %This procedure, known as \emph{reconstruction}, is performed on an event-by-event level using custom-built software. 
 The processing is performed for each event using the \CMSSW package; the final selection of events specific to the \Hgg analysis is performed using a flexible software framework called \FLASHgg. %The \CMSSW software uses the \PF algorithm, in which energy deposits from the various sub-detectors are combined to reconstruct individual particles. This algorithm is described in \Sec~\ref{reco:sec:pf}. The reconstruction and identification of particles often uses \MVA techniques, known as \BDT\s, which are described in \Sec~\ref{reco:sec:bdt}. 
+All the reconstruction and selection procedures described in this section are common with those described in~\cite{CMS-PAS-HIG-16-020}; figures and tables which also appear in~\cite{CMS-PAS-HIG-16-020} are referenced as such.
 
 The \CMS global event description~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, referred to as the \PF algorithm, combines information from all \CMS \subdetector\s to reconstruct and identify individual particles. The inputs to this algorithm are the tracks reconstructed in the tracker and muon system, and the clusters of energy reconstructed in the \ECAL and \HCAL. The outputs of the algorithm are objects corresponding to semi-stable particles (photons, electrons, muons, charged hadrons or neutral hadrons). These so-called \PF \emph{candidates} can then be used to reconstruct jets and identify missing energy in the event. The resolution with which momenta of particles can be measured is typically improved using \PF since information from several \subdetector\s is available. In this scheme, \ECAL \SC\s which are not on the extrapolated trajectory of tracks from either the muon system or the tracker are identified as photon candidates. If a track in the tracker is associated to one or more \ECAL \SC\s, then it can be identified as an electron candidate. If a track in the tracker is consistent with a track or multiple hits in the muon system, then it is identified as a muon candidate. Tracks in the tracker which are not associated with any track in the muon system or any deposit in the \ECAL are interpreted as charged hadron candidates. Finally, deposits in the \HCAL which are not associated with any tracks can be identified as neutral hadron candidates.
-
 The same reconstruction algorithms are applied both to the data collected at the \CMS experiment and to simulated samples. % where the interaction of generated particles with the \CMS sub-detectors is simulated. The way in which both data and simulation are obtained are described in \Sec~\ref{th:sec:samples}.
 %The way in which both types of sample is obtained 
 The data samples and production of simulated samples of \MC events are discussed in \Sec~\ref{reco:sec:samples}.
 
 
 %The work presented in this thesis involves the study of the Higgs boson decaying to photons, \Hgg. 
-It has already been noted in \Sec~\ref{th:sec:higgs_decays} that \Hgg is one of the most sensitive decays with which to study the Higgs boson in the \LHC environment. This is despite it having a small branching fraction (around $0.2\%$) and an irreducible background of \SM processes which produce two photons. The channel benefits from a fully reconstructible final state, which is manifested as a resonant Higgs boson peak on top of a continuous diphoton invariant mass spectrum.
+It has already been noted in \Sec~\ref{sec:th:higgs_decays} that \Hgg is one of the most sensitive decays with which to study the Higgs boson in the \LHC environment. This is despite it having a small branching fraction (around $0.2\%$) and an irreducible background of \SM processes which produce two photons. The channel benefits from a fully reconstructible final state, which is manifested as a resonant Higgs boson peak on top of a continuous diphoton invariant mass spectrum.
 The invariant mass of the diphoton system (\mgg) is given by:
 \begin{equation}
 \label{reco:eq:mgg}
  \mgg = \sqrt{2 E_{\gamma_{1}} E_{\gamma_{2}} (1-\cos\alpha)}, 
 \end{equation}
-
 where $E_{\gamma_{1}},E_{\gamma_{2}}$ represent the energies of the two photons and $\alpha$ represents the opening angle between them. 
 The opening angle depends on the directions of the photons. Since the \CMS \ECAL does not provide a directional measurement, the calculation of the opening angle relies on the spatial locations of the photons and of the Higgs boson decay vertex. The \CMS \ECAL can measure the spatial location of the photons with a sufficient resolution that its contribution to the uncertainty on the photon direction is negligible. However, the fact that the photon is a neutral particle and the presence of multiple interaction vertices in the event can lead to the misassignment of the vertex associated with the Higgs boson decay. This produces a large enough uncertainty in the photon direction to significantly worsen the uncertainty on the mass.
 Therefore, \Eq~\ref{reco:eq:mgg} indicates that to study \Hgg, the most important steps are measuring the positions and energies of the photons, and locating the Higgs boson \PV. These steps are discussed in \Sec~\ref{reco:sec:photons} and \Sec~\ref{reco:sec:vertex} respectively. 
@@ -50,7 +49,7 @@ The main Higgs bosons production processes or \emph{modes} are described in \Sec
 
 Samples of simulated signal events are produced for each of the main Higgs boson production modes for a range of values of \mH between 120 and 130\GeV. The \crosssection and branching fractions used for the simulations under each \mH hypothesis are those recommended by the \LHCHXSWG~\cite{LHCHXSWGYR4}. Signal samples are used to: prepare classifiers, for instance using the \BDT method (see \Sec~\ref{reco:sec:bdt}); validate reconstruction and selection algorithms; and produce signal models (see \Sec~\ref{model:sec:signal_model}). Signal simulations are produced at parton-level using the generator \Madgraph~\cite{Madgraph}, which makes use of perturbative \QCD at \NLO. The parton-level samples are then interfaced with \Pythia~\cite{Pythia8}, using the tune \PythiaTune~\cite{PythiaTune}, which models the subsequent showering and hadronisation of partons. 
 
-Samples of simulated events are also generated for each of the main backgrounds of the \Hgg decay. Background samples are used to: train \BDT\s; validate reconstruction and selection algorithms; and optimise the categorisation scheme. The irreducible background is composed of \SM processes which yield two genuine photons from a \pp interaction in the final state, and are modelled using the \Sherpa~\cite{Sherpa} generator. The reducible background represent events where some jets are incorrectly identified as isolated photons. The largest contributors to the reducible background are \gammaJet and \QCDmultijet events, which are modelled using the \Pythia generator, where a filter designed to enhance the fraction of events with a large component of electromagnetic energy is applied. %The filter required a potential photon signal (photon, electron, or neutral hadrons, with $pt>15 \GeV$
+Samples of simulated events are also generated for each of the main backgrounds of the \Hgg decay. Background samples are used to: train \BDT\s; validate reconstruction and selection algorithms; and optimise the categorisation scheme. The irreducible background is composed of \SM processes which yield two genuine photons from a \pp interaction in the final state, and are modelled using the \Sherpa~\cite{Sherpa} generator. The reducible background represents events where some jets are incorrectly identified as isolated photons. The largest contributors to the reducible background are \gammaJet and \QCDmultijet events, which are modelled using the \Pythia generator, where a filter designed to enhance the fraction of events with a large component of electromagnetic energy is applied. %The filter required a potential photon signal (photon, electron, or neutral hadrons, with $pt>15 \GeV$
 \DY, \Wg and \Zg samples are also used for validation purposes, and these are simulated using \Madgraph. 
 
 The simulated samples take into account the effects of the multiple interactions, other than the hard scattering interaction, taking place in each bunch crossing. These additional interactions are collectively referred to as \PU. The effect of \PU in previous and subsequent bunch crossings is also modelled. The samples are reweighted such that their \PU distributions match the data before they are used in the analysis.
@@ -89,7 +88,7 @@ The \LI efficiency is found to be above 97.5\% in the \EB and above 92\% in the 
 About 95\% of the energy of a single electromagnetic shower in the \ECAL is contained in a $5\times5$ array of crystals. However, particles can have several showers associated with them. Photons travelling towards the \ECAL may undergo pair conversion ($\gamma \rightarrow \Pep \Pem$) in the detector material, resulting in two nearby or overlapping showers usually separated in $\phi$. Electrons or positrons are deflected by the magnetic field, and radiate photons from bremsstrahlung, resulting in multiple showers spread out in the $\phi$-direction. 
 
 %A \emph{clustering} algorithm~\cite{CMS-PAS-EGM-13-001,CMS-PAS-EGM-14-001} attempts to build a \SC which associates all the individual energy deposits of a photon coming from the vertex. 
-A \emph{clustering} algorithm~\cite{CMS-PAS-EGM-13-001,CMS-PAS-EGM-14-001} groups the \ECAL energy deposits into \SC\s. Each \SC is designed to associate all the individual deposits resulting from a photon or electron originating at a primary interaction vertex.
+As was mentioned in \Sec~\ref{sec:cms:ecal:energymeasurement}, a \emph{clustering} algorithm~\cite{CMS-PAS-EGM-13-001,CMS-PAS-EGM-14-001} groups the \ECAL energy deposits into \SC\s. Each \SC is designed to associate all the individual deposits resulting from a photon or electron originating at a primary interaction vertex.
 The algorithm begins by identifying \emph{seed} crystals as those with the largest amount of energy in the local area, above a predefined minimum noise threshold. The threshold %is between 80\MeV and 300\MeV depending on the pseudorapidity region, and 
 represents approximately two standard deviations of the electronic noise in the \ECAL. Next, clusters are obtained by iteratively grouping crystals which have a common side with a crystal already in the cluster if their energy is above another predefined threshold. The location of a cluster is defined as the logarithmic energy-weighted average position of the individual crystals which compose it. During the iterative clustering process, if a crystal could belong to different clusters, its energy is shared between them according to the distance between the crystal and each cluster, assuming a Gaussian shower profile. Finally, additional clusters can be merged with the original cluster to form a \SC if they are aligned in the $\eta$-direction and lie within an extended window in the $\phi$-direction. This final step is designed to recover deposits resulting from bremsstrahlung.
 %\phifrom the are merged into \SC\s by gathering those which lie between two parabolas extending into the $\phi$-direction as a function of $\eta$. %This gives the \SC\s a mustache-like shape, designed to recover the energy of bremsstrahlung photons and to mitigate the effect of \PU.
@@ -156,8 +155,9 @@ ECAL Endcap; $\RNINE<$0.90 & 0.4993 & 0.0018 & 0.0249 & 0.5024 & 0.0016 & 0.9938
 }
 \end{center} 
 \end{small}
-\caption{Photon preselection efficiency (using all requirements aside from the electron veto) measured using \Zee
-events in data and simulation with a \TagAndProbe technique.}
+\caption[Photon preselection efficiency (using all requirements aside from the electron veto) measured using \Zee
+events in data and simulation with a \TagAndProbe technique\quad\cite{CMS-PAS-HIG-16-020}.]{Photon preselection efficiency (using all requirements aside from the electron veto) measured using \Zee
+events in data and simulation with a \TagAndProbe technique~\cite{CMS-PAS-HIG-16-020}.}
 \label{tab:reco:preslection_eff}
 \end{table}
 
@@ -172,23 +172,19 @@ The most common application for \BDT\s is event classification, for instance to 
 
 In general, a \BDT is a linear combination of \DT\s~\cite{friedman2009}. A \DT is obtained using a \emph{training dataset} consisting of a list of items $(\vec{x}_{m},y_{m},w_{m})$ for $m=1,...,N_{\textrm{items}}$, where $\vec{x}_{m}$ is a set of input variables values, $y_{m}$ is the true value of the target variable and items can be weighted with weight $w_{m}$. In the simplest case, the value of $y_{m}$ is binary: signal or background. A numerical value, $1$ and $-1$ say, can be assigned to these two options respectively. The following description uses this binary output example, but can be generalised for $y_{m}$ to take any number of discrete values for classification \DT\s, or continuous values in the case of regression \DT\s.
 To construct a \DT, the training dataset is first split into two subsamples by applying a selection, which will be referred to as a \emph{cut}, on one or more of the input variables. The \emph{purity} $p(s)$ of a subsample $s$ is the proportion of signal items, given by:
-
 \begin{equation}
  p(s) = \frac{\sum_{m=1}^{N_{\textrm{items}}^{s}} w_{m} \cdot \textrm{Bool}(y_m=1)}{\sum_{m=1}^{N_{\textrm{items}}^{s}} w_{m}}, 
 \end{equation}
-
 where $N_{\textrm{items}}^{s}$ is the number of items in the subsample and $\textrm{Bool}(X)$ is equal to $1$ $(0)$ if $X$ it true (false). 
 The cuts on the input variables are chosen to maximise the separation of signal and background in the resulting subsamples. This is achieved by minimizing a separation criterion. 
 A common separation criterion is the \emph{Gini index} $2p(s)(1-p(s))$, which has a maximum at $0.5$ for subsamples with an equal amount of signal and background items and gives $0$ in cases where all items are of the same type (signal or background). Many other separation criteria exist, for instance \emph{cross-entropy, misclassification error, statistical significance} and \emph{average squared error}.
 Each subsample can then be further split by a new set of cuts on the input variables. This procedure is repeated iteratively for each subsample until either the number of iterations reaches some predefined threshold known as the \emph{tree depth}, or if the subsample satisfies some predetermined requirement on the value of the separation criterion. Each subsample obtained after the final set of cuts has been applied is known as a \emph{leaf}. The output score of the items in a given leaf is then $1 $ if $p(s)>0.5$ and $-1$ if $p(s)\leq0.5$.
 
 The procedure known as boosting~\cite{friedman2001} helps to improve the performance of a \DT, for example by reducing the risk of overfitting the \DT to statistical fluctuations in the training sample. Many boosting algorithms exist, but in all cases several individual \DT\s are produced, each trained on subsets or modified versions of the training dataset. The final \BDT is a linear combination of the individual \DT\s. Supposing that there are $N_{\textrm{DT}}$ individual \DT\s, labelled as $f_{l}(\vec{x},\vec{\alpha}_{l})$ where $l=1,..,N_{\textrm{DT}}$ and $\vec{\alpha}_{l}$ is the set of cuts in the corresponding \DT, the full \BDT, $F$, is written as:
-
 \begin{equation}
 \label{reco:eq:bdt}
 F(\vec{x},\vec{\beta},\vec{\alpha}) = \sum_{l=1}^{N_{\textrm{DT}}} \beta_{l} f_{l}(\vec{x},\vec{\alpha_{l}}), 
 \end{equation}
-
 where $\vec{\beta}=(\beta_{1},...,\beta_{N_{\textrm{DT}}})$ is the set of coefficients applied to each \DT in the \BDT. The values of of $\vec{\beta}$ are determined by the boosting algorithm~\cite{friedman2009,TMVA}. A consequence of \Eq~\ref{reco:eq:bdt} is that the output of the \BDT is no longer a discrete value of $\pm1$, but instead a semicontinuous variable between $-1$ and $1$. 
 
 %The simplest and most common boosting algorithm is \emph{adaptive boosting}. In adaptive boosting, the first \DT is trained on the full training dataset as usual. The training dataset is then reweighted so that items which were assigned an incorrect output score by the previous \DT (the so-called \emph{weak learners}) are given a larger weight and the items which were correctly classified are given a smaller weight. The next \DT is then trained on the modified dataset, and the whole procedure is repeated over a large number of iterations. The final $\vec{\beta}$ for adaptive boosting algorithms is given by the logarithm of the weights applied to the dataset at each step. A more robust method is \emph{gradient boosting}, where the values of the individual components of $\vec{\alpha}$ and $\vec{\beta}$ are varied in such a way as to minimise the \emph{loss function} $L(F,y)$, which is a measure of the deviation of the \BDT output score from the true value of $y$ across all items in the training dataset. Popular choices for the loss function include $L(F,y) = ( y - F(\vec{x},\vec{\beta},\vec{\alpha}))^2$ and$L(F,y) = \ln (1 + e^{-2F(\vec{x},\vec{\beta},\vec{\alpha})y})$~\cite{friedman2009,TMVA}.
@@ -209,28 +205,27 @@ The target variable for the \PhoEnergyBdt is the ratio of the true photon energy
 \item Noise variables, i.e.~variables related to \PU such as the number of reconstructed vertices in the event and the median energy density in the \ECAL as a function of position.
 \end{itemize}
 
-The training is done using a \emph{semiparametric likelihood} technique. In this technique, the distribution of the target variable from the training sample is fitted to a functional form, in this case a \DCB~\cite{CrystalBallFunction}. The \DCB is chosen as it is typically a good fit for processes modelling detector resolutions. It consists of a Gaussian core and power-law tails on each side, with 6 independent parameters: the width $\sigma_{DCB}$ and mean $\mu_{DCB}$ of the core, the left tail cutoff and power parameters $\alpha_{DCB}^{L},n_{DCB}^{L}$ and the right tail cutoff and power parameters $\alpha_{DCB}^{R},n_{DCB}^{R}$. The fitting is performed by minimizing \NLL:
-
+The training is done using a \emph{semiparametric likelihood} technique. In this technique, the distribution of the target variable from the training sample is fitted to a functional form, in this case a \DCB~\cite{CrystalBallFunction}. The \DCB is chosen as it is typically a good fit for processes modelling detector resolutions. It consists of a Gaussian core and power-law tails on each side, with 6 independent parameters: the width $\sigma_{DCB}$ and mean $\mu_{DCB}$ of the core, the left tail cutoff and power parameters $\alpha_{DCB}^{L},n_{DCB}^{L}$ and the right tail cutoff and power parameters $\alpha_{DCB}^{R},n_{DCB}^{R}$. The \DCB function also used for the signal modelling, and is described in more detail in \Sec~\ref{model:sec:signal_model_parametrisation}. The fitting is performed by minimizing \NLL:
 \begin{equation}
 \label{reco:eq:regression:dcb}
  - 2\ln \mathcal{L} = -2 \sum_{\textrm{photons}} \ln P_{DCB}( \frac{E_{true}}{E_{SC}} | \mu_{DCB}, \sigma_{DCB}, \alpha_{DCB}^{L},n_{DCB}^{L}, \alpha_{DCB}^{R},n_{DCB}^{R} ) , 
 \end{equation}
  where $P_{DCB}$ is the \DCB probability distribution and all the \DCB parameters are functions of $\vec{x}$, the set of input variables for \PhoEnergyBdt. The nonparametric dependence of the \DCB parameters on $\vec{x}$ is obtained using separate \BDT\s, where a new tree is produced for each iteration of the \NLL fit. The most probable value of $E_{true}$ is then given by $\mu_{DCB}(\vec{x}) \times E_{SC}$ and the relative energy resolution for each photon is approximated by $\sigma_{DCB}(\vec{x}) / \mu_{DCB}(\vec{x})$.
 
-The performance of the \PhoEnergyBdt is illustrated using a simulated sample of \Hgg photons where $\mH=125\GeV$ in \Fig~\ref{fig:reco:pho_regression}.
-
-\begin{figure}[hp]
-\centering
-\subfloat[EB]{
-\includegraphics[width=0.6\textwidth]{recoFigures/RegressionEB_Hgg.pdf}
-}\\
-\subfloat[EE]{
-\includegraphics[width=0.6\textwidth]{recoFigures/RegressionEE_Hgg.pdf}
-}
-\caption{The ratio of the SC energy, shown before the \PhoEnergyBdt correction is applied ($E_{raw}$) and after the correction is applied ($E_{cor}$), and true energy ($E_{true}$) of simulated photons in a sample of \Hgg decays where $\mH=125\GeV$, separately for the EB (a) and the EE (b). All distributions have been fitted to DCB functions.}
-
-\label{fig:reco:pho_regression}
-\end{figure}
+%The performance of the \PhoEnergyBdt is illustrated using a simulated sample of \Hgg photons where $\mH=125\GeV$ in \Fig~\ref{fig:reco:pho_regression}.
+%
+%\begin{figure}[hp]
+%\centering
+%\subfloat[EB]{
+%\includegraphics[width=0.6\textwidth]{recoFigures/RegressionEB_Hgg_noCMS.pdf}
+%}\\
+%\subfloat[EE]{
+%\includegraphics[width=0.6\textwidth]{recoFigures/RegressionEE_Hgg_noCMS.pdf}
+%}
+%\caption{The ratio of the SC energy, shown before the \PhoEnergyBdt correction is applied ($E_{raw}$) and after the correction is applied ($E_{cor}$), and true energy ($E_{true}$) of simulated photons in a sample of \Hgg decays where $\mH=125\GeV$, separately for the EB (a) and the EE (b). All distributions have been fitted to DCB functions.}
+%
+%\label{fig:reco:pho_regression}
+%\end{figure}
 
 
 \subsection{Photon identification BDT}
@@ -244,18 +239,17 @@ The \PhoIdBdt is validated by comparing the output score for data and simulation
 \begin{figure}[hptb]
 \centering 
 %\includegraphics[width=0.47\textwidth]{recoFigures/validation_phoID_ICHEP_4sideTicks.pdf}
-\includegraphics[width=0.5\textwidth]{recoFigures/\whichFig/validation_phoID.pdf}
-\caption{
-The \PhoIdBdt output score for the lower-scoring photon in each diphoton pair in the range $100 < m_{\gamma \gamma} < 180\GeV$ for data and simulation. The simulation is composed of signal (\Hgg photons with $\mH=125\GeV$) and background, which has been split into $\gamma$-$\gamma$, $\gamma$-$\textrm{jet}$ and $\textrm{jet}$-$\textrm{jet}$ components. The sum of the background components has been scaled to the number of events in data.}
+\includegraphics[width=0.6\textwidth]{recoFigures/\whichFig/validation_phoID.pdf}
+\caption[The \PhoIdBdt output score for the lower-scoring photon in each diphoton pair in the range $100 < m_{\gamma \gamma} < 180\GeV$ for data and simulation. The simulation is composed of signal (\Hgg photons with $\mH=125\GeV$) and background, which has been split into $\gamma$-$\gamma$, $\gamma$-$\textrm{jet}$ and $\textrm{jet}$-$\textrm{jet}$ components. The sum of the background components has been scaled to the number of events in data\quad\cite{CMS-PAS-HIG-16-020}.]
+{The \PhoIdBdt output score for the lower-scoring photon in each diphoton pair in the range $100 < m_{\gamma \gamma} < 180\GeV$ for data and simulation. The simulation is composed of signal (\Hgg photons with $\mH=125\GeV$) and background, which has been split into $\gamma$-$\gamma$, $\gamma$-$\textrm{jet}$ and $\textrm{jet}$-$\textrm{jet}$ components. The sum of the background components has been scaled to the number of events in data~\cite{CMS-PAS-HIG-16-020}.}
 \label{fig:reco:photon_id_score_hgg_bkg}
 \end{figure}
 
 \begin{figure}[hptb]
 \centering 
 %\includegraphics[width=0.53\textwidth]{recoFigures/idmva_syst_combined.pdf}
-\includegraphics[width=\figWidth\textwidth]{recoFigures/\whichFig/idmva_syst.pdf}
-\caption{ The \PhoIdBdt output score for \Zee events in data and simulation (labelled MC), where 
-the electrons are reconstructed as photons with the electron veto requirement inverted. The red shaded region corresponds to a systematic uncertainty of approximately 3\% on the value of the output score, to cover discrepancies between data and simulation.}
+\includegraphics[width=0.6\textwidth]{recoFigures/\whichFig/idmva_syst.pdf}
+\caption[The \PhoIdBdt output score for \Zee events in data and simulation (labelled MC), where the electrons are reconstructed as photons with the electron veto requirement inverted. The red shaded region corresponds to a systematic uncertainty of approximately 3\% on the value of the output score, to cover discrepancies between data and simulation\quad\cite{CMS-PAS-HIG-16-020}.]{The \PhoIdBdt output score for \Zee events in data and simulation (labelled MC), where the electrons are reconstructed as photons with the electron veto requirement inverted. The red shaded region corresponds to a systematic uncertainty of approximately 3\% on the value of the output score, to cover discrepancies between data and simulation~\cite{CMS-PAS-HIG-16-020}.}
 \label{fig:reco:photon_id_zee_validation}
 \end{figure}
 
@@ -265,7 +259,6 @@ the electrons are reconstructed as photons with the electron veto requirement in
 
 \subsection{Vertex identification BDT}
 As is discussed in \Sec~\ref{reco:sec:intro}, the determination of the location of Higgs decay is an important step in the reconstruction and selection of \Hgg events, as it impacts the calculation of the invariant mass of diphoton system. For events where the distance $\Delta z$ between the true vertex and the selected vertex in the $z$-direction is less than 1\cm, then the impact of the opening angle uncertainty on the mass resolution is negligible. Conversely, for events where $\Delta z>1\cm$ the \mgg distribution is wider, corresponding to a degradation of the mass resolution. %CITATION NEEDED?
-
 Since the \CMS \ECAL is composed of a single layer of crystals, it cannot be used to point towards the vertex location. %Furthermore, unless a photon undergoes pair conversion, it does not leave any tracks in the tracker. 
 None the less, it is possible to exploit tracks recoiling from the diphoton system and the tracks of any electrons resulting from pair conversion to help determine the location of the vertex.
 
@@ -285,26 +278,26 @@ Two additional variables are also considered if one of the two photons has conve
 The \VtxIdBdt is trained using simulated Higgs boson events %with $\mH=126\GeV$, 
 where the contribution from each production mode is weighted by the respective \SM \crosssection. Reconstructed vertices matched to a generator-level Higgs boson decay vertex are defined as the signal. All other reconstructed vertices not associated with a Higgs boson decay are treated as background. The training samples are reweighted to account for the fact that the width of the \emph{beamspot} (the distribution of reconstructed vertices as a function of longitudinal position) in data and simulation is not the same. This width is modelled as 5.1\cm in simulation but is measured to be 3.6\cm in the data samples used in this analysis. The reweighting is performed as a function of $\Delta z$. After the reweighting, the width of the distribution of $\Delta z$ in simulation matches the width of the $\Delta z$ distribution in data, which is the beamspot width multiplied by $\sqrt{2}$.
 
-The \VtxIdBdt is validated for unconverted photons using \Zmumu events in data and simulation. After determining the vertex of the decay from the muon tracks, the events are re-reconstructed removing the muon tracks to mimic the \Hgg system. For converted photons, the \VtxIdBdt is validated using a similar technique with \gammaJet samples, where the vertex is obtained from the tracks associated with the jet, and the events are re-reconstructed removing the tracks associated with the jet to imitate a diphoton system. The vertex-finding efficiencies as a function of \pT and as a function of the number of vertices in \Zmumu and \gammaJet events can be seen in \Fig~\ref{fig:reco:vtx_id_eff_zmumu_validation} and \Fig~\ref{fig:reco:vtx_if_eff_gjet_validation}. %The data sample was obtained by triggering on isolated muon tracks with $\pT > 27\GeV$, requiring tight identification criteria for both muons, and selecting events where the invariant mass of the dimuon system was between 70\GeV and 110\GeV. A simulated sample of \Zmumu events is used for this study, where the events have been re-weighted such that their \PU distribution matches that of the data and the beamspot reweighting discussed in \Sec~\ref{} is applied. The differences between the data and simulation are used to estimate the systematic uncertainties associated with the choice of vertex. %and \gammaJet
-\begin{figure}
-\begin{center}
-%\includegraphics[width=0.45\linewidth]{vtxIdFig/eff_pt_Zmumu.pdf}
-%\includegraphics[width=0.45\linewidth]{vtxIdFig/eff_nVtx_Zmumu.pdf}
-\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/Zmumu_eff_vs_pt.pdf}
-\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/Zmumu_eff_vs_nVtx.pdf}
-\caption{The efficiency of selecting a vertex within 1\cm of the true vertex in \Zmumu events, as a function of the \pT of the $\PZ$-boson (left) and as a function of the number of vertices (right) in the event.}
-\label{fig:reco:vtx_id_eff_zmumu_validation}
-\end{center}
-\end{figure}
+The \VtxIdBdt is validated for unconverted photons using \Zmumu events in data and simulation. After determining the vertex of the decay from the muon tracks, the events are re-reconstructed removing the muon tracks to mimic the \Hgg system. For converted photons, the \VtxIdBdt is validated using a similar technique with \gammaJet samples, where the vertex is obtained from the tracks associated with the jet, and the events are re-reconstructed removing the tracks associated with the jet to imitate a diphoton system. %The vertex-finding efficiencies as a function of \pT and as a function of the number of vertices in \Zmumu and \gammaJet events can be seen in \Fig~\ref{fig:reco:vtx_id_eff_zmumu_validation} and \Fig~\ref{fig:reco:vtx_if_eff_gjet_validation}. %The data sample was obtained by triggering on isolated muon tracks with $\pT > 27\GeV$, requiring tight identification criteria for both muons, and selecting events where the invariant mass of the dimuon system was between 70\GeV and 110\GeV. A simulated sample of \Zmumu events is used for this study, where the events have been re-weighted such that their \PU distribution matches that of the data and the beamspot reweighting discussed in \Sec~\ref{} is applied. The differences between the data and simulation are used to estimate the systematic uncertainties associated with the choice of vertex. %and \gammaJet
+%\begin{figure}
+%\begin{center}
+%%\includegraphics[width=0.45\linewidth]{vtxIdFig/eff_pt_Zmumu.pdf}
+%%\includegraphics[width=0.45\linewidth]{vtxIdFig/eff_nVtx_Zmumu.pdf}
+%\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/Zmumu_eff_vs_pt_noCMS.pdf}
+%\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/Zmumu_eff_vs_nVtx_noCMS.pdf}
+%\caption{The efficiency of selecting a vertex within 1\cm of the true vertex in \Zmumu events, as a function of the \pT of the $\PZ$-boson (left) and as a function of the number of vertices (right) in the event.}
+%\label{fig:reco:vtx_id_eff_zmumu_validation}
+%\end{center}
+%\end{figure}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/GammaJets_eff_vs_pT.pdf}
-\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/GammaJets_eff_vs_nVtx.pdf}
-\caption{The efficiency of selecting a vertex within 1\cm of the true vertex in \gammaJet events, as a function of the \pT of the \gammaJet system (left) and as a function of the number of vertices (right) in the event.}
-\label{fig:reco:vtx_if_eff_gjet_validation}
-\end{center}
-\end{figure}
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/GammaJets_eff_vs_pT_noCMS.pdf}
+%\includegraphics[width=0.49\linewidth]{recoFigures/\whichFig/GammaJets_eff_vs_nVtx_noCMS.pdf}
+%\caption{The efficiency of selecting a vertex within 1\cm of the true vertex in \gammaJet events, as a function of the \pT of the \gammaJet system (left) and as a function of the number of vertices (right) in the event.}
+%\label{fig:reco:vtx_if_eff_gjet_validation}
+%\end{center}
+%\end{figure}
 
 
 The efficiency of the \VtxIdBdt to select the right vertex within 1\cm of the true one is estimated in simulated signal events ($\mH=125\GeV$), shown as a function of the number of vertices in the event and as a function of \pT in \Fig~\ref{fig:reco:vtxidbdt_eff}. The average efficiency is of the order of 80\%. 
@@ -313,7 +306,8 @@ The efficiency of the \VtxIdBdt to select the right vertex within 1\cm of the tr
 \centering
 \includegraphics[width=0.7\textwidth]{recoFigures/\whichFig/PtBSReweighted.pdf}\\
 \includegraphics[width=0.7\textwidth]{recoFigures/\whichFig/NvtxBSReweighted.pdf}
-\caption{The efficiency to select a vertex within 1\cm of the true vertex in simulated \Hgg events as a function \pT and the number of vertices in the event. The estimated probability that the vertex is chosen within 1\cm is superimposed. The uncertainty on the vertex-finding probability is determined using \Zmumu events. The simulation is reweighted such that the distribution of the number of vertices and the width of the interaction region matched in data and simulation. }
+\caption[The efficiency to select a vertex within 1\cm of the true vertex in simulated \Hgg events as a function \pT and the number of vertices in the event. The estimated probability that the vertex is chosen within 1\cm is superimposed. The uncertainty on the vertex-finding probability is determined using \Zmumu events. The simulation is reweighted such that the distribution of the number of vertices and the width of the interaction region matched in data and simulation\quad\cite{CMS-PAS-HIG-16-020}.]{The efficiency to select a vertex within 1\cm of the true vertex in simulated \Hgg events as a function \pT and the number of vertices in the event. The estimated probability that the vertex is chosen within 1\cm is superimposed. The uncertainty on the vertex-finding probability is determined using \Zmumu events. The simulation is reweighted such that the distribution of the number of vertices and the width of the interaction region matched in data and simulation~\cite{CMS-PAS-HIG-16-020}.}
+
 \label{fig:reco:vtxidbdt_eff}
 \end{figure}
 

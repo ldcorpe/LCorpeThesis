@@ -2,7 +2,7 @@
 %??UPDATE THIS
 \titlepage[Imperial College London\\Department of Physics]%
 {A dissertation submitted to Imperial College London\\
-  for the degree of Doctor of Philosophy}
+for the degree of Doctor of Philosophy}
 \newpage
 The copyright of this thesis rests with the author and is made available under a Creative Commons
 Attribution Non-Commercial No Derivatives licence. Researchers are free to copy, distribute or
@@ -13,8 +13,8 @@ researchers must make clear to others the licence terms of this work.
 %% Abstract
 \begin{abstract}%[\smaller \thetitle\\ \vspace*{1cm} \smaller {\theauthor}]
   %\thispagestyle{empty}
-A study of \Hgg with \thisanalysislumi\ifb of data from \pp collisions at $\sqrt{s}=13\TeV$ is presented. The data were collected at the start of LHC \RunII by the CMS experiment between April and \finaldatatakingmonth 2016. The result is an new standalone observation of the Higgs boson in the diphoton decay channel.  
-The significance of the excess is observed to be $\obsSigAtRunIBF\sigma$ ($\expSigAtRunIBF\sigma$ expected) at the combined \RunI best-fit $\mH=125.09\GeV$. The maximum significance of $\obsSigAtMin\sigma$ ($\expSigAtMin\sigma$ expected) is observed at $\mH=\bestFitGlobalMH\GeV$.
+A study of \Hgg with \thisanalysislumi\ifb of data from \pp collisions at $\sqrt{s}=13\TeV$ is presented. The data were collected at the start of LHC \RunII by the CMS experiment between April and \finaldatatakingmonth 2016. The result is a new standalone observation of the Higgs boson in the diphoton decay channel. 
+The significance of the excess is observed to be $\obsSigAtRunIBF\sigma$ ($\expSigAtRunIBF\sigma$ expected) at the combined \RunI best-fit Higgs boson mass of $\mH=125.09\GeV$. The maximum significance of $\obsSigAtMin\sigma$ ($\expSigAtMin\sigma$ expected) is observed at $\mH=\bestFitGlobalMH\GeV$.
 The measured Higgs boson signal strength is $\obsMuBreakdown$. 
 The signal strength is measured separately for: fermionic and bosonic production modes, giving $ \obsMuV$ and $\obsMuF$; 
 \ifNewAnalysis
@@ -22,25 +22,24 @@ and for the ggH, VBF, ttH and VH production modes, giving $\obsMuggH$, $\obsMuVB
 \else
 and for the ggH, VBF and ttH production modes, giving $\obsMuggH$, $\obsMuVBF$, and $\obsMuttH$.
 \fi
-Measurements of the Higgs boson coupling modifiers yield $\obskF$, $\obskV$ for the fermionic and bosonic coupling modifiers and $\obskGlu$, $\obskGlu$ for the effective coupling modifiers.
+Measurements of the Higgs boson coupling modifiers yield $\obskF$, $\obskV$ for the fermionic and bosonic coupling modifiers and $\obskGlu$, $\obskPho$ for the gluon and photon effective coupling modifiers.
 All measurements are found to be consistent with the theoretical expectation for a SM-like Higgs boson.
 \end{abstract}
 
 %% Declaration
 \begin{declaration}
 The results presented in this thesis are the culmination of work which I certify to be my own, although it is based in part on studies by others. The theory described in \Chap~\ref{chap:theory} has been summarised in my words, but was produced by theorists. The LHC and CMS design and performance detailed in \Chap~\ref{chap:detector} are the result of studies by other experimentalists, although I was involved in the \RunI photon energy resolution measurements (see \Sec~\ref{sec:cms:ecal:overview}) and \RunII ECAL calibration (see \Sec~\ref{sec:cms:ecal:calibration}).
-\Chap\s~\ref{chap:reconstruction} and~\ref{chap:categorisation} are the work of various individuals in the CMS collaboration and \Hgg group, of which I am a member. Some of the procedures are therefore the work of my collaborators.
+\mbox{\Chap\s}~\ref{chap:reconstruction} and~\ref{chap:categorisation} are the work of various individuals in the CMS collaboration and \Hgg group, of which I am a member. Some of the procedures are therefore the work of my collaborators.
 
 The bulk of my personal work is presented in \Chap\s~\ref{chap:model} and~\ref{chap:statandresults}, which detail the signal and background modelling, handling of systematic uncertainties, statistical interpretation of the data and production of results. Indeed, these were my personal areas of responsibility in the CMS \Hgg group. 
 \ifNewAnalysis
-I was responsible for these topics for two studies of \Hgg with \RunII data~\cite{CMS-PAS-HIG-15-005,CMS-PAS-HIG-16-020}. The analysis presented here considers substantially more data. It also includes significant developments to the parametric signal modelling techniques with were conceived and implemented by me, and which I used to produce the results, but which do not feature in previous results.  
+I was responsible for these topics for two studies of \Hgg with \RunII data~\cite{CMS-PAS-HIG-15-005,CMS-PAS-HIG-16-020}. The analysis presented here considers substantially more data. It also includes significant developments to the parametric signal modelling techniques which were conceived and implemented by me, and which I used to produce the results, but which do not feature in previous results. 
 \else
-I was responsible for these topics for two studies of \Hgg with \RunII data~\cite{CMS-PAS-HIG-15-005,CMS-PAS-HIG-16-020}, the latter being the basis for this thesis. These chapters also include significant developments to the parametric signal modelling techniques with were conceived and implemented by me, and which I used to produce the results, but which do not feature in~\cite{CMS-PAS-HIG-16-020}.  
+I was responsible for these topics for two studies of \Hgg with \RunII data~\cite{CMS-PAS-HIG-15-005,CMS-PAS-HIG-16-020}, the latter being the basis for this thesis. These chapters also include significant developments to the parametric signal modelling techniques which were conceived and implemented by me, and which I used to produce the results, but which do not feature in~\cite{CMS-PAS-HIG-16-020}. 
 \fi
 
-Where ideas or figures from others are used, appropriate sources are referenced. Figures labelled ``\textbf{CMS}'' are either taken from CMS publications or preliminary public documents, including those produced by me, and are referenced appropriately; or result from the analysis I have performed in this thesis, in which case they have been approved by the CMS collaboration. Figures additionally labelled ``\Hgg'' result from the work of members of the CMS Higgs to diphoton analysis group specifically.
-  %\vspace*{0.5cm}
-  \begin{flushright}
+Where ideas or figures from others are used, appropriate sources are referenced. Figures labelled ``\textbf{CMS}'' are taken from CMS publications or preliminary public documents, including those produced by me, and are referenced appropriately. The figures and results from the analysis I have performed in this thesis have been endorsed by the CMS collaboration. %\vspace*{0.5cm}
+ \begin{flushright}
     Louie Dartmoor Corpe
   \end{flushright}
 \end{declaration}
@@ -48,13 +47,7 @@ Where ideas or figures from others are used, appropriate sources are referenced.
 
 %% Acknowledgements
 \begin{acknowledgements}
-To be written!\\
-- family\\
-- supervisors\\
-- friends\\
-- IC HEP, CMS, Hgg group\\
-- STFC\\
-- Emma \\
+\input{thanks}
 \end{acknowledgements}
 
 
@@ -74,5 +67,5 @@ To be written!\\
 %% Strictly optional!
 \frontquote%
 {There are more things in heaven and earth, Horatio, \\
-Than are dreamt of in your philosophy} 
+Than are dreamt of in your philosophy.} 
   {Hamlet (William Shakespeare)}

@@ -5,21 +5,27 @@
 \label{model:sec:intro}
 
 The statistical interpretation of the data requires models of the expected \mgg distribution for each of the signal processes and the background in each category. These models must account for the sources of systematic uncertainty which affect the analysis. %The signal here refers to the diphoton events produced by one of the main Higgs production processes \ggH, \VBF, \ttH, and \VH, where the latter can be further split into \WH and \ZH. 
-For the signal processes, the \mgg distribution takes the form of a resonant peak around \mH, the width of which is entirely dominated by detector resolution. The construction of the signal model from simulation is described in \Sec~\ref{model:sec:signal_model}. By contrast, the \mgg distribution for background events is a smoothly-falling non-resonant continuum. The derivation of the background model from data is described in \Sec~\ref{model:sec:background_model}. Finally, the handling of the systematic uncertainties in the modelling is described in \Sec~\ref{model:sec:systematics}. 
+
+For the signal processes, the \mgg distribution takes the form of a resonant peak around \mH, the width of which is entirely dominated by detector resolution. The construction of the signal model from simulation is described in \Sec~\ref{model:sec:signal_model}. 
+The signal modelling described in this chapter differs from the approach taken in~\cite{CMS-PAS-HIG-16-020} in three ways. First, the simulated signal samples used in this chapter have an additional correction to their normalisation compared to those used in~\cite{CMS-PAS-HIG-16-020}, as explained in \Sec~\ref{model:sec:signal_model_normalisation}. Secondly, the functional form used to parametrise the signal shape has been changed. Finally, a new method has been developed to perform the interpolation of the signal model between the samples with different assumptions on the value of \mH.
+
+By contrast, the \mgg distribution for background events is a smoothly-falling non-resonant continuum. The derivation of the background model from data is described in \Sec~\ref{model:sec:background_model}. Finally, the handling of the systematic uncertainties in the modelling is described in \Sec~\ref{model:sec:systematics}. Both the background modelling and handling of systematic uncertainties are unchanged with respect to~\cite{CMS-PAS-HIG-16-020}.
+
+
 
 \section{Signal modelling}
 \label{model:sec:signal_model}
 
 \subsection{Parametrisation of the signal \mgg distributions}
+\label{model:sec:signal_model_parametrisation}
 
 %A signal model is constructed from samples of simulated \Hgg events from each production mode. . % are reconstructed, selected and categorised as described in Chapters~\ref{} and ~\ref{}. 
 The shape of the \mgg distribution in simulated \Hgg events is parametrised separately for each event category and for each production process. % where the \VH events are further split into \WH and \ZH samples. 
-Since the vertex choice affects the shape of the \mgg distribution (see \Sec~\ref{reco:sec:vertex}), the modelling is performed separately for cases where the \RV or \WV was selected (within $1\cm$ in the $z$-direction).
+Since the vertex choice affects the shape of the \mgg distribution (see \Sec~\ref{reco:sec:vertex}), the modelling is performed separately for cases where the \RV or \WV was selected within $1\cm$ in the $z$-direction.
 
 The signal \mgg distributions are all parametrised using a \DCB function~\cite{CrystalBallFunction} summed with an additional Gaussian function sharing the same mean. We refer to this functional form hereafter as a \DCBpG function. %The \CB functional form is used in \HEP to model processes which involve losses, for example in the semiparmetric regression described in Sec~\ref{}, where it is used to model the energy of individual photons. 
 The \DCB shape consists of a Gaussian function core and two tails which are described by power laws. The Gaussian core models the width of the distribution, while the power laws cover the extended non-Gaussian tails caused by systematic under- or over-estimation of the value of \mgg. %For example, the \DCB shape is used iin the semiparmetric regression described in \Sec~\ref{} to model photon energy distribution. The lower tail captures the fact that a certain amount of energy of the photon can be lost in the reconstruction process, this leading to a long non-Gaussian tail of events. Ont he other side, the upper tailis motivated theenergy of the photon shower can be over-estimated, for example because of the inclsuio of showers due to \PU. 
 The explicit form of a \DCB function is :
-
 \begin{equation}
 \label{eq:DCB_form}
 f(x)= N \cdot \begin{cases} 
@@ -37,15 +43,16 @@ f(x)= N \cdot \begin{cases}
 In the definition above, $\sigma_{DCB}$ and $\mu_{DCB}$ are the width and mean of the Gaussian core, $\alpha_{DCB}^{L}$ and $\alpha_{DCB}^{R}$ are the cross-over points to the power laws on the left and right sides, and $n_{DCB}^{L}$ and $n_{DCB}^{R}$ are the orders of the two power laws. The \DCBpG function therefore has a total of eight parameters when the width and amplitude of the additional Gaussian (with the same mean $\mu_{DCB}$) are taken into account. This is in contrast with the functional form used for signal modelling in previous studies of \Hgg by \CMS~\cite{LegacyHgg,CMS-PAS-HIG-15-005,CMS-PAS-HIG-16-020}, which was a sum of up to five Gaussian functions, or a total of up to fourteen parameters.
 
 The values of the parameters of the functional form are determined by fitting the models to simulated \mgg distributions. 
-The choice of the \DCBpG function is motivated by the fact that it is simpler to handle and often gives closer agreement with fewer parameters than the sum of Gaussian functions. 
+The choice of the \DCBpG function is motivated by the fact that it is simpler to handle and often gives closer agreement with fewer parameters than the sum of Gaussian functions, particularly in the \RV fits which are the dominant contribution to the full model. 
 The \DCB shape is also more susceptible to a simple physical interpretation than an arbitrary sum of Gaussian functions. 
 
 \ifNewAnalysis
 The parametrisations of the \mgg distributions for the \ggH process (with $\mH=125\GeV$) in two inclusive categories are shown in \Fig~\ref{fig:model:functionalform} for both the \DCBpG and sum of Gaussians functional forms, where the \RV and \WV components have been summed according to their relative event count. %The agreement between the distribution and the parametrisation when the simpler paramertisation can be seen from the $\chi^2/\text{NDOF}$values.
 \else
-The parametrisations of the \mgg distributions for the \ggH process (with $\mH=125\GeV$) in the inclusive categories are shown in \Fig~\ref{fig:model:functionalform} for the \DCBpG functional form and in \Fig~\ref{fig:model:functionalform_bis} for the sum of Gaussians. In both cases the \RV and \WV components have been summed according to their relative event count. %The agreement between the distribution and the parametrisation when the simpler paramertisation can be seen from the $\chi^2/\text{NDOF}$values.
+The parametrisations of the \mgg distributions for the \ggH process (with $\mH=125\GeV$) in the inclusive categories are shown in \Fig~\ref{fig:model:functionalform} for the \DCBpG functional form and in \Fig~\ref{fig:model:functionalform_bis} for the sum of Gaussians, when the \RV is selected. \Fig\s~\ref{fig:model:functionalform_tris} and~\ref{fig:model:functionalform_quad} show the equivalent figures when the \WV is selected.
+%. In both cases the \RV and \WV components have been summed according to their relative event count. %The agreement between the distribution and the parametrisation when the simpler paramertisation can be seen from the $\chi^2/\text{NDOF}$values.
 \fi
-The \DCBpG generally gives equivalent or better agreement considering the lower number of parameters. This is also true for the other processes and categories.
+The \DCBpG generally gives equivalent or better agreement than the sum of Gaussians, considering the lower number of parameters. 
 
 \ifNewAnalysis
 \begin{figure}[htp!]
@@ -69,27 +76,52 @@ The \DCBpG generally gives equivalent or better agreement considering the lower 
 \else
 \begin{figure}[htp!]
 \centering
- \subfloat[Functional form: DCB$+1$G]{\shortstack{
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/ggh_UntaggedTag_0.pdf} 
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/ggh_UntaggedTag_1.pdf} \\
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/ggh_UntaggedTag_2.pdf} 
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/ggh_UntaggedTag_3.pdf} 
+ \subfloat[RV fits with functional form: DCB$+1$G]{\shortstack{
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_0_rv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_1_rv_125.pdf} \\
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_2_rv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_3_rv_125.pdf} 
 }}\\
-\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the \DCBpG functional form, where the RV and WV contributions have been summed according to their relative event count. The parametrisation has 17 parameters: eight for the \DCBpG shape for each of the vertex scenarios, and one additional one representing the mixing fraction. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the total number of parameters in the parametrisation. This figure is to be compared with the sum of Gaussians parametrisation shown in \Fig~\ref{fig:model:functionalform_bis}.}
+\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the \DCBpG functional form, where the right vertex (RV) was selected. The \DCBpG parametrisation has 8 parameters. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the number of non-empty bins minus the number of parameters in the functional form. Bins with zero entries are ignored in the $\chi^2$ calculation. This figure is to be compared with the sum of Gaussians parametrisation shown in \Fig~\ref{fig:model:functionalform_bis}.}
 
 \label{fig:model:functionalform}
 \end{figure}
 \begin{figure}[htp!]
 \centering
- \subfloat[Functional form: Sum of Gaussians]{\shortstack{
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/ggh_UntaggedTag_0.pdf} 
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/ggh_UntaggedTag_1.pdf}\\ 
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/ggh_UntaggedTag_2.pdf} 
-\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/ggh_UntaggedTag_3.pdf} 
+ \subfloat[RV fits with functional form: Sum of Gaussians]{\shortstack{
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_0_rv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_1_rv_125.pdf}\\ 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_2_rv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_3_rv_125.pdf} 
 }}
-\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the sum of Gaussians functional form, where the RV and WV contributions have been summed according to their relative event count. The models contain between three and five Gaussians in each vertex scenario, leading to between 17 and 29 parameters after summing the RV and WV contributions with a mixing fraction. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the total number of parameters in the parametrisation. This figure is to be compared with the \DCBpG parametrisation shown in \Fig~\ref{fig:model:functionalform}.}
+\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the sum of Gaussians functional form, where the right vertex (RV) was selected. The models contain between three and five Gaussians, leading to between 8 and 14 parameters. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the number of non-empty bins minus the number of parameters in the functional form. Bins with zero entries are ignored in the $\chi^2$ calculation. This figure is to be compared with the \DCBpG parametrisation shown in \Fig~\ref{fig:model:functionalform}.}
 
 \label{fig:model:functionalform_bis}
+\end{figure}
+
+\begin{figure}[htp!]
+\centering
+ \subfloat[WV fits with functional form: DCB$+1$G]{\shortstack{
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_0_wv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_1_wv_125.pdf} \\
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_2_wv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/DCBpG/LI/LCtest_ggh_UntaggedTag_3_wv_125.pdf} 
+}}\\
+\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the \DCBpG functional form, where the wrong vertex (WV) was selected. The \DCBpG parametrisation has 8 parameters. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the number of non-empty bins minus the number of parameters in the functional form. Bins with zero entries are ignored in the $\chi^2$ calculation. This figure is to be compared with the sum of Gaussians parametrisation shown in \Fig~\ref{fig:model:functionalform_quad}.}
+
+\label{fig:model:functionalform_tris}
+\end{figure}
+\begin{figure}[htp!]
+\centering
+ \subfloat[WV fits with functional form: Sum of Gaussians]{\shortstack{
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_0_wv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_1_wv_125.pdf}\\ 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_2_wv_125.pdf} 
+\includegraphics[width=0.5\textwidth]{modellingFigures/\whichFig/nGaus/LI/LCtest_ggh_UntaggedTag_3_wv_125.pdf} 
+}}
+\caption{Examples of the shape of the simulated \mgg distribution (\mH=125\GeV) for the ggH process for the inclusive categories when parametrised with the sum of Gaussians functional form, where the wrong vertex (WV) was selected. The models contain between three and five Gaussians, leading to between 8 and 14 parameters. The plots show the agreement between the simulation and the parametrisation expressed as a $\chi^2$, alongside the number of non-empty bins minus the number of parameters in the functional form. Bins with zero entries are ignored in the $\chi^2$ calculation. This figure is to be compared with the \DCBpG parametrisation shown in \Fig~\ref{fig:model:functionalform_tris}.}
+
+\label{fig:model:functionalform_quad}
 \end{figure}
 \fi
 %A number of checks were performed to validate the use of the \DCBpG shape
@@ -117,8 +149,11 @@ The fraction of events where the selected vertex was within $1\cm$ in the $z$-di
 
 
 \subsection{Normalisation of signal models}
+\label{model:sec:signal_model_normalisation}
 
-The signal models are normalised so that their integrated contents correspond to the number of events predicted by the \SM after detector acceptance ($A$) and selection efficiency ($\epsilon$) are taken into account. The expected number of events in each sample (ignoring $A$ and $\epsilon$) is first computed as the product of the relevant process \crosssection, the \Hgg branching fraction and the integrated luminosity of the data sample. The values of the \crosssection\s and branching fraction as a function of \mH are taken from~\cite{LHCHXSWGYR4}. 
+The signal models are normalised so that their integrated contents correspond to the number of events predicted by the \SM after detector acceptance ($A$) and selection efficiency ($\epsilon$) are taken into account. The expected number of events in each sample (ignoring $A$ and $\epsilon$) is first computed as the product of the relevant process \crosssection, the \Hgg branching fraction and the integrated luminosity of the data sample. The values of the \crosssection\s and branching fraction as a function of \mH are taken from~\cite{LHCHXSWGYR4}.
+
+
 %After the simulated samples have been reconstructed and the events selected and categorised, the number of remaining events is related to the expected number by \effxacc, which is parametrised in \mH using a polynomial fit. 
 %Values of \effxacc, for each production process and each event category, are obtained from the analysis of the simulated samples.
 Values of \effxacc, for each production process and each event category, are obtained from the analysis of the simulated samples, by comparing the final event content to the expected number of events.
@@ -134,6 +169,8 @@ The dependence on \mH of these values is parametrised by polynomial fits.
 \end{figure}
 
 The final normalisation of the signal models for an arbitrary value of \mH can then be obtained from the parametrised \effxacc multiplied by the relevant \crosssection, branching fraction and integrated luminosity.
+The normalisation of the signal samples in this thesis has been updated compared to~\cite{CMS-PAS-HIG-16-020}, such that an additional correction to the weights of the simulated events is applied. The correction was introduced to resolve a discrepancy between the assumptions made for the calculation of the \SM \Hgg branching fraction reported in~\cite{LHCHXSWGYR4} and the contents of the simulated signal samples. Namely, the value from~\cite{LHCHXSWGYR4} assumes that all the photons from the \Hgg decay are on-shell. Conversely, the simulation allows a certain proportion of \Hgg decay photons to be off-shell. In such cases, the excited photons convert immediately into fermion pairs, primarily electron-positron, as part of the electromagnetic shower model in \Pythia. The proportion of events in the sample where at least one of the photons is off-shell is of the order of 6\%. As expected, this proportion is uniform across all samples, corresponding to different Higgs boson production processes and \mH hypotheses. The normalisation of the simulated samples used in the preliminary result~\cite{CMS-PAS-HIG-16-020} was therefore 6\% too low, and the additional correction applied in this thesis resolves this issue.  
+
 As an example, the dependence of the full normalised parametric signal model on \mH for the \ggH process in each of the inclusive analysis categories is shown in \Fig~\ref{fig:model:sig_interpolation}. The equivalent figures for all processes in all categories are available in \App~\ref{app:modelling} in \Fig\s~\ref{fig:model:sig_interpolation_ggh}, ~\ref{fig:model:sig_interpolation_vbf}, ~\ref{fig:model:sig_interpolation_tth}, ~\ref{fig:model:sig_interpolation_wh}, and~\ref{fig:model:sig_interpolation_zh}.
 
 \begin{figure}[htp!]

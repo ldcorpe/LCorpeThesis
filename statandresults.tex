@@ -7,7 +7,7 @@
 \ifNewAnalysis
 The signal and background models described in \Chapter~\ref{chap:model} are used to perform the statistical interpretation of the \thisanalysislumi\ifb of data. The result is an independent observation of the Higgs boson in the diphoton decay channel and measurements of some of its properties. %The objective is to twofold:
 \else
-The signal and background models described in \Chapter~\ref{chap:model} are used to perform the statistical interpretation of \thisanalysislumi\ifb of \RunII data collected at $\sqrt{s}=13\TeV$ by \CMS in 2016. The author was responsible for the signal and background modelling, systematics handling and statistical interpretation in the official \CMS preliminary result~\cite{CMS-PAS-HIG-16-020} produced with the same dataset. The results presented in this section differ from those presented in~\cite{CMS-PAS-HIG-16-020} insofar as they use improvements to the signal modelling techniques developed by the author. Namely the \DCBpG functional form was used instead of a sum of Gaussians, and interpolation using \SSF was used instead of linear interpolation. The results from this thesis and~\cite{CMS-PAS-HIG-16-020} are almost identical, as expected, and are compared at various points throughout this chapter.
+The signal and background models described in \Chapter~\ref{chap:model} are used to perform the statistical interpretation of \thisanalysislumi\ifb of \RunII data collected at $\sqrt{s}=13\TeV$ by \CMS in 2016. The author was responsible for the signal and background modelling, systematics handling and statistical interpretation in the official \CMS preliminary result~\cite{CMS-PAS-HIG-16-020} produced with the same dataset. The results presented in this section differ from those presented in~\cite{CMS-PAS-HIG-16-020} insofar as they use improvements to the signal modelling techniques developed by the author. Namely the \DCBpG functional form was used instead of a sum of Gaussians, and interpolation using \SSF was used instead of linear interpolation. Finally, an additional correction to signal sample normalisation (or order 6\%) was applied, as described in \Sec~\ref{model:sec:signal_model_normalisation}. The results from this thesis and~\cite{CMS-PAS-HIG-16-020} differ slightly due to this correction, as expected. 
 
 Due to the scaling of the \SM Higgs boson and background \crosssection\s moving from 7 or 8\TeV to 13\TeV, the dataset used in this thesis has roughly the same statistical sensitivity as the full \RunI dataset, which had an integrated luminosity of $24.8\ifb$. The final analysis of the \RunI dataset~\cite{LegacyHgg} led to an independent observation of the Higgs boson in the diphoton decay channel. The objective of the work presented in this thesis is therefore to make a confirmation of the observation (or ``rediscovery'') of the Higgs boson in the diphoton decay channel, and measurements of some of its properties.
 \fi
@@ -26,7 +26,7 @@ The observed \mgg distributions obtained from the data (labelled $ \mgg^{obs}$ h
 \end{equation}
 In the definition above:
 \begin{itemize}
-\item $\mu = \sigma^{H} / \sigma^{H}_{SM}$ is a \POI called the signal strength, where in this context $\sigma^H$ is the observed Higgs boson cross section, and $\sigma^H_{SM}$ is the \SM Higgs boson \crosssection. The mass of the Higgs boson \mH is a second \POI. The likelihood function can in fact be generalised for an arbitrary number of \POI\s (as in \Sec\s~\ref{sec:statandresults:sigstrength} and~\ref{sec:statandresults:kappas}); 
+\item $\mu = \sigma^{H} / \sigma^{H}_{SM}$ is a \POI called the signal strength, where in this context $\sigma^H$ is the observed Higgs boson \crosssection, and $\sigma^H_{SM}$ is the \SM Higgs boson \crosssection. The mass of the Higgs boson \mH is a second \POI. The likelihood function can in fact be generalised for an arbitrary number of \POI\s (as in \Sec\s~\ref{sec:statandresults:sigstrength} and~\ref{sec:statandresults:kappas}); 
 \item $\mathbf{n}$ is a set of floating nuisance parameters, composed of those which affect the signal model and those which affect the background model, labelled $\mathbf{n}_S$ and $\mathbf{n}_B$ respectively;
 \item $\mgg^{obs,C}$ is the invariant mass distribution for a particular category $C$;
 \item $f^C_S$ and $f^C_B$ represent the probability distribution functions of the signal and background components of the model in category $C$, normalised to the expected number of signal and background events in that category respectively. Some of the nuisance parameters can modify the normalisation of $f^C_S$ and $f^C_B$. 
@@ -133,17 +133,16 @@ A common choice, which is found to maximise $\beta$~\cite{Cowan}, is to define t
 \label{eq:statandresults:test_statistic}
 q_{\mu} = \begin{cases} 
 % -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH};\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
- -2 \ln \mathcal{L}(\mu,\mH; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\mH;\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
+ -2 \ln \mathcal{L}(\mu,\mH; \hat{\mathbf{n}}^{\mu}| \mgg^{obs}) + 2\ln\mathcal{L}(\hat{\mu},\mH;\hat{\mathbf{n}}| \mgg^{obs} ) & \text{when } \hat{\mu} \geq 0, \\
  0 & \text{when } \hat{\mu} < 0, 
  \end{cases}
 \end{equation}
-
 %where $\hat{\mH}^{\mu}$ and 
 where $\hat{\mathbf{n}}^{\mu}$ denotes the best fit $\mathbf{n}$ for a fixed value of $\mu$. 
 %In this case, \mH is allowed to float with a flat constraint, and is said to be \emph{profiled}. The test statistic can be modified to evaluate the \DNLL for a given \mH hypothesis by fixing it to a particular value instead. 
 When trying to exclude hypothesis $H_{0}$, the test statistic $q_{0}$ in particular is used to define a critical region. In the limit of a large sample of data, the probability distribution function of the test statistic ($f_q$), is Gaussian. The fact that $q_{0} =0$ for $\hat{\mu} < 0$ reflects the fact that only excesses in the data are regarded as significant. This simplifies the definition of the critical region, since increasingly large values of $q_{0}$ indicate increasing incompatibility with $H_{0}$, and therefore only the right-hand tail of $f_q$ is considered when assessing probabilities. Assuming $H_{0}$, the probability of obtaining a value of $q^{{obs}}_{0}$ (corresponding to observed data $ \mgg^{obs}$) or higher is given by the integral of $f_q$ from $q^{{obs}}_{0}$ to infinity. This probability is commonly referred to as the \pvalue. We can therefore define the critical region as: 
 \begin{equation}
-w = \{ \mgg^{obs} : \int_{q^{{obs}}_{0}}^{+\infty} f_q(q_{0}) dq_0 \leq \alpha \},
+w = \{ \mgg^{obs} : \int_{q^{{obs}}_{0}}^{+\infty} f_q(q_{0}) dq_0 \leq \alpha \}.
 \end{equation}
 
 In particle physics experiments, the threshold $\alpha$ to reject the null hypothesis is typically $2.87 \times 10^{-7}$. If expressed as the number of standard deviations that a Gaussian-distributed variable would fluctuate to give the same \pvalue, then this threshold is $5\sigma$.
@@ -161,10 +160,10 @@ The local \pvalue is therefore evaluated separately, given the observed data, fo
 \label{fig:statandresults:pval}
 \end{figure}
 
-The local observed significance at the \RunI best fit ($\mH=125.09\GeV$) is $\obsSigAtRunIBF\sigma$, where $\expSigAtRunIBF\sigma$ was expected for the \SM Higgs boson. The maximum local observed significance is found at $\bestFitGlobalMH\GeV$, corresponding to $\obsSigAtMin\sigma$ where $\expSigAtMin\sigma$ was expected (these results are consistent with~\cite{CMS-PAS-HIG-16-020} to within one unit of the smallest quoted decimal place). % $5.6\sigma$ at $\mH=125.09\GeV$ is where $6.2\sigma$ was expected, and maximum local observed significance at $\mH=126.0\GeV$, corresponding to $6.1\sigma$.
+The local observed significance at the \RunI best fit ($\mH=125.09\GeV$) is $\obsSigAtRunIBF\sigma$, where $\expSigAtRunIBF\sigma$ was expected for the \SM Higgs boson. The maximum local observed significance is found at $\bestFitGlobalMH\GeV$, corresponding to $\obsSigAtMin\sigma$ where $\expSigAtMin\sigma$ was expected. These results are consistent with~\cite{CMS-PAS-HIG-16-020} to within one unit of the smallest quoted decimal place, as expected since the normalisation of the signal model does not affect the calculation of the \pvalue. % $5.6\sigma$ at $\mH=125.09\GeV$ is where $6.2\sigma$ was expected, and maximum local observed significance at $\mH=126.0\GeV$, corresponding to $6.1\sigma$.
 Since the observed data fall in the critical region where at least one \mH assumption yields a local significance above $5\sigma$ (i.e \pvalue is less than $2.87 \times 10^{-7}$), the null hypothesis that there is no Higgs boson is rejected in favour of the alternative hypothesis that there exists a Higgs boson. Therefore, the data correspond to an observation of the Higgs boson decaying to photons.
 
-The maximum significance of the observation in this analysis occurs near $\mH=126.0\GeV$, which is somewhat different from the combined best-fit \mH measured in \RunI. %world average values of $125.09\pm0.24\GeV$ from the combination of \CMS and \ATLAS results from \RunI ~\cite{PhysRevLett.114.191803}. 
+The maximum significance of the observation in this analysis occurs near $\mH=\bestFitGlobalMH\GeV$, which is somewhat different from the combined best-fit \mH measured in \RunI. %world average values of $125.09\pm0.24\GeV$ from the combination of \CMS and \ATLAS results from \RunI ~\cite{PhysRevLett.114.191803}. 
 However, the results which are presented here do not comprise a measurement of the Higgs boson mass, as the data were not reprocessed with the final set of \ECAL calibrations and tuning of the \PhoEnergyBdt which are required for a precision measurement. %As can be seen from \Table~\ref{tab:model:systematics}, the corresponding shape nuisances have a negligible effect on the measurements of the signal strength and related quantities, and therefore these considerations do not invalidate the results presented in this thesis.
 
 \section{Measurements of the signal strength}
@@ -178,9 +177,9 @@ This fact is used to produce a measurement of the global signal strength $\mu$.
 Two modifications are made to the definition of the test statistic in \Eq~\ref{eq:statandresults:test_statistic}. First, the \mH parameter is profiled in the minimisation at each step, which means that it is allowed to float with a flat constraint. Second, the requirement that the test-statistic is nonzero only for positive values of $\hat{\mu}$ is relaxed, since this was a enforced to simplify the calculation of \pvalue\s. The new definition of the test statistic is therefore given by: 
 \begin{equation}
 \label{eq:statandresults:test_statistic_profMH}
-q_{\mu} = -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\mu},\hat{\mH};\hat{\mathbf{n}}| \mgg^{obs} ), 
+q_{\mu} = -2 \ln \mathcal{L}(\mu,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})+ 2\ln\mathcal{L}(\hat{\mu},\hat{\mH};\hat{\mathbf{n}}| \mgg^{obs} ), 
 \end{equation}
-where $\hat{\mathbf{\mH}}^{\mu}$ denotes the best-fit \mH for a fixed value of $\mu$. %Other treatements of the \mH paramater are possible (for instance, fixing it to the central value from the current best measurement, or Gaussian-constraining it within the uncertainties of the best measurement), but these do not signifiancelty change the final measurement of the signal strength.
+where $\hat{\mH}^{\mu}$ denotes the best-fit \mH for a fixed value of $\mu$. %Other treatements of the \mH paramater are possible (for instance, fixing it to the central value from the current best measurement, or Gaussian-constraining it within the uncertainties of the best measurement), but these do not signifiancelty change the final measurement of the signal strength.
 
 The measurement is made by evaluating the test statistic for fixed values of $\mu$ in small steps in the range of $0.5$ to $1.5$. The result of the so-called \DNLL \emph{scan} of $\mu$ is shown in \Fig~\ref{fig:statandresults:global_mu}. By definition, the best-fit point $\hat{\mu}$ has a \DNLL value of $0$. This gives the central value for the measurement. The upper and lower uncertainties are obtained by finding the intercepts of the curve with \DNLL$=1$. 
 The contribution to the total uncertainty on the signal strength arising from the statistical, experimental systematic and theory systematic components are assessed by repeating the process, but freezing the corresponding nuisance parameters to their post-fit values. Their effect is then calculated by taking the difference in quadrature with respect to the total uncertainty. 
@@ -189,7 +188,7 @@ The measured value of the signal strength is:
 \obsMuBreakdown,
 %\hat{\mu}=0.95 ^{+0.21}_{-0.19} = 0.95 \pm 0.17 \text{ (stat.) }^{+0.09}_{-0.06} \text{ (theo. syst.) }^{+0.10}_{-0.07} \text{ (exp. syst.)}. 
 \end{equation*}
-which is consistent with the result quoted in~\cite{CMS-PAS-HIG-16-020} to within one decimal place. 
+which is differs from the result quoted in~\cite{CMS-PAS-HIG-16-020} by 6\%, as expected. 
 
 This measurement indicates that the observed global signal strength is compatible with the \SM expectation within one standard deviation. The observed particle therefore appears to behave very closely to the predictions of the \SM in its overall production rate. None, the less, various extensions to the \SM predict variations of the order of a few percent, and therefore the current uncertainties, which are of the order of $20\%$, cannot rule out contributions from physics beyond the \SM. Further accumulation of data during the \LHC programme will help to bring down this uncertainty, which is currently dominated by the statistical component. The full 2016 dataset contains approximately three times as much data, which would already be enough to bring the statistical contribution to the uncertainty to the level of the theory and experimental systematic contributions.
 
@@ -243,13 +242,12 @@ The plot shows that the observed best-fit point is consistent with the \SM withi
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.8\textwidth]{statandresultsFigures/\whichFig/RVRFScanProfileMH_col.pdf} 
-\caption{The result of a two-dimensional \DNLL scan of the \muF and \muV components of the signal strength. The red diamond indicates the SM expectation, while the black cross shows the location of the best-fit point. The measurement is consistent with the SM within the uncertainty contours, which are shown in solid and dashed lines for the $1\sigma$ and $2\sigma$ uncertainties respectively. The value of \mH was profiled in the scan.}
+\caption{The result of a two-dimensional \DNLL scan of the \muF and \muV components of the signal strength. The red diamond indicates the SM expectation, while the black cross shows the location of the best-fit point. The measurement is consistent with the SM within the uncertainty contours, which are shown in solid and dashed lines for the $1\sigma$ and $2\sigma$ uncertainties respectively. The value of \mH was profiled in the scan. The $x$-axis and $y$-axis are set to the same scale to show the difference in the sensitivity for \muF and \muV. }
 
 \label{fig:statandresults:mu_per_rvrf}
 \end{figure}
 
 To correctly extract the uncertainties on  the \muF and \muV parameters individually, a \DNLL scan of each is performed while profiling the other. This is achieved by modifying the test statistic to treat the profiled \POI analogously to \mH in \Eq~\ref{eq:statandresults:test_statistic_profMH}. 
-
 The resulting scans are available in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:statandresults:mu_per_rv_and_rf}, which give rise to the following measurements, which take the statistical and systematic uncertainties into account:
 \begin{equation*}
 %\muFhat=0.82^{+0.27}_{-0.24} \text{ and } \muVhat=1.60^{+0.90}_{-0.76}.
@@ -259,7 +257,7 @@ The resulting scans are available in \App~\ref{app:dnll_scans} in \Fig~\ref{fig:
 \end{split}
 \end{equation*}
 
-The \muF measurement is consistent with~\cite{CMS-PAS-HIG-16-020} to within one unit of the smallest quoted decimal place and \muV differs by less than $5\%$ which is small compared to the size of the uncertainties. The fermionic and bosonic components of the signal strength are therefore each found to be individually compatible with the \SM expectations. %As expected, the component related to the \ggH production mode has by far the smallest uncertainties, since it exerts the most influence on the fit in the sensitive \Untagged categories.
+The \muF and \muV measurements are consistent with~\cite{CMS-PAS-HIG-16-020} within a few percent after the normalisation change is taken into account. The fermionic and bosonic components of the signal strength are each found to be individually compatible with the \SM expectations within $1\sigma$. %As expected, the component related to the \ggH production mode has by far the smallest uncertainties, since it exerts the most influence on the fit in the sensitive \Untagged categories.
 
 %\newpage
 
@@ -274,12 +272,14 @@ Using a similar procedure to that described in \Sec~\ref{sec:statandresults:rvrf
 &+\muggH\cdot f^C_{S,{\text{ggH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
 &+\muttH\cdot f^C_{S,{\text{ttH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\ 
 &+\muVBF\cdot f^C_{S,{\text{VBF}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S) \\
-&+\muVH \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S){}\big], \\ 
+&+\muVH \cdot f^C_{S,{\text{VH}}}(\mgg^{obs,C} |\mH; \mathbf{n}_S){}\big]. \\ 
 \end{split}
 \end{equation}
-The technique described above exploits the categorisation scheme described in \Chapter~\ref{chap:categorisation}: in particular, the fact that the relative contribution from each process to the overall signal model differs from category to category. This means that varying each per-process signal strength has a different effect on the overall likelihood function. However, since no \VHTag categories are included in this analysis, it is not possible to resolve the effect of varying \muVH from other \POI\s, in particular \muggH, since most \VH events are included in the \Untagged categories along with the \ggH events. To break the degeneracy, when making the measurements of the other \POI\s, the parameter \muVH is fixed to a value of 1. 
+The technique described above exploits the categorisation scheme described in \Chapter~\ref{chap:categorisation}: in particular, the fact that the relative contribution from each process to the overall signal model differs from category to category. This means that varying each per-process signal strength has a different effect on the overall likelihood function. However, since no \VHTag categories are included in this analysis, it is not possible to resolve the effect of varying \muVH from other \POI\s, in particular \muggH, since most \VH events are included in the \Untagged categories along with the \ggH events. There are several treatments which can be used to break the degeneracy. The approach taken here it fix the \muVH parameter value to 1. 
 
-The measurements of the \muggH, \muVBF, and \muttH are performed by producing a \DNLL scan of each parameter, while profiling the others, where the \DNLL definition has been suitably modified to accommodate the new likelihood function defined in \Eq~\ref{eq:statandresults:likelihood_function_muProc}. The \mH parameter is also profiled. The best-fit values and their uncertainties are shown in \Fig~\ref{fig:statandresults:mu_per_proc}. The measurement of the global signal strength obtained in \Sec~\ref{fig:statandresults:global_mu} is shown as the vertical black line with green bands showing the $1\sigma$ uncertainties. The \SM expectation is shown as the vertical dashed red line. The per-process signal strength measurements are all compatible with the \SM expectation within $1\sigma$. The measurements also agree with those presented in~\cite{CMS-PAS-HIG-16-020} within one unit of the smallest significant figure for \muggH, and within $5\%$ for \muVBF and \muttH. This difference is small compared to the $1\sigma$ uncertainties. 
+The measurements of the \muggH, \muVBF, and \muttH are performed by producing a \DNLL scan of each parameter, while profiling the others, where the \DNLL definition has been suitably modified to accommodate the new likelihood function defined in \Eq~\ref{eq:statandresults:likelihood_function_muProc}. The \mH parameter is also profiled. The best-fit values and their uncertainties are shown in \Fig~\ref{fig:statandresults:mu_per_proc}. The measurement of the global signal strength obtained in \Sec~\ref{fig:statandresults:global_mu} is shown as the vertical black line with green bands showing the $1\sigma$ uncertainties. The \SM expectation is shown as the vertical dashed red line. The per-process signal strength measurements are all compatible with the \SM expectation within $1\sigma$. The measurements also agree with those presented in~\cite{CMS-PAS-HIG-16-020} after taking the normalisation correction into account. 
+
+Fixing the \muVH parameter value to 1 has the downside of introducing a certain amount of model dependence into the measurement. Since the uncertainties on the \SM Higgs boson \crosssection\s are accounted for, this approach effectively equates to assuming the Higgs boson behaves as expected by the \SM when produced by the \WH or \ZH processes, within the theoretical uncertainties. This treatment also assumes that the effect of \VH on the \muggH is small, which is a reasonable statement given that \VH events represent less than 4\% of the \Untagged category contents. The advantage of the method is that the measured quantities are easy to interpret physically. By contrast, another approach is to make a measurement of $\mu_{\textrm{ggH,VH}}$ instead. The advantage of this method is that no model dependence is introduced and there is no degeneracy in the measurement. The disadvantage is that this quantity does not provide any particular insight into the behaviour of the Higgs boson. Performing the measurement in this way yields a measurement of $\hat{\mu}_{\textrm{ggH,VH}}=0.75_{-0.20}^{+0.22}$, which sits in very good agreement with the measurement of \muggH shown in \Fig~\ref{fig:statandresults:mu_per_proc}. This suggests that the assumptions made when freezing \muVH to the \SM expectation are justified. 
 
 This result is of particular interest because certain extensions to the \SM predict modified values of the per-process signal strengths. In particular, if a heavy top-like particle exists (as predicted by many theories to resolve the hierarchy problem), then an anomalous value of $\muttH$ could be observed. However, the variations in the value of \muttH predicted by such models are typically smaller than 10\%. There is evidently plenty of room to accommodate such variations in the current measurement. As more data are collected over the course of the \LHC programme, this type of measurement will become increasingly important since it could reveal clues to the nature of physics beyond the \SM, or put strong constraints on proposed extensions. This result also shows that the bulk of the sensitivity of the analysis resides in the \Untagged categories, which are largely composed of \ggH events.
 
@@ -302,7 +302,7 @@ Using an analogous method to the one described in \Sec~\ref{sec:statandresults:m
 \end{equation}
 where $\{\mu_C\}$ represents the set of signal strengths for each category.
 
-Although the signal strengths $\{\mu_C\}$ do not have any direct physical meaning, they can be used to check that each category gives a result consistent with the overall measurement, and that no bias is introduced by any particular category. The result of the check is shown in \Fig~\ref{fig:statandresults:mu_per_tag}, which determines that all the per-category signal strengths are compatible with the \SM expectation and the overall result. The results for each per-category signal strength match those from~\cite{CMS-PAS-HIG-16-020} within a few percent, as for previously quoted results. 
+Although the signal strengths $\{\mu_C\}$ do not have any direct physical meaning, they can be used to check that each category gives a result consistent with the overall measurement, and that no bias is introduced by any particular category. The result of the check is shown in \Fig~\ref{fig:statandresults:mu_per_tag}, which determines that all the per-category signal strengths are compatible with the \SM expectation and the overall result.% The results for each per-category signal strength match those from~\cite{CMS-PAS-HIG-16-020} within a few percent, as for previously quoted results. 
 
 Of the eight categories which are included in this analysis, all but two of them (the \Untagged 2 and \VBFTag 0 categories ) fall within $1\sigma$ of the overall best-fit global signal strength, which roughly matches the expectation that a randomly-distributed Gaussian variable falls within 1\sigma of the mean approximately 68\% of the time.
 
@@ -356,7 +356,7 @@ To make a measurement of fermionic and bosonic Higgs boson coupling modifiers, t
 The definition of the test statistic is also modified to take the new \POI\s into account:
 \begin{equation}
 \label{eq:statandresults:test_statistic_kvkf}
- q(\kV,\kf)= -2 \ln \mathcal{L}(\kV,\kf,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})- 2\ln\mathcal{L}(\hat{\kV},\hat{\kf},\mH;\hat{\mathbf{n}}| \mgg^{obs} ).
+ q(\kV,\kf)= -2 \ln \mathcal{L}(\kV,\kf,\hat{\mH}^{\mu}; \hat{\mathbf{n}}^{\mu}| \mgg^{obs})+ 2\ln\mathcal{L}(\hat{\kV},\hat{\kf},\mH;\hat{\mathbf{n}}| \mgg^{obs} ).
 \end{equation}
 %where unlike \Eq~\ref{eq:statandresults:test_statistic_kvkf} there is no need to specify that the test statistic be null when the \POI\s are negative. The \mH parameter is profiled in this treatment.
 
